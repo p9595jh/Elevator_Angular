@@ -1,0 +1,28 @@
+extends layout
+
+block contentX
+
+    div.box
+        span 회원관리
+        hr
+        br
+        br
+
+        table.admintable
+            tr
+                th ID
+                th 관리
+            each val in users
+                - if ( val.id != 'admin' )
+                    tr
+                        - if ( !val.stop )
+                            td
+                                b(style="cursor:pointer;", id= val.id, onclick="info('"+val.id+"')") #{val.id}
+                            td
+                                button(onclick="stop('"+val.id+"')", id= val.id+"button") 정지
+                        - else
+                            td
+                                b(style="color:red; cursor:pointer;" id= val.id, onclick="info('"+val.id+"')") #{val.id}
+                            td
+                                button(onclick="stop('"+val.id+"')", id= val.id+"button") 해제
+        br
