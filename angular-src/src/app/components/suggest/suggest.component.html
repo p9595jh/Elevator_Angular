@@ -1,0 +1,37 @@
+<div class="box">
+  <span id="visitor">건의사항</span><hr/><br/>
+
+  <form method="POST" action="./handleSuggest" *ngIf="loggedIn">
+    <table style="width:700px; margin:auto">
+      <tr>
+        <td>
+          <textarea cols="80" rows="5" name="comment"></textarea>
+        </td>
+        <td>
+          <input type="submit" name="cmt" value="작성" style="width:100px; height:80px"/>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <table class="tb2" *ngFor="let val of content">
+    <tr style="height:110px; vertical-align:top;">
+      <td style="text-align:center; vertical-align:middle; width:110px; border-right:1px solid rgb(0,91,159)">
+        <img width="70" height="70"/>
+      </td>
+      <td>
+        <div style="font-size:12px; padding:2px; margin-left:5px; border-bottom:1px dotted rgb(0,91,159);">
+          <b *ngIf="val.id == 'admin'">
+            <a class="tblink" href="javascript:;">{{val.nickname}}</a>
+          </b>
+          <a *ngIf="val.id != 'admin'" class="tblink" href="javascript:;">{{val.nickname}}</a>
+          <span style="font-size:12px; float:right;">{{val.writedate}}</span>
+        </div>
+        <div style="padding-left:10px;">
+          <pre class="contentView">{{val.comment}}</pre>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+</div>>

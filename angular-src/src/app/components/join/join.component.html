@@ -1,0 +1,35 @@
+<div class="reg"><span style="float:left;">회원가입 <span class="regerr"></span></span><br/>
+    <hr/><br/>
+    <form (submit)="submitRegister()">
+        <table class="regtable">
+            <tr>
+                <td>아이디<span class="regerr"> *</span></td>
+                <td><input class="reginput" type="text" name="id" [(ngModel)]="id" /></td>
+            </tr>
+            <tr>
+                <td>비밀번호<span class="regerr"> *</span></td>
+                <td><input class="reginput" type="password" name="password" [(ngModel)]="password" /></td>
+            </tr>
+            <tr>
+                <td>이메일<span class="regerr"> *</span></td>
+                <td><input class="reginput" type="text" name="email" [(ngModel)]="email" /></td>
+            </tr>
+            <tr>
+                <td>닉네임<span class="regerr"> *</span></td>
+                <td><input class="reginput" type="text" name="nickname" [(ngModel)]="nickname" /></td>
+            </tr>
+            <tr>
+                <td>즐겨듣는 장르</td>
+                <td><input class="reginput" type="text" name="genre" [(ngModel)]="genre" /></td>
+            </tr>
+            <tr>
+                <td>자기소개 한마디</td>
+                <td><input class="reginput" type="text" name="intro" [(ngModel)]="intro" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align:center;"><input type="submit" name="submit" value="회원가입" style="width:200px; height:50px;" /></td>
+            </tr>
+        </table><br/>
+        <hr/><span class="regerr">* </span><span class="regerr" style="color:black;">표시가 된 곳은 필수 입력사항입니다.</span><br/><br/><span class="link">회원가입 이후 회원정보수정에서 회원코드를 메모해놓으세요. 추후 아이디/비밀번호 찾기에 필요합니다.</span></form>
+  </div>
+  
