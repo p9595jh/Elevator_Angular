@@ -34,7 +34,7 @@ export class HandleuserService {
   logout() {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    this.http.get('http://localhost:3000/logout', {headers: headers}).pipe(map((res: Response) => res.json()));
+    return this.http.get('http://localhost:3000/logout', {headers: headers}).pipe(map((res: Response) => res.json()));
   }
 
   handleRegi(user) {

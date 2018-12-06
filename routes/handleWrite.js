@@ -20,8 +20,10 @@ router.post('/', function(req, res) {
             FreeBoard.find({}).sort({num:-1}).exec(function(err, frees) {
                 if ( err ) {
                     console.log("Error in handleWrite!!!!");
-                    res.status(500).send({ error: 'database failure' });
-                    return;
+                    return res.json({
+                        success: false,
+                        msg: err
+                    });
                 }
 
                 var free = new FreeBoard();
@@ -48,7 +50,10 @@ router.post('/', function(req, res) {
                     if ( ext == '.jpg' || ext == '.jpeg' || ext == '.png' || ext == '.gif' ) {
                         imagePath = 'images/contentimages/' + 'free_' + free.num + '_' + req.session.userid + ext;
                         fs.copy(files.image.path, 'public/' + imagePath, function(err0) {
-                            if ( err0 ) console.err(err0);
+                            if ( err0 ) {
+                                console.log('handleWrite - image copy error');
+                                console.err(err0);
+                            }
                         });
                     }
                 }
@@ -57,7 +62,10 @@ router.post('/', function(req, res) {
                     if ( ext == '.mp3' || ext == '.ogg' || ext == '.wav' ) {
                         audioPath = 'audios/contentaudios/' + 'free_' + free.num + '_' + req.session.userid + ext;
                         fs.copy(files.audio.path, 'public/' + audioPath, function(err0) {
-                            if ( err0 ) console.err(err0);
+                            if ( err0 ) {
+                                console.log('handleWrite - audio copy error');
+                                console.err(err0);
+                            }
                         });
                     }
                 }
@@ -66,10 +74,16 @@ router.post('/', function(req, res) {
 
                 free.save(function(err) {
                     if ( err ) {
-                        res.status(500).send({ error: 'database failure' });
-                        return;
+                        return res.json({
+                            success: false,
+                            msg: err
+                        });
                     }
-                    res.redirect('./content?type=free&num=' + free.num);
+                    else {
+                        return res.json({
+                            success: true
+                        });
+                    }
                 });
             });
         }
@@ -77,15 +91,19 @@ router.post('/', function(req, res) {
         else if ( boardtype == "music" ) {
             if ( files.audio.name == '' ) {
                 console.log("No music file");
-                res.redirect('./music');
-                return;
+                return res.json({
+                    success: false,
+                    msg: 'NO_MUSIC_FILE'
+                });
             }
 
             MusicClass.find({}).sort({num:-1}).exec(function(err, musics) {
                 if ( err ) {
                     console.log("Error in handleWrite!!!!");
-                    res.status(500).send({ error: 'database failure' });
-                    return;
+                    return res.json({
+                        success: false,
+                        msg: err
+                    });
                 }
 
                 var music = new MusicClass();
@@ -114,7 +132,10 @@ router.post('/', function(req, res) {
                     if ( ext == '.jpg' || ext == '.jpeg' || ext == '.png' || ext == '.gif' ) {
                         imagePath = 'images/contentimages/' + 'music_' + music.num + '_' + req.session.userid + ext;
                         fs.copy(files.image.path, 'public/' + imagePath, function(err0) {
-                            if ( err0 ) console.err(err0);
+                            if ( err0 ) {
+                                console.log('handleWrite - image copy error');
+                                console.err(err0);
+                            }
                         });
                     }
                 }
@@ -123,7 +144,10 @@ router.post('/', function(req, res) {
                     if ( ext == '.mp3' || ext == '.ogg' || ext == '.wav' ) {
                         audioPath = 'audios/contentaudios/' + 'music_' + music.num + '_' + req.session.userid + ext;
                         fs.copy(files.audio.path, 'public/' + audioPath, function(err0) {
-                            if ( err0 ) console.err(err0);
+                            if ( err0 ) {
+                                console.log('handleWrite - audio copy error');
+                                console.err(err0);
+                            }
                         });
                     }
                 }
@@ -132,10 +156,16 @@ router.post('/', function(req, res) {
 
                 music.save(function(err) {
                     if ( err ) {
-                        res.status(500).send({ error: 'database failure' });
-                        return;
+                        return res.json({
+                            success: false,
+                            msg: err
+                        });
                     }
-                    res.redirect('./content?type=music&num=' + music.num);
+                    else {
+                        return res.json({
+                            success: true
+                        });
+                    }
                 });
             });
         }
@@ -144,8 +174,10 @@ router.post('/', function(req, res) {
             SubContent.find({}).sort({num:-1}).exec(function(err, subs) {
                 if ( err ) {
                     console.log("Error in handleWrite!!!!");
-                    res.status(500).send({ error: 'database failure' });
-                    return;
+                    return res.json({
+                        success: false,
+                        msg: err
+                    });
                 }
 
                 var sub = new SubContent();
@@ -173,7 +205,10 @@ router.post('/', function(req, res) {
                     if ( ext == '.jpg' || ext == '.jpeg' || ext == '.png' || ext == '.gif' ) {
                         imagePath = 'images/contentimages/' + boardtype + '_' + sub.num + '_' + req.session.userid + ext;
                         fs.copy(files.image.path, 'public/' + imagePath, function(err0) {
-                            if ( err0 ) console.err(err0);
+                            if ( err0 ) {
+                                console.log('handleWrite - image copy error');
+                                console.err(err0);
+                            }
                         });
                     }
                 }
@@ -182,7 +217,10 @@ router.post('/', function(req, res) {
                     if ( ext == '.mp3' || ext == '.ogg' || ext == '.wav' ) {
                         audioPath = 'audios/contentaudios/' + boardtype + '_' + sub.num + '_' + req.session.userid + ext;
                         fs.copy(files.audio.path, 'public/' + audioPath, function(err0) {
-                            if ( err0 ) console.err(err0);
+                            if ( err0 ) {
+                                console.log('handleWrite - audio copy error');
+                                console.err(err0);
+                            }
                         });
                     }
                     if ( req.session.userid == boardtype ) {
@@ -207,10 +245,16 @@ router.post('/', function(req, res) {
 
                 sub.save(function(err) {
                     if ( err ) {
-                        res.status(500).send({ error: 'database failure' });
-                        return;
+                        return res.json({
+                            success: false,
+                            msg: err
+                        });
                     }
-                    res.redirect('./content?type=' + boardtype + '&num=' + sub.num);
+                    else {
+                        return res.json({
+                            success: true
+                        });
+                    }
                 });
             });
         }

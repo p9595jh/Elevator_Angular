@@ -19,6 +19,7 @@ import { ContentComponent } from './components/content/content.component';
 import { NgFlashMessagesModule } from 'ng-flash-messages';
 import { HandleuserService } from './services/handleuser.service';
 import { HandleboardService } from './services/handleboard.service';
+import { WriteComponent } from './components/write/write.component';
 
 const appRoutes: Routes = [
   { path: '', component: StartComponent },
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
     LoginpageComponent,
     MusicComponent,
     ContentComponent,
-    JoinComponent
+    JoinComponent,
+    WriteComponent
   ],
   imports: [
     BrowserModule,

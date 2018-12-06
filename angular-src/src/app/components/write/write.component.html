@@ -1,0 +1,19 @@
+<div class="box"><span>글 작성</span>
+  <hr/><br/>
+  <form (submit)="submitWrite(fileInput.files)">
+      <table style="margin:auto; width:700px; text-align:center;">
+          <tr>
+              <td style="height:50px;"><input type="text" placeholder="제목" name="title" [(ngModel)]="title" style="width:600px; height:30px;" /></td>
+          </tr>
+          <tr>
+              <td><textarea cols="90" rows="30" name="content" [(ngModel)]="content"></textarea></td>
+          </tr>
+          <tr>
+              <td style="height:50px;"><input type="text" name="tag" [(ngModel)]="tag" placeholder="html 태그를 입력해주세요" style="width:500px;" /><br/><br/>
+                <input type="file" name="image" [(ngModel)]="image" accept="image/*" (change)="onFileChange(fileInput.files)" /><span class="link">이미지 (jpg,jpeg,png,gif)</span><br/>
+                <input type="file" name="audio" [(ngModel)]="audio" accept="audio/*" (change)="onFileChange(fileInput.files)" /><span class="link">음악 (mp3, ogg, wav)</span><br/>
+                <input type="submit" name="submit" value="작성" style="float:right;" /><input type="hidden" name="boardtype" [(ngModel)]="boardtype" value="{{type}}" /></td>
+          </tr>
+      </table>
+  </form>
+</div>
