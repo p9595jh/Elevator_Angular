@@ -10,11 +10,12 @@ router.get('/', function(req, res, next) {
 
     if ( !req.query.type || !req.session.userid ) {
         // only logged-in subscribed users can get in
-        res.redirect('./start');
-        return;
+        return res.json({
+            result: false,
+            msg: 'NO_LOGGEDIN'
+        });
     }
 
-    var User = require('./user.js');
     Sub.findOne({id: req.query.type}, function(err, sub) {
         var flag = false;
         for (var i=0; i<sub.subscribes.length; i++) {
@@ -24,8 +25,10 @@ router.get('/', function(req, res, next) {
             }
         }
         if ( !flag ) {
-            res.redirect('./start');
-            return;
+            return res.json({
+                result: false,
+                msg: 'NO_SUBSCRIBED'
+            });
         }
         var stopped = false;
         if ( req.session.userid ) {
@@ -38,7 +41,8 @@ router.get('/', function(req, res, next) {
         }
 
         SubContent.find({type: req.query.type}).sort({num:-1}).exec(function(err, subcontents) {
-            res.render('subboard', {
+            return res.json({
+                result: true,
                 title: req.query.type + ' - 서브게시판',
                 sub: sub,
                 subcontents: subcontents,

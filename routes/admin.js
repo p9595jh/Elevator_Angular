@@ -8,12 +8,15 @@ mongoose.connect('mongodb://localhost:27017/elevator');
 router.get('/', function(req, res, next) {
     if ( req.session.userid != 'admin' ) {
         console.log("invalid access");
-        return;
+        return res.json({
+            result: false,
+            msg: 'invalid access'
+        })
     }
 
     User.find(function(err, users) {
-        res.render('admin', {
-            title: '어드민',
+        return res.json({
+            result: true,
             users: users,
             user: {
                 id: req.session.userid,

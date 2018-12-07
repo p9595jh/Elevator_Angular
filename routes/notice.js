@@ -12,8 +12,7 @@ router.get('/', function(req, res, next) {
             res.status(500).send({ error: 'database failure' });
             return;
         }
-        res.render('notice', {
-            title: '공지사항',
+        return res.json({
             user: {
                 id: req.session.userid,
                 nickname: req.session.nickname,

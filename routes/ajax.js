@@ -89,7 +89,8 @@ router.post('/acceptboardrequest', function(req, res) {
     });
 });
 router.post('/subscribeboard', function(req, res) {
-    var userid = req.body.userid;
+    // var userid = req.body.userid;
+    var userid = req.session.userid;
     var subid = req.body.subid;
 
     var User = require('./user.js');
@@ -97,8 +98,7 @@ router.post('/subscribeboard', function(req, res) {
         for (var i=0; i<output.subscribes.length; i++) {
             if ( output.subscribes[i] == subid ) {
                 var responseData = { "message" : "duplicated" };
-                res.json(responseData);
-                return;
+                return res.json(responseData);
             }
         }
 
@@ -106,7 +106,7 @@ router.post('/subscribeboard', function(req, res) {
         var Sub = require('./sub.js');
         Sub.updateOne({id: subid}, {$push: {subscribes: userid}}, function(err1, output1) {});
         var responseData = { "message" : "done" };
-        res.json(responseData);
+        return res.json(responseData);
     });
 });
 router.post('/stop', function(req, res) {

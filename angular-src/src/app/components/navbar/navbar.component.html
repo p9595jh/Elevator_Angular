@@ -14,6 +14,12 @@
       <a [routerLink]="['./loginpage']" class="link">로그인</a>
     </li>
     <!-- have to add links to admin page here -->
+    <li *ngIf="loggedIn && user.id == 'admin'" [routerLinkActive]="['active']">
+      <a [routerLink]="['./admin']" class="link">어드민</a>
+    </li>
+    <li *ngIf="loggedIn && user.boardRequest == 2" [routerLinkActive]="['active']">
+        <a [routerLink]="['./subadmin']" class="link">어드민</a>
+    </li>
   </ul>
   <div style="text-align:center;">
     <a style="text-decoration:none; color:black; font-family:Ubuntu;" [routerLink]="['./start']">
@@ -27,7 +33,7 @@
     <a [routerLink]="['./start']">HOME</a>
     <a [routerLink]="['./free']">자유게시판</a>
     <a [routerLink]="['./music']">음악게시판</a>
-    <a [routerLink]="['./subboard']">서브게시판</a>
+    <a [routerLink]="['./subs']">서브게시판</a>
     <a [routerLink]="['./suggest']">건의게시판</a>
   </nav>
 </div>

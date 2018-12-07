@@ -1,0 +1,24 @@
+<div class="box" *ngIf="loggedIn">
+  <span>구독한 게시판</span><hr/><br/>
+  <ul *ngFor="let val for user.subscribes">
+    <li>
+      <a class="link" style="font-size:16px;" [routerLink]="['./subboard']" [queryParams]="{type: val}">{{val}}</a>
+    </li>
+  </ul>
+</div>
+
+<div class="box">
+  <span>서브게시판 목록</span><hr/><br/>
+  <ul *ngIf="loggedIn" *ngFor="let val for sub">
+    <li>
+      <a class="link" style="font-size:16px;" href="javascript:;" (click)="onSubscribeBoard(val.id)">{{val.id}}</a> 
+      <span style="font-size:12px; color:grey;">[{{val.subscribes-1}}]</span>
+    </li>
+  </ul>
+  <ul *ngIf="!loggedIn" *ngFor="let val for sub">
+    <li>
+      {{val.id}} <span style="font-size:12px; color:grey;">[{{val.subscribes-1}}]</span>
+    </li>
+  </ul>
+  <br/><br/>
+</div>

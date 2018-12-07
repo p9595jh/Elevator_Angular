@@ -1,0 +1,19 @@
+<div class="box">
+    <table class="admintable">
+      <tr>
+        <th>ID</th>
+        <th>관리</th>
+      </tr>
+      <ng-container *ngFor="let val for sub.stops">
+        <tr>
+          <td><b style="cursor:pointer; color:red;" id="val.id" onclick="">{{val.id}}</b></td>
+          <td><button onclick="" id="val.id + 'button'">해제</button></td>
+        </tr>
+        <tr *ngIf="val.id != user.id || val.id != 'admin'">
+          <td><b style="cursor:pointer;" id="val.id" onclick="">{{val.id}}</b></td>
+          <td><button onclick="" id="val.id + 'button'">정지</button></td>
+        </tr>
+      </ng-container>
+    </table>
+  </div>
+  

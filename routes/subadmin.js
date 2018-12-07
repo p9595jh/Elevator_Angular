@@ -8,7 +8,10 @@ mongoose.connect('mongodb://localhost:27017/elevator');
 router.get('/', function(req, res, next) {
     if ( req.session.boardRequest != 2 ) {
         console.log("invalid access");
-        return;
+        return res.json({
+            result: false,
+            error: 'invalid access'
+        });
     }
 
     Sub.findOne({id: req.session.userid}, function(err, output) {
@@ -21,8 +24,8 @@ router.get('/', function(req, res, next) {
             clean.push(output.subscribes[i]);
         }
 
-        res.render('subadmin', {
-            title: req.session.userid + ' 게시판 관리',
+        return res.json({
+            result: true,
             sub: output,
             clean: clean,
             user: {
