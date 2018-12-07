@@ -19,7 +19,8 @@ export class StartComponent implements OnInit {
   constructor(
     private handleuserService: HandleuserService,
     private router: Router,
-    private http:Http
+    private http:Http,
+    private location: Location
   ) { }
 
   ngOnInit() {
@@ -41,6 +42,7 @@ export class StartComponent implements OnInit {
       }
       else {
         this.router.navigate(['localhost:3000/loginpage']);
+        
       }
     })
   }

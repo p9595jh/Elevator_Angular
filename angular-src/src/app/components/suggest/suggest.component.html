@@ -1,11 +1,11 @@
 <div class="box">
   <span id="visitor">건의사항</span><hr/><br/>
 
-  <form method="POST" action="./handleSuggest" *ngIf="loggedIn">
+  <form (submit)="onWrite()" *ngIf="loggedIn">
     <table style="width:700px; margin:auto">
       <tr>
         <td>
-          <textarea cols="80" rows="5" name="comment"></textarea>
+          <textarea cols="80" rows="5" name="comment" [(ngModel)]="comment"></textarea>
         </td>
         <td>
           <input type="submit" name="cmt" value="작성" style="width:100px; height:80px"/>

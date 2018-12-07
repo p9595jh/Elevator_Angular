@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HandleuserService } from '../../services/handleuser.service';
+import { HandleboardService } from '../../services/handleboard.service';
 import { Router } from '@angular/router';
 import { NgFlashMessageService } from 'ng-flash-messages';
 
@@ -10,16 +11,23 @@ import { NgFlashMessageService } from 'ng-flash-messages';
 })
 export class SubsComponent implements OnInit {
   loggedIn: Boolean;
+  sub: Object[];
+  user: Object;
 
   constructor(
     private handleuserService: HandleuserService,
     private router: Router,
-    private flashMessage: NgFlashMessageService
+    private flashMessage: NgFlashMessageService,
+    private handleboardService: HandleboardService
   ) { }
 
   ngOnInit() {
     this.handleuserService.loggedIn().subscribe(data => {
       this.loggedIn = data.result;
+      this.handleboardService.getSubs().subscribe(data => {
+        this.sub = data.sub;
+        this.user = data.user;
+      })
     });
   }
 

@@ -37,10 +37,22 @@ export class HandleboardService {
     return this.http.get('http://localhost:3000/notice', {headers: headers}).pipe(map((res: Response) => res.json()));
   }
 
+  getSubs() {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/subs', {headers: headers}).pipe(map((res: Response) => res.json()));
+  }
+
   handleWrite(formData) {
     let headers = new Headers();
     headers.append('enctype', 'multipart/form-data');
     return this.http.post('http://localhost:3000/handleWrite', formData, {headers: headers}).pipe(map((res: Response) => res.json()));
+  }
+
+  handleSuggest(formData) {
+    let headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    return this.http.post('http://localhost:3000/handleSuggest', formData, {headers: headers}).pipe(map((res: Response) => res.json()));
   }
 
 }

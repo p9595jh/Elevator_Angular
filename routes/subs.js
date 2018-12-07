@@ -10,16 +10,14 @@ router.get('/', function(req, res, next) {
         if ( req.session.userid ) {
             var User = require('./user.js');
             User.findOne({id: req.session.userid}, function(err1, users) {
-                res.render('subs', {
-                    title: '서브게시판',
+                return res.json({
                     sub: subs,
                     user: users
                 });
             });
         }
         else {
-            res.render('subs', {
-                title: '서브게시판',
+            return res.json({
                 sub: subs,
                 user: {
                     id: req.session.userid,

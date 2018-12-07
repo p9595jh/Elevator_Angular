@@ -26,6 +26,7 @@ import { FindComponent } from './components/find/find.component';
 import { FixComponent } from './components/fix/fix.component';
 import { NoticeComponent } from './components/notice/notice.component';
 import { SubadminComponent } from './components/subadmin/subadmin.component';
+import { ReloadComponent } from './components/reload/reload.component';
 
 const appRoutes: Routes = [
   { path: '', component: StartComponent },
@@ -38,7 +39,11 @@ const appRoutes: Routes = [
   { path: 'loginpage', component: LoginpageComponent },
   { path: 'content', component: ContentComponent },
   { path: 'join', component: JoinComponent },
-  { path: 'admin', component: AdminComponent }
+  { path: 'admin', component: AdminComponent },
+  { path: 'find', component: FindComponent },
+  { path: 'fix', component: FixComponent },
+  { path: 'notice', component: NoticeComponent },
+  { path: 'subadmin', component: SubadminComponent }
 ]
 
 @NgModule({
@@ -61,7 +66,8 @@ const appRoutes: Routes = [
     FindComponent,
     FixComponent,
     NoticeComponent,
-    SubadminComponent
+    SubadminComponent,
+    ReloadComponent
   ],
   imports: [
     BrowserModule,

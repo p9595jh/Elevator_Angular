@@ -111,6 +111,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(ng_flash_messages__WEBPACK_IMPORTED_MODULE_16__);
 /* harmony import */ var _services_handleuser_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./services/handleuser.service */ "./src/app/services/handleuser.service.ts");
 /* harmony import */ var _services_handleboard_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./services/handleboard.service */ "./src/app/services/handleboard.service.ts");
+/* harmony import */ var _components_write_write_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/write/write.component */ "./src/app/components/write/write.component.ts");
+/* harmony import */ var _components_subs_subs_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/subs/subs.component */ "./src/app/components/subs/subs.component.ts");
+/* harmony import */ var _components_admin_admin_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/admin/admin.component */ "./src/app/components/admin/admin.component.ts");
+/* harmony import */ var _components_find_find_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/find/find.component */ "./src/app/components/find/find.component.ts");
+/* harmony import */ var _components_fix_fix_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/fix/fix.component */ "./src/app/components/fix/fix.component.ts");
+/* harmony import */ var _components_notice_notice_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/notice/notice.component */ "./src/app/components/notice/notice.component.ts");
+/* harmony import */ var _components_subadmin_subadmin_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/subadmin/subadmin.component */ "./src/app/components/subadmin/subadmin.component.ts");
+/* harmony import */ var _components_reload_reload_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/reload/reload.component */ "./src/app/components/reload/reload.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -136,16 +144,30 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
+
+
+
+
+
 var appRoutes = [
     { path: '', component: _components_start_start_component__WEBPACK_IMPORTED_MODULE_7__["StartComponent"] },
     { path: 'start', component: _components_start_start_component__WEBPACK_IMPORTED_MODULE_7__["StartComponent"] },
     { path: 'free', component: _components_free_free_component__WEBPACK_IMPORTED_MODULE_9__["FreeComponent"] },
     { path: 'music', component: _components_music_music_component__WEBPACK_IMPORTED_MODULE_10__["MusicComponent"] },
+    { path: 'subs', component: _components_subs_subs_component__WEBPACK_IMPORTED_MODULE_20__["SubsComponent"] },
     { path: 'subboard', component: _components_subboard_subboard_component__WEBPACK_IMPORTED_MODULE_11__["SubboardComponent"] },
     { path: 'suggest', component: _components_suggest_suggest_component__WEBPACK_IMPORTED_MODULE_12__["SuggestComponent"] },
     { path: 'loginpage', component: _components_loginpage_loginpage_component__WEBPACK_IMPORTED_MODULE_13__["LoginpageComponent"] },
     { path: 'content', component: _components_content_content_component__WEBPACK_IMPORTED_MODULE_15__["ContentComponent"] },
-    { path: 'join', component: _components_join_join_component__WEBPACK_IMPORTED_MODULE_14__["JoinComponent"] }
+    { path: 'join', component: _components_join_join_component__WEBPACK_IMPORTED_MODULE_14__["JoinComponent"] },
+    { path: 'admin', component: _components_admin_admin_component__WEBPACK_IMPORTED_MODULE_21__["AdminComponent"] },
+    { path: 'find', component: _components_find_find_component__WEBPACK_IMPORTED_MODULE_22__["FindComponent"] },
+    { path: 'fix', component: _components_fix_fix_component__WEBPACK_IMPORTED_MODULE_23__["FixComponent"] },
+    { path: 'notice', component: _components_notice_notice_component__WEBPACK_IMPORTED_MODULE_24__["NoticeComponent"] },
+    { path: 'subadmin', component: _components_subadmin_subadmin_component__WEBPACK_IMPORTED_MODULE_25__["SubadminComponent"] }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -164,7 +186,15 @@ var AppModule = /** @class */ (function () {
                 _components_loginpage_loginpage_component__WEBPACK_IMPORTED_MODULE_13__["LoginpageComponent"],
                 _components_music_music_component__WEBPACK_IMPORTED_MODULE_10__["MusicComponent"],
                 _components_content_content_component__WEBPACK_IMPORTED_MODULE_15__["ContentComponent"],
-                _components_join_join_component__WEBPACK_IMPORTED_MODULE_14__["JoinComponent"]
+                _components_join_join_component__WEBPACK_IMPORTED_MODULE_14__["JoinComponent"],
+                _components_write_write_component__WEBPACK_IMPORTED_MODULE_19__["WriteComponent"],
+                _components_subs_subs_component__WEBPACK_IMPORTED_MODULE_20__["SubsComponent"],
+                _components_admin_admin_component__WEBPACK_IMPORTED_MODULE_21__["AdminComponent"],
+                _components_find_find_component__WEBPACK_IMPORTED_MODULE_22__["FindComponent"],
+                _components_fix_fix_component__WEBPACK_IMPORTED_MODULE_23__["FixComponent"],
+                _components_notice_notice_component__WEBPACK_IMPORTED_MODULE_24__["NoticeComponent"],
+                _components_subadmin_subadmin_component__WEBPACK_IMPORTED_MODULE_25__["SubadminComponent"],
+                _components_reload_reload_component__WEBPACK_IMPORTED_MODULE_26__["ReloadComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -181,6 +211,89 @@ var AppModule = /** @class */ (function () {
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/admin/admin.component.css":
+/*!******************************************************!*\
+  !*** ./src/app/components/admin/admin.component.css ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/admin/admin.component.html":
+/*!*******************************************************!*\
+  !*** ./src/app/components/admin/admin.component.html ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"box\">\r\n  <table class=\"admintable\">\r\n    <tr>\r\n      <th>ID</th>\r\n      <th>관리</th>\r\n    </tr>\r\n    <ng-container *ngFor=\"let val of users\">\r\n      <tr *ngIf=\"val.id != 'admin' && !val.stop\">\r\n        <td><b style=\"cursor:pointer;\" id=\"val.id\" onclick=\"\">{{val.id}}</b></td>\r\n        <td><button onclick=\"\" id=\"val.id + 'button'\">정지</button></td>\r\n      </tr>\r\n      <tr *ngIf=\"val.id != 'admin' && val.stop\">\r\n        <td><b style=\"cursor:pointer; color:red;\" id=\"val.id\" onclick=\"\">{{val.id}}</b></td>\r\n        <td><button onclick=\"\" id=\"val.id + 'button'\">해제</button></td>\r\n      </tr>\r\n    </ng-container>\r\n  </table>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/admin/admin.component.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/components/admin/admin.component.ts ***!
+  \*****************************************************/
+/*! exports provided: AdminComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminComponent", function() { return AdminComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var AdminComponent = /** @class */ (function () {
+    function AdminComponent(http, router) {
+        this.http = http;
+        this.router = router;
+    }
+    AdminComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
+        headers.append('Content-type', 'application/json');
+        this.http.get('http://localhost:3000/admin', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
+            if (data.result) {
+                _this.users = data.users;
+            }
+            else {
+                _this.router.navigate(['./start']);
+            }
+        });
+    };
+    AdminComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-admin',
+            template: __webpack_require__(/*! ./admin.component.html */ "./src/app/components/admin/admin.component.html"),
+            styles: [__webpack_require__(/*! ./admin.component.css */ "./src/app/components/admin/admin.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+    ], AdminComponent);
+    return AdminComponent;
 }());
 
 
@@ -276,6 +389,145 @@ var ContentComponent = /** @class */ (function () {
             _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
     ], ContentComponent);
     return ContentComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/find/find.component.css":
+/*!****************************************************!*\
+  !*** ./src/app/components/find/find.component.css ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/find/find.component.html":
+/*!*****************************************************!*\
+  !*** ./src/app/components/find/find.component.html ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"reg\" style=\"border-width:0px;\"><span style=\"float:left;\">아이디 찾기</span><br/>\r\n  <hr/><br/><span>회원코드를 입력해주세요.</span><br/><br/><input type=\"text\" id=\"findid\" /><button (click)=\"find('pw')\">찾기</button>\r\n  <p id=\"idresult\"></p>\r\n</div><br/><br/>\r\n<div class=\"reg\" style=\"border-width:0px;\"><span style=\"float:left;\">비밀번호 찾기</span><br/>\r\n  <hr/><br/><span>회원코드를 입력해주세요.</span><br/><br/><input type=\"text\" id=\"findpw\" /><button (click)=\"find('pw')\">찾기</button>\r\n  <p id=\"pwresult\"></p>\r\n</div><br/><br/>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/find/find.component.ts":
+/*!***************************************************!*\
+  !*** ./src/app/components/find/find.component.ts ***!
+  \***************************************************/
+/*! exports provided: FindComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FindComponent", function() { return FindComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var FindComponent = /** @class */ (function () {
+    function FindComponent() {
+    }
+    FindComponent.prototype.ngOnInit = function () {
+    };
+    FindComponent.prototype.find = function (type) {
+    };
+    FindComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-find',
+            template: __webpack_require__(/*! ./find.component.html */ "./src/app/components/find/find.component.html"),
+            styles: [__webpack_require__(/*! ./find.component.css */ "./src/app/components/find/find.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], FindComponent);
+    return FindComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/fix/fix.component.css":
+/*!**************************************************!*\
+  !*** ./src/app/components/fix/fix.component.css ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/fix/fix.component.html":
+/*!***************************************************!*\
+  !*** ./src/app/components/fix/fix.component.html ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"reg\"><span style=\"float:left;\">회원정보수정 </span><br/>\r\n  <hr/><br/>\r\n  <form method=\"POST\" action=\"./handleFix\" enctype=\"multipart/form-data\">\r\n      <table class=\"regtable\" style=\"height:600px;\">\r\n          <tr>\r\n              <td>기존 비밀번호<span class=\"regerr\">*</span></td>\r\n              <td><input class=\"reginput\" type=\"password\" name=\"password\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td>새 비밀번호<span class=\"regerr\">*</span></td>\r\n              <td><input class=\"reginput\" type=\"password\" name=\"passwordNew\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td>닉네임<span class=\"regerr\">*</span></td>\r\n              <td><input class=\"reginput\" type=\"text\" name=\"nickname\" value=\"user.nickname\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td>좋아하는 장르</td>\r\n              <td><input class=\"reginput\" type=\"text\" name=\"genre\" value=\"user.genre\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td>한줄 자기소개</td>\r\n              <td><input class=\"reginput\" type=\"text\" name=\"intro\" value=\"user.introduction\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td>프로필 이미지</td>\r\n              <td><input type=\"file\" name=\"image\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td colspan=\"2\" style=\"text-align:center;\"><input type=\"submit\" name=\"submit\" value=\"수정\" style=\"width:200px; height:50px;\" /></td>\r\n          </tr>\r\n      </table>\r\n  </form><br/>\r\n  <hr/><span class=\"regerr\">* </span><span>표시가 된 곳은 필수 입력사항입니다</span><br/><br/>\r\n  <span class=\"link\">회원코드: {{user._id}}</span>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/fix/fix.component.ts":
+/*!*************************************************!*\
+  !*** ./src/app/components/fix/fix.component.ts ***!
+  \*************************************************/
+/*! exports provided: FixComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FixComponent", function() { return FixComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var FixComponent = /** @class */ (function () {
+    function FixComponent(http) {
+        this.http = http;
+    }
+    FixComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
+        headers.append('Content-type', 'application/json');
+        this.http.get('http://localhost:3000/fix', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
+            _this.user = data.user;
+        });
+    };
+    FixComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-fix',
+            template: __webpack_require__(/*! ./fix.component.html */ "./src/app/components/fix/fix.component.html"),
+            styles: [__webpack_require__(/*! ./fix.component.css */ "./src/app/components/fix/fix.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"]])
+    ], FixComponent);
+    return FixComponent;
 }());
 
 
@@ -640,7 +892,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box\"><span>음악게시판</span>\n  <hr/><br/><br/>\n  <table class=\"tb\">\n    <tr style=\"height:25px; font-weight:bold\">\n      <td style=\"width:70px\">번호</td>\n      <td style=\"width:140px\">제목</td>\n      <td style=\"width:65px\">작성자</td>\n      <td style=\"width:100px\">날짜</td>\n      <td style=\"width:55px\">조회수</td>\n      <td style=\"width:40px\">전체평점</td>\n    </tr>\n\n    <ng-container *ngFor=\"let val of music\">\n      <tr class=\"trhover\" style=\"height:20px;\">\n        <td>{{val.num}}</td>\n        <td style=\"text-align:left; padding:50px;\">\n          <a class=\"link\" [routerLink]=\"['./content?type=music&num=' + val.num]\">{{val.title}}</a> \n          <span style=\"font-size:12px; color:grey;\" *ngIf=\"val.comment.length > 0\">[{{val.comment.length}}]</span>\n        </td>\n        <td>{{val.nickname}}</td>\n        <td>{{val.writedate}}</td>\n        <td>{{val.hit}}</td>\n        <td>{{val.grade}}</td>\n      </tr>\n    </ng-container>\n\n  </table>\n  <br/><br/>\n\n  <form method=\"POST\" action=\"./write\" *ngIf=\"loggedIn\">\n    <input type=\"submit\" name=\"submit\" value=\"글쓰기\" style=\"float:right;\"/>\n    <input type=\"hidden\" name=\"type\" value=\"music\"/>\n  </form>\n</div>"
+module.exports = "<div class=\"box\"><span>음악게시판</span>\n  <hr/><br/><br/>\n  <table class=\"tb\">\n    <tr style=\"height:25px; font-weight:bold\">\n      <td style=\"width:70px\">번호</td>\n      <td style=\"width:140px\">제목</td>\n      <td style=\"width:65px\">작성자</td>\n      <td style=\"width:100px\">날짜</td>\n      <td style=\"width:55px\">조회수</td>\n      <td style=\"width:40px\">전체평점</td>\n    </tr>\n\n    <ng-container *ngFor=\"let val of music\">\n      <tr class=\"trhover\" style=\"height:20px;\">\n        <td>{{val.num}}</td>\n        <td style=\"text-align:left; padding:50px;\">\n          <a class=\"link\" [routerLink]=\"['../content']\" [queryParams]=\"{type: 'free', num: val.num}\">{{val.title}}</a> \n          <span style=\"font-size:12px; color:grey;\" *ngIf=\"val.comment.length > 0\">[{{val.comment.length}}]</span>\n        </td>\n        <td>{{val.nickname}}</td>\n        <td>{{val.writedate}}</td>\n        <td>{{val.hit}}</td>\n        <td>{{val.grade}}</td>\n      </tr>\n    </ng-container>\n\n  </table>\n  <br/><br/>\n\n  <form method=\"POST\" action=\"./write\" *ngIf=\"loggedIn\">\n    <input type=\"submit\" name=\"submit\" value=\"글쓰기\" style=\"float:right;\"/>\n    <input type=\"hidden\" name=\"type\" value=\"music\"/>\n  </form>\n</div>"
 
 /***/ }),
 
@@ -717,7 +969,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"topscroll\">\n  <a style=\"text-decoration:none; color:black; font-weight:bold;\" href=\"#top\">TOP</a>\n</div>\n\n<header style=\"padding-top:20px; padding-bottom:20px;\">\n  <ul style=\"float:right; list-style:none;\">\n    <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\n      <a [routerLink]=\"['./notice']\" class=\"link\">공지사항</a>\n    </li>\n    <li *ngIf=\"handleuserService.loggedIn()\">\n      <a (click)=\"onLogoutClick()\" href=\"javascript:;\" class=\"link\">로그아웃</a>\n    </li>\n    <li *ngIf=\"!handleuserService.loggedIn()\" [routerLinkActive]=\"['active']\">\n      <a [routerLink]=\"['./loginpage']\" class=\"link\">로그인</a>\n    </li>\n    <!-- have to add links to admin page here -->\n  </ul>\n  <div style=\"text-align:center;\">\n    <a style=\"text-decoration:none; color:black; font-family:Ubuntu;\" [routerLink]=\"['./start']\">\n      elevator\n    </a>\n  </div>\n</header>\n<br/>\n<div id=\"nav\">\n  <nav>\n    <a [routerLink]=\"['./start']\">HOME</a>\n    <a [routerLink]=\"['./free']\">자유게시판</a>\n    <a [routerLink]=\"['./music']\">음악게시판</a>\n    <a [routerLink]=\"['./subboard']\">서브게시판</a>\n    <a [routerLink]=\"['./suggest']\">건의게시판</a>\n  </nav>\n</div>\n"
+module.exports = "<div id=\"topscroll\">\r\n  <a style=\"text-decoration:none; color:black; font-weight:bold;\" href=\"#top\">TOP</a>\r\n</div>\r\n\r\n<header style=\"padding-top:20px; padding-bottom:20px;\">\r\n  <ul style=\"float:right; list-style:none;\">\r\n    <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\r\n      <a [routerLink]=\"['./notice']\" class=\"link\">공지사항</a>\r\n    </li>\r\n    <li *ngIf=\"handleuserService.loggedIn()\">\r\n      <a (click)=\"onLogoutClick()\" href=\"javascript:;\" class=\"link\">로그아웃</a>\r\n    </li>\r\n    <li *ngIf=\"!handleuserService.loggedIn()\" [routerLinkActive]=\"['active']\">\r\n      <a [routerLink]=\"['./loginpage']\" class=\"link\">로그인</a>\r\n    </li>\r\n    <!-- have to add links to admin page here -->\r\n    <li *ngIf=\"loggedIn && user.id == 'admin'\" [routerLinkActive]=\"['active']\">\r\n      <a [routerLink]=\"['./admin']\" class=\"link\">어드민</a>\r\n    </li>\r\n    <li *ngIf=\"loggedIn && user.boardRequest == 2\" [routerLinkActive]=\"['active']\">\r\n        <a [routerLink]=\"['./subadmin']\" class=\"link\">어드민</a>\r\n    </li>\r\n  </ul>\r\n  <div style=\"text-align:center;\">\r\n    <a style=\"text-decoration:none; color:black; font-family:Ubuntu;\" [routerLink]=\"['./start']\">\r\n      elevator\r\n    </a>\r\n  </div>\r\n</header>\r\n<br/>\r\n<div id=\"nav\">\r\n  <nav>\r\n    <a [routerLink]=\"['./start']\">HOME</a>\r\n    <a [routerLink]=\"['./free']\">자유게시판</a>\r\n    <a [routerLink]=\"['./music']\">음악게시판</a>\r\n    <a [routerLink]=\"['./subs']\">서브게시판</a>\r\n    <a [routerLink]=\"['./suggest']\">건의게시판</a>\r\n  </nav>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -758,8 +1010,10 @@ var NavbarComponent = /** @class */ (function () {
         });
     };
     NavbarComponent.prototype.onLogoutClick = function () {
-        this.handleuserService.logout();
-        this.router.navigate(['./start']);
+        var _this = this;
+        this.handleuserService.logout().subscribe(function (data) {
+            _this.router.navigate(['./start']);
+        });
     };
     NavbarComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -771,6 +1025,152 @@ var NavbarComponent = /** @class */ (function () {
             _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], NavbarComponent);
     return NavbarComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/notice/notice.component.css":
+/*!********************************************************!*\
+  !*** ./src/app/components/notice/notice.component.css ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/notice/notice.component.html":
+/*!*********************************************************!*\
+  !*** ./src/app/components/notice/notice.component.html ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"box\">\r\n  <span id=\"visitor\">공지사항</span><hr/><br/>\r\n\r\n  <form method=\"POST\" action=\"./handleNotice\" *ngIf=\"user.id == 'admin'\">\r\n    <table style=\"width:700px; margin:auto;\">\r\n      <tr>\r\n        <td><textarea cols=\"80\" rows=\"5\" name=\"comment\"></textarea></td>\r\n        <td><input type=\"submit\" name=\"cmt\" value=\"작성\" style=\"width:100px; height:80px;\" /></td>\r\n      </tr>\r\n    </table>\r\n  </form><br/>\r\n\r\n  <table class=\"tb2\" *ngFor=\"let val of content\">\r\n    <tr style=\"height:110px; vertical-align:top;\">\r\n        <td style=\"text-align:center; vertical-align:middle; width:110px; border-right:1px solid rgb(0,91,159);\">\r\n          <img src=\"'images/profileimages/' + val.id\" width=\"70\" height=\"70\" />\r\n        </td>\r\n        <td>\r\n            <div style=\"font-size:12px; padding:2px; margin-left:5px; border-bottom:1px dotted rgb(0,91,159);\">\r\n              <b *ngIf=\"val.id == 'admin'\">\r\n                <a class=\"tblink\" href=\"javascript:;\" onclick=\"\">{{val.nickname}}</a>\r\n              </b>\r\n              <a *ngIf=\"val.id != 'admin'\" class=\"tblink\" href=\"javascript:;\" onclick=\"\">{{val.nickname}}</a>\r\n              <span style=\"font-size:12px; float:right;\">{{val.writedate}}</span>\r\n            </div>\r\n            <div style=\"padding-left:10px;\">\r\n              <pre class=\"contentView\">{{val.comment}}</pre>\r\n            </div>\r\n        </td>\r\n        <td style=\"text-align:right;\"></td>\r\n    </tr>\r\n  </table>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/notice/notice.component.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/components/notice/notice.component.ts ***!
+  \*******************************************************/
+/*! exports provided: NoticeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NoticeComponent", function() { return NoticeComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_handleboard_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/handleboard.service */ "./src/app/services/handleboard.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var NoticeComponent = /** @class */ (function () {
+    function NoticeComponent(handleboardService) {
+        this.handleboardService = handleboardService;
+    }
+    NoticeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.handleboardService.getNotices().subscribe(function (data) {
+            _this.user = data.user;
+            _this.content = data.content;
+        });
+    };
+    NoticeComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-notice',
+            template: __webpack_require__(/*! ./notice.component.html */ "./src/app/components/notice/notice.component.html"),
+            styles: [__webpack_require__(/*! ./notice.component.css */ "./src/app/components/notice/notice.component.css")]
+        }),
+        __metadata("design:paramtypes", [_services_handleboard_service__WEBPACK_IMPORTED_MODULE_1__["HandleboardService"]])
+    ], NoticeComponent);
+    return NoticeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/reload/reload.component.css":
+/*!********************************************************!*\
+  !*** ./src/app/components/reload/reload.component.css ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/reload/reload.component.html":
+/*!*********************************************************!*\
+  !*** ./src/app/components/reload/reload.component.html ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  hello\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/reload/reload.component.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/components/reload/reload.component.ts ***!
+  \*******************************************************/
+/*! exports provided: ReloadComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReloadComponent", function() { return ReloadComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ReloadComponent = /** @class */ (function () {
+    function ReloadComponent(http, route, router, _location) {
+        this.http = http;
+        this.route = route;
+        this.router = router;
+        this._location = _location;
+    }
+    ReloadComponent.prototype.ngOnInit = function () {
+        this._location.reload();
+    };
+    ReloadComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-reload',
+            template: __webpack_require__(/*! ./reload.component.html */ "./src/app/components/reload/reload.component.html"),
+            styles: [__webpack_require__(/*! ./reload.component.css */ "./src/app/components/reload/reload.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            Location])
+    ], ReloadComponent);
+    return ReloadComponent;
 }());
 
 
@@ -827,10 +1227,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var StartComponent = /** @class */ (function () {
-    function StartComponent(handleuserService, router, http) {
+    function StartComponent(handleuserService, router, http, location) {
         this.handleuserService = handleuserService;
         this.router = router;
         this.http = http;
+        this.location = location;
     }
     StartComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -850,13 +1251,16 @@ var StartComponent = /** @class */ (function () {
                 _this.router.navigate(['./start']);
             }
             else {
-                _this.router.navigate(['localhost:3000/loginpage']);
+                // this.router.navigate(['localhost:3000/loginpage']);
+                _this.location.reload();
             }
         });
     };
     StartComponent.prototype.onLogoutClick = function () {
-        this.handleuserService.logout();
-        this.router.navigate(['./start']);
+        var _this = this;
+        this.handleuserService.logout().subscribe(function (data) {
+            _this.router.navigate(['./start']);
+        });
     };
     StartComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -866,9 +1270,95 @@ var StartComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [_services_handleuser_service__WEBPACK_IMPORTED_MODULE_1__["HandleuserService"],
             _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_http__WEBPACK_IMPORTED_MODULE_3__["Http"]])
+            _angular_http__WEBPACK_IMPORTED_MODULE_3__["Http"],
+            Location])
     ], StartComponent);
     return StartComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/subadmin/subadmin.component.css":
+/*!************************************************************!*\
+  !*** ./src/app/components/subadmin/subadmin.component.css ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/subadmin/subadmin.component.html":
+/*!*************************************************************!*\
+  !*** ./src/app/components/subadmin/subadmin.component.html ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"box\">\r\n    <table class=\"admintable\">\r\n      <tr>\r\n        <th>ID</th>\r\n        <th>관리</th>\r\n      </tr>\r\n      <ng-container *ngFor=\"let val of sub.stops\">\r\n        <tr>\r\n          <td><b style=\"cursor:pointer; color:red;\" id=\"val.id\" onclick=\"\">{{val.id}}</b></td>\r\n          <td><button onclick=\"\" id=\"val.id + 'button'\">해제</button></td>\r\n        </tr>\r\n        <tr *ngIf=\"val.id != user.id || val.id != 'admin'\">\r\n          <td><b style=\"cursor:pointer;\" id=\"val.id\" onclick=\"\">{{val.id}}</b></td>\r\n          <td><button onclick=\"\" id=\"val.id + 'button'\">정지</button></td>\r\n        </tr>\r\n      </ng-container>\r\n    </table>\r\n  </div>\r\n  "
+
+/***/ }),
+
+/***/ "./src/app/components/subadmin/subadmin.component.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/components/subadmin/subadmin.component.ts ***!
+  \***********************************************************/
+/*! exports provided: SubadminComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SubadminComponent", function() { return SubadminComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var SubadminComponent = /** @class */ (function () {
+    function SubadminComponent(http, router) {
+        this.http = http;
+        this.router = router;
+    }
+    SubadminComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
+        headers.append('Content-type', 'application/json');
+        this.http.get('http://localhost:3000/subadmin', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
+            if (data.result) {
+                _this.sub = data.sub;
+                _this.clean = data.clean;
+                _this.user = data.user;
+            }
+            else {
+                _this.router.navigate(['./start']);
+            }
+        });
+    };
+    SubadminComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-subadmin',
+            template: __webpack_require__(/*! ./subadmin.component.html */ "./src/app/components/subadmin/subadmin.component.html"),
+            styles: [__webpack_require__(/*! ./subadmin.component.css */ "./src/app/components/subadmin/subadmin.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+    ], SubadminComponent);
+    return SubadminComponent;
 }());
 
 
@@ -893,7 +1383,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  subboard works!\n</p>\n"
+module.exports = "<div class=\"box\"><span>{{title}}</span>\r\n  <hr/><br/><br/>\r\n  <table class=\"tb\">\r\n    <tr style=\"height:25px; font-weight:bold\">\r\n      <td style=\"width:70px\">번호</td>\r\n      <td style=\"width:140px\">제목</td>\r\n      <td style=\"width:65px\">작성자</td>\r\n      <td style=\"width:100px\">날짜</td>\r\n      <td style=\"width:55px\">조회수</td>\r\n      <td style=\"width:40px\">추천</td>\r\n    </tr>\r\n\r\n    <ng-container *ngFor=\"let val of subcontents\">\r\n      <tr class=\"trhover\" style=\"height:20px;\">\r\n        <td>{{val.num}}</td>\r\n        <td style=\"text-align:left; padding:50px;\">\r\n          <a class=\"link\" [routerLink]=\"['../content']\" [queryParams]=\"{type: val.type, num: val.num}\">{{val.title}}</a> \r\n          <span style=\"font-size:12px; color:grey;\" *ngIf=\"val.comment.length > 0\"> [{{val.comment.length}}]</span>\r\n        </td>\r\n        <td>{{val.nickname}}</td>\r\n        <td>{{val.writedate}}</td>\r\n        <td>{{val.hit}}</td>\r\n        <td>{{val.recommend}}</td>\r\n      </tr>\r\n    </ng-container>\r\n\r\n  </table>\r\n  <br/><br/>\r\n\r\n  <form method=\"POST\" action=\"./write\" *ngIf=\"loggedIn && !user.stop\">\r\n    <input type=\"submit\" name=\"submit\" value=\"글쓰기\" style=\"float:right;\"/>\r\n    <input type=\"hidden\" name=\"type\" value=\"val.type\"/>\r\n  </form>\r\n  <button style=\"float:right;\" onclick=\"\">재생목록</button>\r\n  <button style=\"float:left;\" onclick=\"\">라이브</button>\r\n  <button *ngIf=\"user.id == sub.id\" style=\"float:left;\">라이브 생성</button>\r\n</div>"
 
 /***/ }),
 
@@ -908,6 +1398,9 @@ module.exports = "<p>\n  subboard works!\n</p>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SubboardComponent", function() { return SubboardComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_handleuser_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/handleuser.service */ "./src/app/services/handleuser.service.ts");
+/* harmony import */ var _services_handleboard_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/handleboard.service */ "./src/app/services/handleboard.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -918,10 +1411,33 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
 var SubboardComponent = /** @class */ (function () {
-    function SubboardComponent() {
+    function SubboardComponent(handleuserService, handleboardService, route, router) {
+        this.handleuserService = handleuserService;
+        this.handleboardService = handleboardService;
+        this.route = route;
+        this.router = router;
+        this.type = this.route.snapshot.queryParamMap.get('type');
     }
     SubboardComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.handleuserService.loggedIn().subscribe(function (data) {
+            _this.loggedIn = data.result;
+            _this.handleboardService.getSubcontents(_this.type).subscribe(function (result) {
+                if (result.result) {
+                    _this.title = result.title;
+                    _this.sub = result.sub;
+                    _this.subcontents = result.subcontents;
+                    _this.user = result.user;
+                }
+                else {
+                    _this.router.navigate(['./start']);
+                }
+            });
+        });
     };
     SubboardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -929,9 +1445,114 @@ var SubboardComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./subboard.component.html */ "./src/app/components/subboard/subboard.component.html"),
             styles: [__webpack_require__(/*! ./subboard.component.css */ "./src/app/components/subboard/subboard.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_services_handleuser_service__WEBPACK_IMPORTED_MODULE_2__["HandleuserService"],
+            _services_handleboard_service__WEBPACK_IMPORTED_MODULE_3__["HandleboardService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], SubboardComponent);
     return SubboardComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/subs/subs.component.css":
+/*!****************************************************!*\
+  !*** ./src/app/components/subs/subs.component.css ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/subs/subs.component.html":
+/*!*****************************************************!*\
+  !*** ./src/app/components/subs/subs.component.html ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"box\" *ngIf=\"loggedIn\">\r\n  <span>구독한 게시판</span><hr/><br/>\r\n  <ul *ngFor=\"let val of user.subscribes\">\r\n    <li>\r\n      <a class=\"link\" style=\"font-size:16px;\" [routerLink]=\"['./subboard']\" [queryParams]=\"{type: val}\">{{val}}</a>\r\n    </li>\r\n  </ul>\r\n</div>\r\n\r\n<div class=\"box\">\r\n  <span>서브게시판 목록</span><hr/><br/>\r\n  <ul *ngIf=\"loggedIn\">\r\n    <ng-container *ngFor=\"let val of sub\">\r\n      <li>\r\n        <a class=\"link\" style=\"font-size:16px;\" href=\"javascript:;\" (click)=\"onSubscribeBoard(val.id)\">{{val.id}}</a> \r\n        <span style=\"font-size:12px; color:grey;\">[{{val.subscribes-1}}]</span>\r\n      </li>\r\n    </ng-container>\r\n  </ul>\r\n  <ul *ngIf=\"!loggedIn\">\r\n    <ng-container *ngFor=\"let val of sub\">\r\n      <li>\r\n        {{val.id}} <span style=\"font-size:12px; color:grey;\">[{{val.subscribes-1}}]</span>\r\n      </li>\r\n    </ng-container>\r\n  </ul>\r\n  <br/><br/>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/subs/subs.component.ts":
+/*!***************************************************!*\
+  !*** ./src/app/components/subs/subs.component.ts ***!
+  \***************************************************/
+/*! exports provided: SubsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SubsComponent", function() { return SubsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_handleuser_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/handleuser.service */ "./src/app/services/handleuser.service.ts");
+/* harmony import */ var _services_handleboard_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/handleboard.service */ "./src/app/services/handleboard.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ng-flash-messages */ "./node_modules/ng-flash-messages/ng-flash-messages.umd.js");
+/* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(ng_flash_messages__WEBPACK_IMPORTED_MODULE_4__);
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var SubsComponent = /** @class */ (function () {
+    function SubsComponent(handleuserService, router, flashMessage, handleboardService) {
+        this.handleuserService = handleuserService;
+        this.router = router;
+        this.flashMessage = flashMessage;
+        this.handleboardService = handleboardService;
+    }
+    SubsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.handleuserService.loggedIn().subscribe(function (data) {
+            _this.loggedIn = data.result;
+            _this.handleboardService.getSubs().subscribe(function (data) {
+                _this.sub = data.sub;
+                _this.user = data.user;
+            });
+        });
+    };
+    SubsComponent.prototype.onSubscribeBoard = function (subid) {
+        var _this = this;
+        this.handleuserService.subscribeBoard(subid).subscribe(function (data) {
+            if (data.message == 'done') {
+                _this.router.navigate(['./subs']);
+            }
+            else {
+                _this.flashMessage.showFlashMessage({
+                    messages: ['에러 발생: ' + data.message],
+                    type: 'danger',
+                    timeout: 3000
+                });
+            }
+        });
+    };
+    SubsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-subs',
+            template: __webpack_require__(/*! ./subs.component.html */ "./src/app/components/subs/subs.component.html"),
+            styles: [__webpack_require__(/*! ./subs.component.css */ "./src/app/components/subs/subs.component.css")]
+        }),
+        __metadata("design:paramtypes", [_services_handleuser_service__WEBPACK_IMPORTED_MODULE_1__["HandleuserService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            ng_flash_messages__WEBPACK_IMPORTED_MODULE_4__["NgFlashMessageService"],
+            _services_handleboard_service__WEBPACK_IMPORTED_MODULE_2__["HandleboardService"]])
+    ], SubsComponent);
+    return SubsComponent;
 }());
 
 
@@ -956,7 +1577,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box\">\n  <span id=\"visitor\">건의사항</span><hr/><br/>\n\n  <form method=\"POST\" action=\"./handleSuggest\" *ngIf=\"loggedIn\">\n    <table style=\"width:700px; margin:auto\">\n      <tr>\n        <td>\n          <textarea cols=\"80\" rows=\"5\" name=\"comment\"></textarea>\n        </td>\n        <td>\n          <input type=\"submit\" name=\"cmt\" value=\"작성\" style=\"width:100px; height:80px\"/>\n        </td>\n      </tr>\n    </table>\n  </form>\n\n  <table class=\"tb2\" *ngFor=\"let val of content\">\n    <tr style=\"height:110px; vertical-align:top;\">\n      <td style=\"text-align:center; vertical-align:middle; width:110px; border-right:1px solid rgb(0,91,159)\">\n        <img width=\"70\" height=\"70\"/>\n      </td>\n      <td>\n        <div style=\"font-size:12px; padding:2px; margin-left:5px; border-bottom:1px dotted rgb(0,91,159);\">\n          <b *ngIf=\"val.id == 'admin'\">\n            <a class=\"tblink\" href=\"javascript:;\">{{val.nickname}}</a>\n          </b>\n          <a *ngIf=\"val.id != 'admin'\" class=\"tblink\" href=\"javascript:;\">{{val.nickname}}</a>\n          <span style=\"font-size:12px; float:right;\">{{val.writedate}}</span>\n        </div>\n        <div style=\"padding-left:10px;\">\n          <pre class=\"contentView\">{{val.comment}}</pre>\n        </div>\n      </td>\n    </tr>\n  </table>\n\n</div>>"
+module.exports = "<div class=\"box\">\n  <span id=\"visitor\">건의사항</span><hr/><br/>\n\n  <form (submit)=\"onWrite()\" *ngIf=\"loggedIn\">\n    <table style=\"width:700px; margin:auto\">\n      <tr>\n        <td>\n          <textarea cols=\"80\" rows=\"5\" name=\"comment\" [(ngModel)]=\"comment\"></textarea>\n        </td>\n        <td>\n          <input type=\"submit\" name=\"cmt\" value=\"작성\" style=\"width:100px; height:80px\"/>\n        </td>\n      </tr>\n    </table>\n  </form>\n\n  <table class=\"tb2\" *ngFor=\"let val of content\">\n    <tr style=\"height:110px; vertical-align:top;\">\n      <td style=\"text-align:center; vertical-align:middle; width:110px; border-right:1px solid rgb(0,91,159)\">\n        <img width=\"70\" height=\"70\"/>\n      </td>\n      <td>\n        <div style=\"font-size:12px; padding:2px; margin-left:5px; border-bottom:1px dotted rgb(0,91,159);\">\n          <b *ngIf=\"val.id == 'admin'\">\n            <a class=\"tblink\" href=\"javascript:;\">{{val.nickname}}</a>\n          </b>\n          <a *ngIf=\"val.id != 'admin'\" class=\"tblink\" href=\"javascript:;\">{{val.nickname}}</a>\n          <span style=\"font-size:12px; float:right;\">{{val.writedate}}</span>\n        </div>\n        <div style=\"padding-left:10px;\">\n          <pre class=\"contentView\">{{val.comment}}</pre>\n        </div>\n      </td>\n    </tr>\n  </table>\n\n</div>>"
 
 /***/ }),
 
@@ -971,8 +1592,12 @@ module.exports = "<div class=\"box\">\n  <span id=\"visitor\">건의사항</span
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SuggestComponent", function() { return SuggestComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_handleuser_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/handleuser.service */ "./src/app/services/handleuser.service.ts");
-/* harmony import */ var _services_handleboard_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/handleboard.service */ "./src/app/services/handleboard.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ng-flash-messages */ "./node_modules/ng-flash-messages/ng-flash-messages.umd.js");
+/* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(ng_flash_messages__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var _services_handleuser_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/handleuser.service */ "./src/app/services/handleuser.service.ts");
+/* harmony import */ var _services_handleboard_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/handleboard.service */ "./src/app/services/handleboard.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -985,10 +1610,16 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+
 var SuggestComponent = /** @class */ (function () {
-    function SuggestComponent(handleuserService, handleboardService) {
+    function SuggestComponent(handleuserService, handleboardService, router, http, flashMessage) {
         this.handleuserService = handleuserService;
         this.handleboardService = handleboardService;
+        this.router = router;
+        this.http = http;
+        this.flashMessage = flashMessage;
     }
     SuggestComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -999,16 +1630,134 @@ var SuggestComponent = /** @class */ (function () {
             });
         });
     };
+    SuggestComponent.prototype.onWrite = function () {
+        var _this = this;
+        var formData = {
+            comment: this.comment
+        };
+        this.handleboardService.handleSuggest(formData).subscribe(function (data) {
+            if (data.success) {
+                _this.router.navigate(['./suggest']);
+            }
+            else {
+                _this.flashMessage.showFlashMessage({
+                    messages: ['글작성 에러'],
+                    type: 'danger',
+                    timeout: 3000
+                });
+            }
+        });
+    };
     SuggestComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-suggest',
             template: __webpack_require__(/*! ./suggest.component.html */ "./src/app/components/suggest/suggest.component.html"),
             styles: [__webpack_require__(/*! ./suggest.component.css */ "./src/app/components/suggest/suggest.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_handleuser_service__WEBPACK_IMPORTED_MODULE_1__["HandleuserService"],
-            _services_handleboard_service__WEBPACK_IMPORTED_MODULE_2__["HandleboardService"]])
+        __metadata("design:paramtypes", [_services_handleuser_service__WEBPACK_IMPORTED_MODULE_4__["HandleuserService"],
+            _services_handleboard_service__WEBPACK_IMPORTED_MODULE_5__["HandleboardService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _angular_http__WEBPACK_IMPORTED_MODULE_3__["Http"],
+            ng_flash_messages__WEBPACK_IMPORTED_MODULE_2__["NgFlashMessageService"]])
     ], SuggestComponent);
     return SuggestComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/write/write.component.css":
+/*!******************************************************!*\
+  !*** ./src/app/components/write/write.component.css ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/write/write.component.html":
+/*!*******************************************************!*\
+  !*** ./src/app/components/write/write.component.html ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"box\"><span>글 작성</span>\n  <hr/><br/>\n  <form (submit)=\"submitWrite(fileInput.files)\">\n      <table style=\"margin:auto; width:700px; text-align:center;\">\n          <tr>\n              <td style=\"height:50px;\"><input type=\"text\" placeholder=\"제목\" name=\"title\" [(ngModel)]=\"title\" style=\"width:600px; height:30px;\" /></td>\n          </tr>\n          <tr>\n              <td><textarea cols=\"90\" rows=\"30\" name=\"content\" [(ngModel)]=\"content\"></textarea></td>\n          </tr>\n          <tr>\n              <td style=\"height:50px;\"><input type=\"text\" name=\"tag\" [(ngModel)]=\"tag\" placeholder=\"html 태그를 입력해주세요\" style=\"width:500px;\" /><br/><br/>\n                <input type=\"file\" name=\"image\" [(ngModel)]=\"image\" accept=\"image/*\" (change)=\"onFileChange(fileInput.files)\" /><span class=\"link\">이미지 (jpg,jpeg,png,gif)</span><br/>\n                <input type=\"file\" name=\"audio\" [(ngModel)]=\"audio\" accept=\"audio/*\" (change)=\"onFileChange(fileInput.files)\" /><span class=\"link\">음악 (mp3, ogg, wav)</span><br/>\n                <input type=\"submit\" name=\"submit\" value=\"작성\" style=\"float:right;\" /><input type=\"hidden\" name=\"boardtype\" [(ngModel)]=\"boardtype\" value=\"{{type}}\" /></td>\n          </tr>\n      </table>\n  </form>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/write/write.component.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/components/write/write.component.ts ***!
+  \*****************************************************/
+/*! exports provided: WriteComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WriteComponent", function() { return WriteComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_handleuser_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/handleuser.service */ "./src/app/services/handleuser.service.ts");
+/* harmony import */ var _services_handleboard_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/handleboard.service */ "./src/app/services/handleboard.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ng-flash-messages */ "./node_modules/ng-flash-messages/ng-flash-messages.umd.js");
+/* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(ng_flash_messages__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var WriteComponent = /** @class */ (function () {
+    function WriteComponent(handleuserService, handleboardSerivce, router, http, flashMessage) {
+        this.handleuserService = handleuserService;
+        this.handleboardSerivce = handleboardSerivce;
+        this.router = router;
+        this.http = http;
+        this.flashMessage = flashMessage;
+    }
+    WriteComponent.prototype.ngOnInit = function () {
+        this.fileSrc = '';
+    };
+    WriteComponent.prototype.onFileChange = function (files) {
+        var _this = this;
+        if (files && files.length > 0) {
+            var file = files[0];
+            var reader_1 = new FileReader();
+            reader_1.readAsDataURL(file);
+            reader_1.onload = function () {
+                _this.fileSrc = reader_1.result;
+            };
+        }
+    };
+    WriteComponent.prototype.submitWrite = function () {
+    };
+    WriteComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-write',
+            template: __webpack_require__(/*! ./write.component.html */ "./src/app/components/write/write.component.html"),
+            styles: [__webpack_require__(/*! ./write.component.css */ "./src/app/components/write/write.component.css")]
+        }),
+        __metadata("design:paramtypes", [_services_handleuser_service__WEBPACK_IMPORTED_MODULE_1__["HandleuserService"],
+            _services_handleboard_service__WEBPACK_IMPORTED_MODULE_2__["HandleboardService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            _angular_http__WEBPACK_IMPORTED_MODULE_5__["Http"],
+            ng_flash_messages__WEBPACK_IMPORTED_MODULE_4__["NgFlashMessageService"]])
+    ], WriteComponent);
+    return WriteComponent;
 }());
 
 
@@ -1058,6 +1807,31 @@ var HandleboardService = /** @class */ (function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
         return this.http.get('http://localhost:3000/suggest', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+    };
+    HandleboardService.prototype.getSubcontents = function (type) {
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        return this.http.get('http://localhost:3000/subboard?type=' + type, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+    };
+    HandleboardService.prototype.getNotices = function () {
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        return this.http.get('http://localhost:3000/notice', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+    };
+    HandleboardService.prototype.getSubs = function () {
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        return this.http.get('http://localhost:3000/subs', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+    };
+    HandleboardService.prototype.handleWrite = function (formData) {
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
+        headers.append('enctype', 'multipart/form-data');
+        return this.http.post('http://localhost:3000/handleWrite', formData, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+    };
+    HandleboardService.prototype.handleSuggest = function (formData) {
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
+        headers.append('Content-type', 'application/json');
+        return this.http.post('http://localhost:3000/handleSuggest', formData, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     HandleboardService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
@@ -1120,12 +1894,17 @@ var HandleuserService = /** @class */ (function () {
     HandleuserService.prototype.logout = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        this.http.get('http://localhost:3000/logout', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
+        return this.http.get('http://localhost:3000/logout', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
     };
     HandleuserService.prototype.handleRegi = function (user) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
         return this.http.post('http://localhost:3000/handleRegi', user, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
+    };
+    HandleuserService.prototype.subscribeBoard = function (subid) {
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('http://localhost:3000/ajax/subscribeboard', { subid: subid }, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
     };
     HandleuserService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(

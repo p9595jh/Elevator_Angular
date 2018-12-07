@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgFlashMessageService } from 'ng-flash-messages';
 
+import { Http, Headers, Response } from '@angular/http';
 import { HandleuserService } from '../../services/handleuser.service';
 import { HandleboardService } from '../../services/handleboard.service';
 
@@ -12,10 +14,14 @@ import { HandleboardService } from '../../services/handleboard.service';
 export class SuggestComponent implements OnInit {
   loggedIn: boolean;
   content: any[];
+  comment: String;
 
   constructor(
     private handleuserService: HandleuserService,
-    private handleboardService: HandleboardService
+    private handleboardService: HandleboardService,
+    private router: Router,
+    private http: Http,
+    private flashMessage: NgFlashMessageService
   ) { }
 
   ngOnInit() {
@@ -26,6 +32,24 @@ export class SuggestComponent implements OnInit {
       });
     });
 
+  }
+
+  onWrite() {
+    const formData = {
+      comment: this.comment
+    }
+    this.handleboardService.handleSuggest(formData).subscribe(data => {
+      if ( data.success ) {
+        this.router.navigate(['./suggest']);
+      }
+      else {
+        this.flashMessage.showFlashMessage({
+          messages: ['글작성 에러'],
+          type: 'danger',
+          timeout: 3000
+        });
+      }
+    })
   }
 
 }

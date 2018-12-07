@@ -19,7 +19,10 @@ router.post('/', function(req, res, next) {
         if ( err ) {
             console.log("Error in suggest.js");
             res.status(500).send({ error: 'database failure' });
-            return;
+            return res.json({
+                success: false,
+                msg: 'database failure'
+            });
         }
         
         if ( suggests.length == 0 ) suggest.num = 0;
@@ -27,9 +30,16 @@ router.post('/', function(req, res, next) {
         suggest.save(function(err) {
             if ( err ) {
                 res.status(500).send({ error: 'database failure' });
-                return;
+                return res.json({
+                    success: false,
+                    msg: 'database failure'
+                });
             }
-            res.redirect('./suggest');
+            else {
+                return res.json({
+                    success: true
+                });
+            }
         });
     });
 });

@@ -4,7 +4,7 @@
       <th>ID</th>
       <th>관리</th>
     </tr>
-    <ng-container *ngFor="let val for users">
+    <ng-container *ngFor="let val of users">
       <tr *ngIf="val.id != 'admin' && !val.stop">
         <td><b style="cursor:pointer;" id="val.id" onclick="">{{val.id}}</b></td>
         <td><button onclick="" id="val.id + 'button'">정지</button></td>

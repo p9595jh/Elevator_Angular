@@ -4,7 +4,7 @@
         <th>ID</th>
         <th>관리</th>
       </tr>
-      <ng-container *ngFor="let val for sub.stops">
+      <ng-container *ngFor="let val of sub.stops">
         <tr>
           <td><b style="cursor:pointer; color:red;" id="val.id" onclick="">{{val.id}}</b></td>
           <td><button onclick="" id="val.id + 'button'">해제</button></td>
