@@ -49,4 +49,10 @@ export class HandleuserService {
     return this.http.post('http://localhost:3000/ajax/subscribeboard', {subid: subid}, {headers: headers}).pipe(map((res: Response) => res.json()));
   }
 
+  fixUser(user) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'multipart/form-data');
+    return this.http.post('http://localhost:3000/handleFix', user, {headers: headers}).pipe(map((res: Response) => res.json()));
+  }
+
 }

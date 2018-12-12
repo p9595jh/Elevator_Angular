@@ -9,8 +9,10 @@ mongoose.connect('mongodb://localhost:27017/elevator');
 router.use(bodyParser.urlencoded({ extended: true }));
 router.post('/', function(req, res, next) {
     if ( req.session.userid != 'admin' ) {
-        res.redirect('./notice');
-        return;
+        return res.json({
+            success: false,
+            msg: 'Not admin'
+        });
     }
 
     var notice = new Notice();
@@ -23,18 +25,26 @@ router.post('/', function(req, res, next) {
     Notice.find().sort({num:-1}).exec(function(err, notices) {
         if ( err ) {
             console.log("Error in notice.js");
-            res.status(500).send({ error: 'database failure' });
-            return;
+            return res.json({
+                success: false,
+                msg: 'database failure'
+            });
         }
         
         if ( notices.length == 0 ) notice.num = 0;
         else notice.num = notices[0].num + 1;
         notice.save(function(err) {
             if ( err ) {
-                res.status(500).send({ error: 'database failure' });
-                return;
+                return res.json({
+                    success: false,
+                    msg: 'database failure'
+                });
             }
-            res.redirect('./notice');
+            else {
+                return res.json({
+                    success: true
+                });
+            }
         });
     });
 });

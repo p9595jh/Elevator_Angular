@@ -55,4 +55,10 @@ export class HandleboardService {
     return this.http.post('http://localhost:3000/handleSuggest', formData, {headers: headers}).pipe(map((res: Response) => res.json()));
   }
 
+  handleNotice(formData) {
+    let headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    return this.http.post('http://localhost:3000/handleNotice', formData, {headers: headers}).pipe(map((res: Response) => res.json()));
+  }
+
 }

@@ -112,7 +112,9 @@ router.post('/subscribeboard', function(req, res) {
 router.post('/stop', function(req, res) {
     if ( req.session.userid != 'admin' ) {
         console.log('not admin');
-        return;
+        return res.json({
+            message: 'fail'
+        });
     }
 
     var userid = req.body.userid;

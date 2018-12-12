@@ -7,10 +7,10 @@
     <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
       <a [routerLink]="['./notice']" class="link">공지사항</a>
     </li>
-    <li *ngIf="handleuserService.loggedIn()">
+    <li *ngIf="loggedIn">
       <a (click)="onLogoutClick()" href="javascript:;" class="link">로그아웃</a>
     </li>
-    <li *ngIf="!handleuserService.loggedIn()" [routerLinkActive]="['active']">
+    <li *ngIf="!loggedIn" [routerLinkActive]="['active']">
       <a [routerLink]="['./loginpage']" class="link">로그인</a>
     </li>
     <!-- have to add links to admin page here -->

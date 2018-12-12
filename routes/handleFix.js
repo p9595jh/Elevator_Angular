@@ -13,8 +13,10 @@ router.post('/', function(req, res) {
     User.findOne({id: req.session.userid}, function(err, users) {
         if ( err ) {
             console.log("Error in handleRegi!!!!");
-            res.status(500).send({ error: 'database failure' });
-            return;
+            return res.json({
+                success: false,
+                errmsg: 'database failure'
+            })
         }
         var form = new formidable.IncomingForm();
 
@@ -26,42 +28,39 @@ router.post('/', function(req, res) {
             var introduction = fields.intro;
 
             if ( password != users.pw ) {
-                res.render('./fix', {
-                    title: '회원정보수정',
+                return res.json({
+                    success: false,
                     errmsg: '기존 비밀번호가 일치하지 않습니다',
-                    user: users
                 });
             }
             else if ( passwordNew == '' || nickname == '' ) {
-                res.render('./fix', {
-                    title: '회원정보수정',
+                return res.json({
+                    success: false,
                     errmsg: '* 표시된 칸은 모두 채워야 합니다',
-                    user: users
                 });
             }
             else {
                 if ( files.image.name != '' ) {
                     var filePath = files.image.path;
                     fs.copy(filePath, 'public/images/profileimages/' + req.session.userid, function(err0) {
-                        if ( err0 ) console.err(err0);
+                        if ( err0 ) {
+                            console.log('error in handling profile image');
+                            console.log(err0);
+                        }
                     });
                 }
 
                 User.updateOne({id: req.session.userid}, {pw: passwordNew, nickname: nickname, genre: genre, introduction: introduction}, function(err1, output) {
                     if ( err1 ) {
                         res.status(500).json({err: 'database failure'});
-                        return;
+                        return res.json({
+                            success: false,
+                            errmsg: 'database failure'
+                        })
                     }
                     req.session.nickname = nickname;
-                    res.render('./start', {
-                        title: 'Start',
-                        user: {
-                            id: req.session.userid,
-                            nickname: req.session.nickname,
-                            stop: req.session.stop,
-                            joindate: req.session.joindate,
-                            boardRequest: req.session.boardRequest
-                        }
+                    return res.render('./start', {
+                        success: true
                     });
                 });
             }

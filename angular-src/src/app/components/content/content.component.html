@@ -9,7 +9,7 @@
   <span style="float:right; font-size:13px;">조회 {{content.hit}} &nbsp;댓글 {{content.comment.length}}</span>
   <ng-container *ngIf="listurl == 'music'">
     <br/>
-    <span id="gradeSpan" style="float:right; font-size:13px;">평점 {{content.grade}} by {{content.gradeby.length}}명</span>
+    <span id="gradeSpan" style="float:right; font-size:13px;" #gradeSpan>평점 {{content.grade}} by {{content.gradeby.length}}명</span>
     <ng-container *ngIf="content.grade >= 3 && content.gradeby.length >= 1 && user.id == content.id && writer.boardRequest == 0">
       <br/><button id="boardRequest" style="float:right;" onclick="">게시판 생성 요청</button>
     </ng-container>
@@ -34,18 +34,19 @@
 
   <div style="text-align:center;">
     <ng-container *ngIf="listurl == 'music' && loggedIn">
-      <select id="grade" *ngIf="listurl == 'music' && loggedIn">
+      <select id="grade" *ngIf="listurl == 'music' && loggedIn" #grade>
         <option value="5">★★★★★</option>
         <option value="4">★★★★</option>
         <option value="3">★★★</option>
         <option value="2">★★</option>
         <option value="1">★</option>
       </select>
-      <button onclick="" id="recommendbtn">평가</button>
+      <button (click)="onRecommend()" id="recommendbtn">평가</button>
     </ng-container>
-    <button *ngIf="loggedIn && listurl != 'music'" id="recommendbtn" onclick="">추천 {{content.recommend}}</button>
+    <button *ngIf="loggedIn && listurl != 'music'" id="recommendbtn" (click)="onRecommend()" #recommendBtn>추천 {{content.recommend}}</button>
   </div><br/><hr/>
 
+  <!-- ###################### written comment part ###################### -->
   <table class="tb2" *ngFor="let val of content.comment">
     <tr style="height:110px; vertical-align:top;">
       <td style="text-align:center; vertical-align:middle; width:110px; border-right:1px solid rgb(0,91,159);">
@@ -60,7 +61,7 @@
               <input type="hidden" name="contentnum" [(ngModel)]="contentnum" value="{{content.num}}" />
               <input type="hidden" name="num" [(ngModel)]="num" value="{{val.num}}" />
               <input type="hidden" name="id" [(ngModel)]="id" value="{{val.id}}" />
-              <input type="hidden" name="boardtype" value="{{boardtype}}" />
+              <input type="hidden" name="boardtype" [(ngModel)]="commentBoardtype" value="{{boardtype}}" />
             </form>
             <a *ngIf="user.id == val.id || user.id == 'admin' || boardtype == user.id" class="link" href="javascript:;" onclick="document.getElementById('removeCmt' + val.num).submit()">삭제</a>
             <span>{{val.writedate}}</span>
@@ -74,6 +75,8 @@
       <td style="text-align:right;"></td>
     </tr>
   </table><br/>
+
+  <!-- ###################### writing comment part ###################### -->
   <form *ngIf="loggedIn && !user.stop" (submit)="onWriteComment()">
     <br/>
     <input type="hidden" name="board" [(ngModel)]="board" value="{{listurl}}" />

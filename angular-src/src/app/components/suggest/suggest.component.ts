@@ -40,6 +40,8 @@ export class SuggestComponent implements OnInit {
     }
     this.handleboardService.handleSuggest(formData).subscribe(data => {
       if ( data.success ) {
+        // this.router.navigate(['./suggest']);
+        this.router.navigated = false;
         this.router.navigate(['./suggest']);
       }
       else {

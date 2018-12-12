@@ -12,8 +12,10 @@ router.post('/', function(req, res) {
         Board.findOne({_id: req.body._id}, function(err, frees) {
             if ( err ) {
                 console.log("Error in handling comment");
-                res.status(500).send({ error: 'database failure' });
-                return;
+                return res.json({
+                    success: false,
+                    msg: 'database failure'
+                });
             }
 
             var num = 0;
@@ -33,10 +35,16 @@ router.post('/', function(req, res) {
             var data = {num: num, id: id, nickname: nickname, writedate: writedate, comment: comment};
             Board.updateOne({_id: req.body._id}, {$push: {comment: data}}, function(err1, output) {
                 if ( err1 ) {
-                    res.status(500).json({err: 'database failure'});
-                    return;
+                    return res.json({
+                        success: false,
+                        msg: 'database failure'
+                    });
                 }
-                res.redirect('./content?type=' + req.body.board + '&num=' + frees.num);
+                else {
+                    return res.json({
+                        success: true,
+                    });
+                }
             });
         });
     }
@@ -45,8 +53,10 @@ router.post('/', function(req, res) {
         Board.findOne({_id: req.body._id}, function(err, musics) {
             if ( err ) {
                 console.log("Error in handling comment");
-                res.status(500).send({ error: 'database failure' });
-                return;
+                return res.json({
+                    success: false,
+                    msg: 'database failure'
+                });
             }
 
             var num = 0;
@@ -66,10 +76,16 @@ router.post('/', function(req, res) {
             var data = {num: num, id: id, nickname: nickname, writedate: writedate, comment: comment};
             Board.updateOne({_id: req.body._id}, {$push: {comment: data}}, function(err1, output) {
                 if ( err1 ) {
-                    res.status(500).json({err: 'database failure'});
-                    return;
+                    return res.json({
+                        success: false,
+                        msg: 'database failure'
+                    });
                 }
-                res.redirect('./content?type=' + req.body.board + '&num=' + musics.num);
+                else {
+                    return res.json({
+                        success: true,
+                    });
+                }
             });
         });
     }
@@ -78,8 +94,10 @@ router.post('/', function(req, res) {
         Board.findOne({_id: req.body._id}, function(err, subs) {
             if ( err ) {
                 console.log("Error in handling comment");
-                res.status(500).send({ error: 'database failure' });
-                return;
+                return res.json({
+                    success: false,
+                    msg: 'database failure'
+                });
             }
 
             var num = 0;
@@ -99,10 +117,16 @@ router.post('/', function(req, res) {
             var data = {num: num, id: id, nickname: nickname, writedate: writedate, comment: comment};
             Board.updateOne({_id: req.body._id}, {$push: {comment: data}}, function(err1, output) {
                 if ( err1 ) {
-                    res.status(500).json({err: 'database failure'});
-                    return;
+                    return res.json({
+                        success: false,
+                        msg: 'database failure'
+                    });
                 }
-                res.redirect('./content?type=' + subs.type + '&num=' + subs.num);
+                else {
+                    return res.json({
+                        success: true,
+                    });
+                }
             });
         });
     }

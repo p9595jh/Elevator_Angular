@@ -1,7 +1,7 @@
 <div class="box">
   <span id="visitor">공지사항</span><hr/><br/>
 
-  <form method="POST" action="./handleNotice" *ngIf="user.id == 'admin'">
+  <form (submit)="onWrite()" *ngIf="user.id == 'admin'">
     <table style="width:700px; margin:auto;">
       <tr>
         <td><textarea cols="80" rows="5" name="comment"></textarea></td>

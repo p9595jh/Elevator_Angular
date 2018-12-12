@@ -53,7 +53,19 @@ router.post('/comment', function(req, res, next) {
                     break;
                 }
             }
-            FreeBoard.updateOne({_id: _id}, {$pullAll: {comment: [comment]}}, function(err1, output1) {});
+            FreeBoard.updateOne({_id: _id}, {$pullAll: {comment: [comment]}}, function(err1, output1) {
+                if ( err1 ) {
+                    return res.json({
+                        success: false,
+                        msg: 'database failure'
+                    });
+                }
+                else {
+                    return res.json({
+                        success: true
+                    });
+                }
+            });
         });
     }
     else if ( boardtype == 'music' ) {
@@ -67,7 +79,19 @@ router.post('/comment', function(req, res, next) {
                     break;
                 }
             }
-            MusicClass.updateOne({_id: _id}, {$pullAll: {comment: [comment]}}, function(err1, output1) {});
+            MusicClass.updateOne({_id: _id}, {$pullAll: {comment: [comment]}}, function(err1, output1) {
+                if ( err1 ) {
+                    return res.json({
+                        success: false,
+                        msg: 'database failure'
+                    });
+                }
+                else {
+                    return res.json({
+                        success: true
+                    });
+                }
+            });
         });
     }
     else {
@@ -81,10 +105,21 @@ router.post('/comment', function(req, res, next) {
                     break;
                 }
             }
-            SubContent.updateOne({_id: _id}, {$pullAll: {comment: [comment]}}, function(err1, output1) {});
+            SubContent.updateOne({_id: _id}, {$pullAll: {comment: [comment]}}, function(err1, output1) {
+                if ( err1 ) {
+                    return res.json({
+                        success: false,
+                        msg: 'database failure'
+                    });
+                }
+                else {
+                    return res.json({
+                        success: true
+                    });
+                }
+            });
         });
     }
-    res.redirect("../content?type=" + boardtype + "&num=" + contentnum);
 });
 
 module.exports = router;

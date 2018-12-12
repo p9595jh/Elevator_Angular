@@ -49,6 +49,7 @@ export class StartComponent implements OnInit {
 
   onLogoutClick() {
     this.handleuserService.logout().subscribe(data => {
+      this.router.navigated = false;
       this.router.navigate(['./start']);
     });
   }

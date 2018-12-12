@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<div id=\"content\">\n  <ng-flash-message></ng-flash-message>\n  <router-outlet></router-outlet>\n</div>\n<app-footer></app-footer>\n"
+module.exports = "<app-navbar></app-navbar>\r\n<div id=\"content\">\r\n  <ng-flash-message></ng-flash-message>\r\n  <router-outlet></router-outlet>\r\n</div>\r\n<app-footer></app-footer>\r\n"
 
 /***/ }),
 
@@ -118,19 +118,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_fix_fix_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/fix/fix.component */ "./src/app/components/fix/fix.component.ts");
 /* harmony import */ var _components_notice_notice_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/notice/notice.component */ "./src/app/components/notice/notice.component.ts");
 /* harmony import */ var _components_subadmin_subadmin_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/subadmin/subadmin.component */ "./src/app/components/subadmin/subadmin.component.ts");
-/* harmony import */ var _components_reload_reload_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/reload/reload.component */ "./src/app/components/reload/reload.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var _this = undefined;
 
 
 
 
 
-
+// import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 
@@ -193,8 +193,7 @@ var AppModule = /** @class */ (function () {
                 _components_find_find_component__WEBPACK_IMPORTED_MODULE_22__["FindComponent"],
                 _components_fix_fix_component__WEBPACK_IMPORTED_MODULE_23__["FixComponent"],
                 _components_notice_notice_component__WEBPACK_IMPORTED_MODULE_24__["NoticeComponent"],
-                _components_subadmin_subadmin_component__WEBPACK_IMPORTED_MODULE_25__["SubadminComponent"],
-                _components_reload_reload_component__WEBPACK_IMPORTED_MODULE_26__["ReloadComponent"]
+                _components_subadmin_subadmin_component__WEBPACK_IMPORTED_MODULE_25__["SubadminComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -204,6 +203,7 @@ var AppModule = /** @class */ (function () {
                 ng_flash_messages__WEBPACK_IMPORTED_MODULE_16__["NgFlashMessagesModule"].forRoot()
             ],
             providers: [
+                this.Location,
                 _services_handleuser_service__WEBPACK_IMPORTED_MODULE_17__["HandleuserService"],
                 _services_handleboard_service__WEBPACK_IMPORTED_MODULE_18__["HandleboardService"]
             ],
@@ -318,7 +318,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box\">\n  <span style=\"font-size:20px;\">{{content.title}}</span>\n  <span style=\"float:right;\">\n    <a class=\"tblink\" href=\"javascript:;\" onclick=\"\">{{content.nickname}}</a>\n  </span>\n  <hr/>\n  <span style=\"float:right; font-size:13px;\">{{content.writedate}}</span>\n  <br/>\n  <span style=\"float:right; font-size:13px;\">조회 {{content.hit}} &nbsp;댓글 {{content.comment.length}}</span>\n  <ng-container *ngIf=\"listurl == 'music'\">\n    <br/>\n    <span id=\"gradeSpan\" style=\"float:right; font-size:13px;\">평점 {{content.grade}} by {{content.gradeby.length}}명</span>\n    <ng-container *ngIf=\"content.grade >= 3 && content.gradeby.length >= 1 && user.id == content.id && writer.boardRequest == 0\">\n      <br/><button id=\"boardRequest\" style=\"float:right;\" onclick=\"\">게시판 생성 요청</button>\n    </ng-container>\n    <ng-container *ngIf=\"user.id == 'admin' && writer.boardRequest == 1\">\n      <br/><button id=\"boardRequest\" style=\"float:right;\" onclick=\"\">게시판 생성 요청</button>\n    </ng-container>\n  </ng-container><br/><br/>\n\n  <div style=\"text-align:center;\" *ngIf=\"content.image != ''\">\n    <img src=\"content.image\" width=\"imageWidth\"/>\n    <br/><br/>\n  </div>\n  <div style=\"text-align:center;\" *ngIf=\"content.image != ''\">\n    <audio controls>\n      <source src=\"content.audio\"/>\n    </audio>\n    <br/><br/>\n  </div>\n  <div style=\"padding:20px;\">\n    <pre class=\"contentView\">{{content.content}}</pre>\n  </div><br/><br/><br/>\n\n  <div style=\"text-align:center;\">\n    <ng-container *ngIf=\"listurl == 'music' && loggedIn\">\n      <select id=\"grade\" *ngIf=\"listurl == 'music' && loggedIn\">\n        <option value=\"5\">★★★★★</option>\n        <option value=\"4\">★★★★</option>\n        <option value=\"3\">★★★</option>\n        <option value=\"2\">★★</option>\n        <option value=\"1\">★</option>\n      </select>\n      <button onclick=\"\" id=\"recommendbtn\">평가</button>\n    </ng-container>\n    <button *ngIf=\"loggedIn && listurl != 'music'\" id=\"recommendbtn\" onclick=\"\">추천 {{content.recommend}}</button>\n  </div><br/><hr/>\n\n  <table class=\"tb2\" *ngFor=\"let val of content.comment\">\n    <tr style=\"height:110px; vertical-align:top;\">\n      <td style=\"text-align:center; vertical-align:middle; width:110px; border-right:1px solid rgb(0,91,159);\">\n        <img src=\"images/profileimages/val.id\" width=\"70\" height=\"70\" />\n      </td>\n      <td style=\"vertical-align:top;\">\n        <div style=\"font-size:12px; padding:2px; margin-left:5px; border-bottom:1px dotted rgb(0,91,159);\">\n          <b *ngIf=\"val.id == 'admin'\"><a class=\"tblink\" href=\"javascript:;\" onclick=\"\">{{val.nickname}}</a></b>\n          <a *ngIf=\"val.id != 'admin'\" class=\"tblink\" href=\"javascript:;\" onclick=\"\">{{val.nickname}}</a>\n          <span style=\"font-size:12px; float:right;\">\n            <form *ngIf=\"user.id == val.id || user.id == 'admin' || boardtype == user.id\" (submit)=\"onDeleteComment()\" id=\"removeCmt+{{val.num}}\" style=\"display:none;\">\n              <input type=\"hidden\" name=\"contentnum\" [(ngModel)]=\"contentnum\" value=\"{{content.num}}\" />\n              <input type=\"hidden\" name=\"num\" [(ngModel)]=\"num\" value=\"{{val.num}}\" />\n              <input type=\"hidden\" name=\"id\" [(ngModel)]=\"id\" value=\"{{val.id}}\" />\n              <input type=\"hidden\" name=\"boardtype\" value=\"{{boardtype}}\" />\n            </form>\n            <a *ngIf=\"user.id == val.id || user.id == 'admin' || boardtype == user.id\" class=\"link\" href=\"javascript:;\" onclick=\"document.getElementById('removeCmt' + val.num).submit()\">삭제</a>\n            <span>{{val.writedate}}</span>\n          </span>\n        </div>\n        <div style=\"padding-left:10px;\">\n          <pre class=\"contentView\" *ngIf=\"content.id == val.id\" style=\"color:blue;\">{{val.comment}}</pre>\n          <pre class=\"contentView\" *ngIf=\"content.id != val.id\">{{val.comment}}</pre>\n        </div>\n      </td>\n      <td style=\"text-align:right;\"></td>\n    </tr>\n  </table><br/>\n  <form *ngIf=\"loggedIn && !user.stop\" (submit)=\"onWriteComment()\">\n    <br/>\n    <input type=\"hidden\" name=\"board\" [(ngModel)]=\"board\" value=\"{{listurl}}\" />\n    <input type=\"hidden\" name=\"_id\" [(ngModel)]=\"_id\" value=\"{{content._id}}\" />\n    <table style=\"width:700px; margin:auto;\">\n      <tr>\n        <td><textarea cols=\"80\" rows=\"5\" name=\"comment\" [(ngModel)]=\"comment\"></textarea></td>\n        <td><input type=\"submit\" name=\"cmt\" value=\"댓글달기\" style=\"width:100px; height:80px;\" /></td>\n      </tr>\n    </table>\n    <br/>\n  </form>\n  <hr/><button style=\"float:right;\" [routerLink]=\"['./listurl', {type: boardtype}]\">목록</button><br/><br/>\n</div>\n\n<div class=\"box\">\n  <span>{{type}}</span><hr/><br/><br/>\n  <table class=\"tb\">\n    <tr style=\"height:25px; font-weight:bold\">\n      <td style=\"width:70px\">번호</td>\n      <td style=\"width:140px\">제목</td>\n      <td style=\"width:65px\">작성자</td>\n      <td style=\"width:100px\">날짜</td>\n      <td style=\"width:55px\">조회수</td>\n      <td style=\"width:40px\">추천</td>\n    </tr>\n\n    <ng-container *ngFor=\"let val of all\">\n      <tr class=\"trhover\" style=\"height:20px;\">\n        <td>{{val.num}}</td>\n        <td style=\"text-align:left; padding:50px;\">\n          <a class=\"link\" [routerLink]=\"['./content', {type: boardtype, num: val.num}]\">{{val.title}}</a> \n          <span style=\"font-size:12px; color:grey;\" *ngIf=\"val.comment.length > 0\"> [{{val.comment.length}}]</span>\n        </td>\n        <td>{{val.nickname}}</td>\n        <td>{{val.writedate}}</td>\n        <td>{{val.hit}}</td>\n        <td>{{val.recommend}}</td>\n      </tr>\n    </ng-container>\n\n  </table>\n</div>\n"
+module.exports = "<div class=\"box\">\r\n  <span style=\"font-size:20px;\">{{content.title}}</span>\r\n  <span style=\"float:right;\">\r\n    <a class=\"tblink\" href=\"javascript:;\" onclick=\"\">{{content.nickname}}</a>\r\n  </span>\r\n  <hr/>\r\n  <span style=\"float:right; font-size:13px;\">{{content.writedate}}</span>\r\n  <br/>\r\n  <span style=\"float:right; font-size:13px;\">조회 {{content.hit}} &nbsp;댓글 {{content.comment.length}}</span>\r\n  <ng-container *ngIf=\"listurl == 'music'\">\r\n    <br/>\r\n    <span id=\"gradeSpan\" style=\"float:right; font-size:13px;\">평점 {{content.grade}} by {{content.gradeby.length}}명</span>\r\n    <ng-container *ngIf=\"content.grade >= 3 && content.gradeby.length >= 1 && user.id == content.id && writer.boardRequest == 0\">\r\n      <br/><button id=\"boardRequest\" style=\"float:right;\" onclick=\"\">게시판 생성 요청</button>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"user.id == 'admin' && writer.boardRequest == 1\">\r\n      <br/><button id=\"boardRequest\" style=\"float:right;\" onclick=\"\">게시판 생성 요청</button>\r\n    </ng-container>\r\n  </ng-container><br/><br/>\r\n\r\n  <div style=\"text-align:center;\" *ngIf=\"content.image != ''\">\r\n    <img src=\"content.image\" width=\"imageWidth\"/>\r\n    <br/><br/>\r\n  </div>\r\n  <div style=\"text-align:center;\" *ngIf=\"content.image != ''\">\r\n    <audio controls>\r\n      <source src=\"content.audio\"/>\r\n    </audio>\r\n    <br/><br/>\r\n  </div>\r\n  <div style=\"padding:20px;\">\r\n    <pre class=\"contentView\">{{content.content}}</pre>\r\n  </div><br/><br/><br/>\r\n\r\n  <div style=\"text-align:center;\">\r\n    <ng-container *ngIf=\"listurl == 'music' && loggedIn\">\r\n      <select id=\"grade\" *ngIf=\"listurl == 'music' && loggedIn\">\r\n        <option value=\"5\">★★★★★</option>\r\n        <option value=\"4\">★★★★</option>\r\n        <option value=\"3\">★★★</option>\r\n        <option value=\"2\">★★</option>\r\n        <option value=\"1\">★</option>\r\n      </select>\r\n      <button onclick=\"\" id=\"recommendbtn\">평가</button>\r\n    </ng-container>\r\n    <button *ngIf=\"loggedIn && listurl != 'music'\" id=\"recommendbtn\" onclick=\"\">추천 {{content.recommend}}</button>\r\n  </div><br/><hr/>\r\n\r\n  <table class=\"tb2\" *ngFor=\"let val of content.comment\">\r\n    <tr style=\"height:110px; vertical-align:top;\">\r\n      <td style=\"text-align:center; vertical-align:middle; width:110px; border-right:1px solid rgb(0,91,159);\">\r\n        <img src=\"images/profileimages/val.id\" width=\"70\" height=\"70\" />\r\n      </td>\r\n      <td style=\"vertical-align:top;\">\r\n        <div style=\"font-size:12px; padding:2px; margin-left:5px; border-bottom:1px dotted rgb(0,91,159);\">\r\n          <b *ngIf=\"val.id == 'admin'\"><a class=\"tblink\" href=\"javascript:;\" onclick=\"\">{{val.nickname}}</a></b>\r\n          <a *ngIf=\"val.id != 'admin'\" class=\"tblink\" href=\"javascript:;\" onclick=\"\">{{val.nickname}}</a>\r\n          <span style=\"font-size:12px; float:right;\">\r\n            <form *ngIf=\"user.id == val.id || user.id == 'admin' || boardtype == user.id\" (submit)=\"onDeleteComment()\" id=\"removeCmt+{{val.num}}\" style=\"display:none;\">\r\n              <input type=\"hidden\" name=\"contentnum\" [(ngModel)]=\"contentnum\" value=\"{{content.num}}\" />\r\n              <input type=\"hidden\" name=\"num\" [(ngModel)]=\"num\" value=\"{{val.num}}\" />\r\n              <input type=\"hidden\" name=\"id\" [(ngModel)]=\"id\" value=\"{{val.id}}\" />\r\n              <input type=\"hidden\" name=\"boardtype\" value=\"{{boardtype}}\" />\r\n            </form>\r\n            <a *ngIf=\"user.id == val.id || user.id == 'admin' || boardtype == user.id\" class=\"link\" href=\"javascript:;\" onclick=\"document.getElementById('removeCmt' + val.num).submit()\">삭제</a>\r\n            <span>{{val.writedate}}</span>\r\n          </span>\r\n        </div>\r\n        <div style=\"padding-left:10px;\">\r\n          <pre class=\"contentView\" *ngIf=\"content.id == val.id\" style=\"color:blue;\">{{val.comment}}</pre>\r\n          <pre class=\"contentView\" *ngIf=\"content.id != val.id\">{{val.comment}}</pre>\r\n        </div>\r\n      </td>\r\n      <td style=\"text-align:right;\"></td>\r\n    </tr>\r\n  </table><br/>\r\n  <form *ngIf=\"loggedIn && !user.stop\" (submit)=\"onWriteComment()\">\r\n    <br/>\r\n    <input type=\"hidden\" name=\"board\" [(ngModel)]=\"board\" value=\"{{listurl}}\" />\r\n    <input type=\"hidden\" name=\"_id\" [(ngModel)]=\"_id\" value=\"{{content._id}}\" />\r\n    <table style=\"width:700px; margin:auto;\">\r\n      <tr>\r\n        <td><textarea cols=\"80\" rows=\"5\" name=\"comment\" [(ngModel)]=\"comment\"></textarea></td>\r\n        <td><input type=\"submit\" name=\"cmt\" value=\"댓글달기\" style=\"width:100px; height:80px;\" /></td>\r\n      </tr>\r\n    </table>\r\n    <br/>\r\n  </form>\r\n  <hr/><button style=\"float:right;\" [routerLink]=\"['./listurl', {type: boardtype}]\">목록</button><br/><br/>\r\n</div>\r\n\r\n<div class=\"box\">\r\n  <span>{{type}}</span><hr/><br/><br/>\r\n  <table class=\"tb\">\r\n    <tr style=\"height:25px; font-weight:bold\">\r\n      <td style=\"width:70px\">번호</td>\r\n      <td style=\"width:140px\">제목</td>\r\n      <td style=\"width:65px\">작성자</td>\r\n      <td style=\"width:100px\">날짜</td>\r\n      <td style=\"width:55px\">조회수</td>\r\n      <td style=\"width:40px\">추천</td>\r\n    </tr>\r\n\r\n    <ng-container *ngFor=\"let val of all\">\r\n      <tr class=\"trhover\" style=\"height:20px;\">\r\n        <td>{{val.num}}</td>\r\n        <td style=\"text-align:left; padding:50px;\">\r\n          <a class=\"link\" [routerLink]=\"['./content', {type: boardtype, num: val.num}]\">{{val.title}}</a> \r\n          <span style=\"font-size:12px; color:grey;\" *ngIf=\"val.comment.length > 0\"> [{{val.comment.length}}]</span>\r\n        </td>\r\n        <td>{{val.nickname}}</td>\r\n        <td>{{val.writedate}}</td>\r\n        <td>{{val.hit}}</td>\r\n        <td>{{val.recommend}}</td>\r\n      </tr>\r\n    </ng-container>\r\n\r\n  </table>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -478,7 +478,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"reg\"><span style=\"float:left;\">회원정보수정 </span><br/>\r\n  <hr/><br/>\r\n  <form method=\"POST\" action=\"./handleFix\" enctype=\"multipart/form-data\">\r\n      <table class=\"regtable\" style=\"height:600px;\">\r\n          <tr>\r\n              <td>기존 비밀번호<span class=\"regerr\">*</span></td>\r\n              <td><input class=\"reginput\" type=\"password\" name=\"password\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td>새 비밀번호<span class=\"regerr\">*</span></td>\r\n              <td><input class=\"reginput\" type=\"password\" name=\"passwordNew\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td>닉네임<span class=\"regerr\">*</span></td>\r\n              <td><input class=\"reginput\" type=\"text\" name=\"nickname\" value=\"user.nickname\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td>좋아하는 장르</td>\r\n              <td><input class=\"reginput\" type=\"text\" name=\"genre\" value=\"user.genre\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td>한줄 자기소개</td>\r\n              <td><input class=\"reginput\" type=\"text\" name=\"intro\" value=\"user.introduction\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td>프로필 이미지</td>\r\n              <td><input type=\"file\" name=\"image\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td colspan=\"2\" style=\"text-align:center;\"><input type=\"submit\" name=\"submit\" value=\"수정\" style=\"width:200px; height:50px;\" /></td>\r\n          </tr>\r\n      </table>\r\n  </form><br/>\r\n  <hr/><span class=\"regerr\">* </span><span>표시가 된 곳은 필수 입력사항입니다</span><br/><br/>\r\n  <span class=\"link\">회원코드: {{user._id}}</span>\r\n</div>\r\n"
+module.exports = "<div class=\"reg\"><span style=\"float:left;\">회원정보수정 </span><br/>\r\n  <hr/><br/>\r\n  <form (submit)=\"onFixSubmit()\">\r\n      <table class=\"regtable\" style=\"height:600px;\">\r\n          <tr>\r\n              <td>기존 비밀번호<span class=\"regerr\">*</span></td>\r\n              <td><input class=\"reginput\" type=\"password\" name=\"password\" [(ngModel)]=\"password\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td>새 비밀번호<span class=\"regerr\">*</span></td>\r\n              <td><input class=\"reginput\" type=\"password\" name=\"passwordNew\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td>닉네임<span class=\"regerr\">*</span></td>\r\n              <td><input class=\"reginput\" type=\"text\" name=\"nickname\" [(ngModel)]=\"nickname\" value=\"user.nickname\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td>좋아하는 장르</td>\r\n              <td><input class=\"reginput\" type=\"text\" name=\"genre\" [(ngModel)]=\"genre\" value=\"user.genre\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td>한줄 자기소개</td>\r\n              <td><input class=\"reginput\" type=\"text\" name=\"intro\" [(ngModel)]=\"intro\" value=\"user.introduction\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td>프로필 이미지</td>\r\n              <td><input type=\"file\" name=\"image\" [(ngModel)]=\"image\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td colspan=\"2\" style=\"text-align:center;\"><input type=\"submit\" name=\"submit\" value=\"수정\" style=\"width:200px; height:50px;\" /></td>\r\n          </tr>\r\n      </table>\r\n  </form><br/>\r\n  <hr/><span class=\"regerr\">* </span><span>표시가 된 곳은 필수 입력사항입니다</span><br/><br/>\r\n  <span class=\"link\">회원코드: {{user._id}}</span>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -495,6 +495,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ng-flash-messages */ "./node_modules/ng-flash-messages/ng-flash-messages.umd.js");
+/* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(ng_flash_messages__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _services_handleuser_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/handleuser.service */ "./src/app/services/handleuser.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -507,9 +511,15 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+
 var FixComponent = /** @class */ (function () {
-    function FixComponent(http) {
+    function FixComponent(http, flashMessage, handleuserService, router) {
         this.http = http;
+        this.flashMessage = flashMessage;
+        this.handleuserService = handleuserService;
+        this.router = router;
     }
     FixComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -519,13 +529,39 @@ var FixComponent = /** @class */ (function () {
             _this.user = data.user;
         });
     };
+    FixComponent.prototype.onFixSubmit = function () {
+        var _this = this;
+        var formData = {
+            password: this.password,
+            passwordNew: this.passwordNew,
+            nickname: this.nickname,
+            genre: this.genre,
+            intro: this.intro,
+            image: this.image.name
+        };
+        this.handleuserService.fixUser(formData).subscribe(function (data) {
+            if (data.success) {
+                _this.router.navigate(['./start']);
+            }
+            else {
+                _this.flashMessage.showFlashMessage({
+                    messages: [data.errmsg],
+                    type: 'danger',
+                    timeout: 3000
+                });
+            }
+        });
+    };
     FixComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-fix',
             template: __webpack_require__(/*! ./fix.component.html */ "./src/app/components/fix/fix.component.html"),
             styles: [__webpack_require__(/*! ./fix.component.css */ "./src/app/components/fix/fix.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"]])
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"],
+            ng_flash_messages__WEBPACK_IMPORTED_MODULE_3__["NgFlashMessageService"],
+            _services_handleuser_service__WEBPACK_IMPORTED_MODULE_4__["HandleuserService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]])
     ], FixComponent);
     return FixComponent;
 }());
@@ -552,7 +588,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<hr/>\n<span style=\"font-size:12px;\">&nbsp; powered by</span>\n<b style=\"font-size:12px;\">Project Elevator</b>\n<br/><br/>\n"
+module.exports = "<hr/>\r\n<span style=\"font-size:12px;\">&nbsp; powered by </span>\r\n<b style=\"font-size:12px;\">Project Elevator</b>\r\n<br/><br/>\r\n"
 
 /***/ }),
 
@@ -615,7 +651,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box\"><span>자유게시판</span>\n  <hr/><br/><br/>\n  <table class=\"tb\">\n    <tr style=\"height:25px; font-weight:bold\">\n      <td style=\"width:70px\">번호</td>\n      <td style=\"width:140px\">제목</td>\n      <td style=\"width:65px\">작성자</td>\n      <td style=\"width:100px\">날짜</td>\n      <td style=\"width:55px\">조회수</td>\n      <td style=\"width:40px\">추천</td>\n    </tr>\n\n    <ng-container *ngFor=\"let val of free\">\n      <tr class=\"trhover\" style=\"height:20px;\">\n        <td>{{val.num}}</td>\n        <td style=\"text-align:left; padding:50px;\">\n          <a class=\"link\" [routerLink]=\"['../content']\" [queryParams]=\"{type: 'free', num: val.num}\">{{val.title}}</a> \n          <span style=\"font-size:12px; color:grey;\" *ngIf=\"val.comment.length > 0\"> [{{val.comment.length}}]</span>\n        </td>\n        <td>{{val.nickname}}</td>\n        <td>{{val.writedate}}</td>\n        <td>{{val.hit}}</td>\n        <td>{{val.recommend}}</td>\n      </tr>\n    </ng-container>\n\n  </table>\n  <br/><br/>\n\n  <form method=\"POST\" action=\"./write\" *ngIf=\"loggedIn\">\n    <input type=\"submit\" name=\"submit\" value=\"글쓰기\" style=\"float:right;\"/>\n    <input type=\"hidden\" name=\"type\" value=\"free\"/>\n  </form>\n</div>"
+module.exports = "<div class=\"box\"><span>자유게시판</span>\r\n  <hr/><br/><br/>\r\n  <table class=\"tb\">\r\n    <tr style=\"height:25px; font-weight:bold\">\r\n      <td style=\"width:70px\">번호</td>\r\n      <td style=\"width:140px\">제목</td>\r\n      <td style=\"width:65px\">작성자</td>\r\n      <td style=\"width:100px\">날짜</td>\r\n      <td style=\"width:55px\">조회수</td>\r\n      <td style=\"width:40px\">추천</td>\r\n    </tr>\r\n\r\n    <ng-container *ngFor=\"let val of free\">\r\n      <tr class=\"trhover\" style=\"height:20px;\">\r\n        <td>{{val.num}}</td>\r\n        <td style=\"text-align:left; padding:50px;\">\r\n          <a class=\"link\" [routerLink]=\"['../content']\" [queryParams]=\"{type: 'free', num: val.num}\">{{val.title}}</a> \r\n          <span style=\"font-size:12px; color:grey;\" *ngIf=\"val.comment.length > 0\"> [{{val.comment.length}}]</span>\r\n        </td>\r\n        <td>{{val.nickname}}</td>\r\n        <td>{{val.writedate}}</td>\r\n        <td>{{val.hit}}</td>\r\n        <td>{{val.recommend}}</td>\r\n      </tr>\r\n    </ng-container>\r\n\r\n  </table>\r\n  <br/><br/>\r\n\r\n  <form method=\"POST\" action=\"./write\" *ngIf=\"loggedIn\">\r\n    <input type=\"submit\" name=\"submit\" value=\"글쓰기\" style=\"float:right;\"/>\r\n    <input type=\"hidden\" name=\"type\" value=\"free\"/>\r\n  </form>\r\n</div>"
 
 /***/ }),
 
@@ -692,7 +728,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"reg\"><span style=\"float:left;\">회원가입 <span class=\"regerr\"></span></span><br/>\n    <hr/><br/>\n    <form (submit)=\"submitRegister()\">\n        <table class=\"regtable\">\n            <tr>\n                <td>아이디<span class=\"regerr\"> *</span></td>\n                <td><input class=\"reginput\" type=\"text\" name=\"id\" [(ngModel)]=\"id\" /></td>\n            </tr>\n            <tr>\n                <td>비밀번호<span class=\"regerr\"> *</span></td>\n                <td><input class=\"reginput\" type=\"password\" name=\"password\" [(ngModel)]=\"password\" /></td>\n            </tr>\n            <tr>\n                <td>이메일<span class=\"regerr\"> *</span></td>\n                <td><input class=\"reginput\" type=\"text\" name=\"email\" [(ngModel)]=\"email\" /></td>\n            </tr>\n            <tr>\n                <td>닉네임<span class=\"regerr\"> *</span></td>\n                <td><input class=\"reginput\" type=\"text\" name=\"nickname\" [(ngModel)]=\"nickname\" /></td>\n            </tr>\n            <tr>\n                <td>즐겨듣는 장르</td>\n                <td><input class=\"reginput\" type=\"text\" name=\"genre\" [(ngModel)]=\"genre\" /></td>\n            </tr>\n            <tr>\n                <td>자기소개 한마디</td>\n                <td><input class=\"reginput\" type=\"text\" name=\"intro\" [(ngModel)]=\"intro\" /></td>\n            </tr>\n            <tr>\n                <td colspan=\"2\" style=\"text-align:center;\"><input type=\"submit\" name=\"submit\" value=\"회원가입\" style=\"width:200px; height:50px;\" /></td>\n            </tr>\n        </table><br/>\n        <hr/><span class=\"regerr\">* </span><span class=\"regerr\" style=\"color:black;\">표시가 된 곳은 필수 입력사항입니다.</span><br/><br/><span class=\"link\">회원가입 이후 회원정보수정에서 회원코드를 메모해놓으세요. 추후 아이디/비밀번호 찾기에 필요합니다.</span></form>\n  </div>\n  "
+module.exports = "<div class=\"reg\"><span style=\"float:left;\">회원가입 <span class=\"regerr\"></span></span><br/>\r\n    <hr/><br/>\r\n    <form (submit)=\"submitRegister()\">\r\n        <table class=\"regtable\">\r\n            <tr>\r\n                <td>아이디<span class=\"regerr\"> *</span></td>\r\n                <td><input class=\"reginput\" type=\"text\" name=\"id\" [(ngModel)]=\"id\" /></td>\r\n            </tr>\r\n            <tr>\r\n                <td>비밀번호<span class=\"regerr\"> *</span></td>\r\n                <td><input class=\"reginput\" type=\"password\" name=\"password\" [(ngModel)]=\"password\" /></td>\r\n            </tr>\r\n            <tr>\r\n                <td>이메일<span class=\"regerr\"> *</span></td>\r\n                <td><input class=\"reginput\" type=\"text\" name=\"email\" [(ngModel)]=\"email\" /></td>\r\n            </tr>\r\n            <tr>\r\n                <td>닉네임<span class=\"regerr\"> *</span></td>\r\n                <td><input class=\"reginput\" type=\"text\" name=\"nickname\" [(ngModel)]=\"nickname\" /></td>\r\n            </tr>\r\n            <tr>\r\n                <td>즐겨듣는 장르</td>\r\n                <td><input class=\"reginput\" type=\"text\" name=\"genre\" [(ngModel)]=\"genre\" /></td>\r\n            </tr>\r\n            <tr>\r\n                <td>자기소개 한마디</td>\r\n                <td><input class=\"reginput\" type=\"text\" name=\"intro\" [(ngModel)]=\"intro\" /></td>\r\n            </tr>\r\n            <tr>\r\n                <td colspan=\"2\" style=\"text-align:center;\"><input type=\"submit\" name=\"submit\" value=\"회원가입\" style=\"width:200px; height:50px;\" /></td>\r\n            </tr>\r\n        </table><br/>\r\n        <hr/><span class=\"regerr\">* </span><span class=\"regerr\" style=\"color:black;\">표시가 된 곳은 필수 입력사항입니다.</span><br/><br/><span class=\"link\">회원가입 이후 회원정보수정에서 회원코드를 메모해놓으세요. 추후 아이디/비밀번호 찾기에 필요합니다.</span></form>\r\n  </div>\r\n  "
 
 /***/ }),
 
@@ -794,7 +830,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"reg\" style=\"border-width:0px\"><span style=\"float:left\">로그인</span><br/>\n  <hr/><br/><br/>\n  <form (submit)=\"onLoginSubmit()\">\n    <input type=\"text\" name=\"id\" [(ngModel)]=\"id\" placeholder=\"아이디\" style=\"width:300px; height:50px\"/><br/><br/>\n    <input type=\"password\" name=\"password\" [(ngModel)]=\"password\" placeholder=\"비밀번호\" style=\"width:300px; height:50px\"/><br/><br/>\n    <input type=\"submit\" name=\"submit\" value=\"로그인\" style=\"width:300px; height:50px\"/><br/><br/>\n  </form><br/>\n  <hr/><a class=\"link\" [routerLink]=\"['./join']\" style=\"font-size:15px\">회원가입</a><span> | </span><a class=\"link\" [routerLink]=\"['./find']\" style=\"font-size:15px\">아이디/비밀번호 찾기</a>\n</div>"
+module.exports = "<div class=\"reg\" style=\"border-width:0px\"><span style=\"float:left\">로그인</span><br/>\r\n  <hr/><br/><br/>\r\n  <form (submit)=\"onLoginSubmit()\">\r\n    <input type=\"text\" name=\"id\" [(ngModel)]=\"id\" placeholder=\"아이디\" style=\"width:300px; height:50px\"/><br/><br/>\r\n    <input type=\"password\" name=\"password\" [(ngModel)]=\"password\" placeholder=\"비밀번호\" style=\"width:300px; height:50px\"/><br/><br/>\r\n    <input type=\"submit\" name=\"submit\" value=\"로그인\" style=\"width:300px; height:50px\"/><br/><br/>\r\n  </form><br/>\r\n  <hr/><a class=\"link\" [routerLink]=\"['./join']\" style=\"font-size:15px\">회원가입</a><span> | </span><a class=\"link\" [routerLink]=\"['./find']\" style=\"font-size:15px\">아이디/비밀번호 찾기</a>\r\n</div>"
 
 /***/ }),
 
@@ -892,7 +928,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box\"><span>음악게시판</span>\n  <hr/><br/><br/>\n  <table class=\"tb\">\n    <tr style=\"height:25px; font-weight:bold\">\n      <td style=\"width:70px\">번호</td>\n      <td style=\"width:140px\">제목</td>\n      <td style=\"width:65px\">작성자</td>\n      <td style=\"width:100px\">날짜</td>\n      <td style=\"width:55px\">조회수</td>\n      <td style=\"width:40px\">전체평점</td>\n    </tr>\n\n    <ng-container *ngFor=\"let val of music\">\n      <tr class=\"trhover\" style=\"height:20px;\">\n        <td>{{val.num}}</td>\n        <td style=\"text-align:left; padding:50px;\">\n          <a class=\"link\" [routerLink]=\"['../content']\" [queryParams]=\"{type: 'free', num: val.num}\">{{val.title}}</a> \n          <span style=\"font-size:12px; color:grey;\" *ngIf=\"val.comment.length > 0\">[{{val.comment.length}}]</span>\n        </td>\n        <td>{{val.nickname}}</td>\n        <td>{{val.writedate}}</td>\n        <td>{{val.hit}}</td>\n        <td>{{val.grade}}</td>\n      </tr>\n    </ng-container>\n\n  </table>\n  <br/><br/>\n\n  <form method=\"POST\" action=\"./write\" *ngIf=\"loggedIn\">\n    <input type=\"submit\" name=\"submit\" value=\"글쓰기\" style=\"float:right;\"/>\n    <input type=\"hidden\" name=\"type\" value=\"music\"/>\n  </form>\n</div>"
+module.exports = "<div class=\"box\"><span>음악게시판</span>\r\n  <hr/><br/><br/>\r\n  <table class=\"tb\">\r\n    <tr style=\"height:25px; font-weight:bold\">\r\n      <td style=\"width:70px\">번호</td>\r\n      <td style=\"width:140px\">제목</td>\r\n      <td style=\"width:65px\">작성자</td>\r\n      <td style=\"width:100px\">날짜</td>\r\n      <td style=\"width:55px\">조회수</td>\r\n      <td style=\"width:40px\">전체평점</td>\r\n    </tr>\r\n\r\n    <ng-container *ngFor=\"let val of music\">\r\n      <tr class=\"trhover\" style=\"height:20px;\">\r\n        <td>{{val.num}}</td>\r\n        <td style=\"text-align:left; padding:50px;\">\r\n          <a class=\"link\" [routerLink]=\"['../content']\" [queryParams]=\"{type: 'free', num: val.num}\">{{val.title}}</a> \r\n          <span style=\"font-size:12px; color:grey;\" *ngIf=\"val.comment.length > 0\">[{{val.comment.length}}]</span>\r\n        </td>\r\n        <td>{{val.nickname}}</td>\r\n        <td>{{val.writedate}}</td>\r\n        <td>{{val.hit}}</td>\r\n        <td>{{val.grade}}</td>\r\n      </tr>\r\n    </ng-container>\r\n\r\n  </table>\r\n  <br/><br/>\r\n\r\n  <form method=\"POST\" action=\"./write\" *ngIf=\"loggedIn\">\r\n    <input type=\"submit\" name=\"submit\" value=\"글쓰기\" style=\"float:right;\"/>\r\n    <input type=\"hidden\" name=\"type\" value=\"music\"/>\r\n  </form>\r\n</div>"
 
 /***/ }),
 
@@ -969,7 +1005,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"topscroll\">\r\n  <a style=\"text-decoration:none; color:black; font-weight:bold;\" href=\"#top\">TOP</a>\r\n</div>\r\n\r\n<header style=\"padding-top:20px; padding-bottom:20px;\">\r\n  <ul style=\"float:right; list-style:none;\">\r\n    <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\r\n      <a [routerLink]=\"['./notice']\" class=\"link\">공지사항</a>\r\n    </li>\r\n    <li *ngIf=\"handleuserService.loggedIn()\">\r\n      <a (click)=\"onLogoutClick()\" href=\"javascript:;\" class=\"link\">로그아웃</a>\r\n    </li>\r\n    <li *ngIf=\"!handleuserService.loggedIn()\" [routerLinkActive]=\"['active']\">\r\n      <a [routerLink]=\"['./loginpage']\" class=\"link\">로그인</a>\r\n    </li>\r\n    <!-- have to add links to admin page here -->\r\n    <li *ngIf=\"loggedIn && user.id == 'admin'\" [routerLinkActive]=\"['active']\">\r\n      <a [routerLink]=\"['./admin']\" class=\"link\">어드민</a>\r\n    </li>\r\n    <li *ngIf=\"loggedIn && user.boardRequest == 2\" [routerLinkActive]=\"['active']\">\r\n        <a [routerLink]=\"['./subadmin']\" class=\"link\">어드민</a>\r\n    </li>\r\n  </ul>\r\n  <div style=\"text-align:center;\">\r\n    <a style=\"text-decoration:none; color:black; font-family:Ubuntu;\" [routerLink]=\"['./start']\">\r\n      elevator\r\n    </a>\r\n  </div>\r\n</header>\r\n<br/>\r\n<div id=\"nav\">\r\n  <nav>\r\n    <a [routerLink]=\"['./start']\">HOME</a>\r\n    <a [routerLink]=\"['./free']\">자유게시판</a>\r\n    <a [routerLink]=\"['./music']\">음악게시판</a>\r\n    <a [routerLink]=\"['./subs']\">서브게시판</a>\r\n    <a [routerLink]=\"['./suggest']\">건의게시판</a>\r\n  </nav>\r\n</div>\r\n"
+module.exports = "<div id=\"topscroll\">\r\n  <a style=\"text-decoration:none; color:black; font-weight:bold;\" href=\"#top\">TOP</a>\r\n</div>\r\n\r\n<header style=\"padding-top:20px; padding-bottom:20px;\">\r\n  <ul style=\"float:right; list-style:none;\">\r\n    <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\r\n      <a [routerLink]=\"['./notice']\" class=\"link\">공지사항</a>\r\n    </li>\r\n    <li *ngIf=\"loggedIn\">\r\n      <a (click)=\"onLogoutClick()\" href=\"javascript:;\" class=\"link\">로그아웃</a>\r\n    </li>\r\n    <li *ngIf=\"!loggedIn\" [routerLinkActive]=\"['active']\">\r\n      <a [routerLink]=\"['./loginpage']\" class=\"link\">로그인</a>\r\n    </li>\r\n    <!-- have to add links to admin page here -->\r\n    <li *ngIf=\"loggedIn && user.id == 'admin'\" [routerLinkActive]=\"['active']\">\r\n      <a [routerLink]=\"['./admin']\" class=\"link\">어드민</a>\r\n    </li>\r\n    <li *ngIf=\"loggedIn && user.boardRequest == 2\" [routerLinkActive]=\"['active']\">\r\n        <a [routerLink]=\"['./subadmin']\" class=\"link\">어드민</a>\r\n    </li>\r\n  </ul>\r\n  <div style=\"text-align:center;\">\r\n    <a style=\"text-decoration:none; color:black; font-family:Ubuntu;\" [routerLink]=\"['./start']\">\r\n      elevator\r\n    </a>\r\n  </div>\r\n</header>\r\n<br/>\r\n<div id=\"nav\">\r\n  <nav>\r\n    <a [routerLink]=\"['./start']\">HOME</a>\r\n    <a [routerLink]=\"['./free']\">자유게시판</a>\r\n    <a [routerLink]=\"['./music']\">음악게시판</a>\r\n    <a [routerLink]=\"['./subs']\">서브게시판</a>\r\n    <a [routerLink]=\"['./suggest']\">건의게시판</a>\r\n  </nav>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1012,6 +1048,7 @@ var NavbarComponent = /** @class */ (function () {
     NavbarComponent.prototype.onLogoutClick = function () {
         var _this = this;
         this.handleuserService.logout().subscribe(function (data) {
+            _this.router.navigated = false;
             _this.router.navigate(['./start']);
         });
     };
@@ -1049,7 +1086,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box\">\r\n  <span id=\"visitor\">공지사항</span><hr/><br/>\r\n\r\n  <form method=\"POST\" action=\"./handleNotice\" *ngIf=\"user.id == 'admin'\">\r\n    <table style=\"width:700px; margin:auto;\">\r\n      <tr>\r\n        <td><textarea cols=\"80\" rows=\"5\" name=\"comment\"></textarea></td>\r\n        <td><input type=\"submit\" name=\"cmt\" value=\"작성\" style=\"width:100px; height:80px;\" /></td>\r\n      </tr>\r\n    </table>\r\n  </form><br/>\r\n\r\n  <table class=\"tb2\" *ngFor=\"let val of content\">\r\n    <tr style=\"height:110px; vertical-align:top;\">\r\n        <td style=\"text-align:center; vertical-align:middle; width:110px; border-right:1px solid rgb(0,91,159);\">\r\n          <img src=\"'images/profileimages/' + val.id\" width=\"70\" height=\"70\" />\r\n        </td>\r\n        <td>\r\n            <div style=\"font-size:12px; padding:2px; margin-left:5px; border-bottom:1px dotted rgb(0,91,159);\">\r\n              <b *ngIf=\"val.id == 'admin'\">\r\n                <a class=\"tblink\" href=\"javascript:;\" onclick=\"\">{{val.nickname}}</a>\r\n              </b>\r\n              <a *ngIf=\"val.id != 'admin'\" class=\"tblink\" href=\"javascript:;\" onclick=\"\">{{val.nickname}}</a>\r\n              <span style=\"font-size:12px; float:right;\">{{val.writedate}}</span>\r\n            </div>\r\n            <div style=\"padding-left:10px;\">\r\n              <pre class=\"contentView\">{{val.comment}}</pre>\r\n            </div>\r\n        </td>\r\n        <td style=\"text-align:right;\"></td>\r\n    </tr>\r\n  </table>\r\n</div>\r\n"
+module.exports = "<div class=\"box\">\r\n  <span id=\"visitor\">공지사항</span><hr/><br/>\r\n\r\n  <form (submit)=\"onWrite()\" *ngIf=\"user.id == 'admin'\">\r\n    <table style=\"width:700px; margin:auto;\">\r\n      <tr>\r\n        <td><textarea cols=\"80\" rows=\"5\" name=\"comment\"></textarea></td>\r\n        <td><input type=\"submit\" name=\"cmt\" value=\"작성\" style=\"width:100px; height:80px;\" /></td>\r\n      </tr>\r\n    </table>\r\n  </form><br/>\r\n\r\n  <table class=\"tb2\" *ngFor=\"let val of content\">\r\n    <tr style=\"height:110px; vertical-align:top;\">\r\n        <td style=\"text-align:center; vertical-align:middle; width:110px; border-right:1px solid rgb(0,91,159);\">\r\n          <img src=\"'images/profileimages/' + val.id\" width=\"70\" height=\"70\" />\r\n        </td>\r\n        <td>\r\n            <div style=\"font-size:12px; padding:2px; margin-left:5px; border-bottom:1px dotted rgb(0,91,159);\">\r\n              <b *ngIf=\"val.id == 'admin'\">\r\n                <a class=\"tblink\" href=\"javascript:;\" onclick=\"\">{{val.nickname}}</a>\r\n              </b>\r\n              <a *ngIf=\"val.id != 'admin'\" class=\"tblink\" href=\"javascript:;\" onclick=\"\">{{val.nickname}}</a>\r\n              <span style=\"font-size:12px; float:right;\">{{val.writedate}}</span>\r\n            </div>\r\n            <div style=\"padding-left:10px;\">\r\n              <pre class=\"contentView\">{{val.comment}}</pre>\r\n            </div>\r\n        </td>\r\n        <td style=\"text-align:right;\"></td>\r\n    </tr>\r\n  </table>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1065,6 +1102,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NoticeComponent", function() { return NoticeComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_handleboard_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/handleboard.service */ "./src/app/services/handleboard.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ng-flash-messages */ "./node_modules/ng-flash-messages/ng-flash-messages.umd.js");
+/* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(ng_flash_messages__WEBPACK_IMPORTED_MODULE_3__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1076,9 +1116,13 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
+
 var NoticeComponent = /** @class */ (function () {
-    function NoticeComponent(handleboardService) {
+    function NoticeComponent(handleboardService, router, flashMessage) {
         this.handleboardService = handleboardService;
+        this.router = router;
+        this.flashMessage = flashMessage;
     }
     NoticeComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1087,90 +1131,36 @@ var NoticeComponent = /** @class */ (function () {
             _this.content = data.content;
         });
     };
+    NoticeComponent.prototype.onWrite = function () {
+        var _this = this;
+        var formData = {
+            comment: this.comment
+        };
+        this.handleboardService.handleNotice(formData).subscribe(function (data) {
+            if (data.success) {
+                _this.router.navigated = false;
+                _this.router.navigate(['./notice']);
+            }
+            else {
+                _this.flashMessage.showFlashMessage({
+                    messages: ['글작성 에러'],
+                    type: 'danger',
+                    timeout: 3000
+                });
+            }
+        });
+    };
     NoticeComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-notice',
             template: __webpack_require__(/*! ./notice.component.html */ "./src/app/components/notice/notice.component.html"),
             styles: [__webpack_require__(/*! ./notice.component.css */ "./src/app/components/notice/notice.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_handleboard_service__WEBPACK_IMPORTED_MODULE_1__["HandleboardService"]])
+        __metadata("design:paramtypes", [_services_handleboard_service__WEBPACK_IMPORTED_MODULE_1__["HandleboardService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            ng_flash_messages__WEBPACK_IMPORTED_MODULE_3__["NgFlashMessageService"]])
     ], NoticeComponent);
     return NoticeComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/components/reload/reload.component.css":
-/*!********************************************************!*\
-  !*** ./src/app/components/reload/reload.component.css ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/components/reload/reload.component.html":
-/*!*********************************************************!*\
-  !*** ./src/app/components/reload/reload.component.html ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  hello\n</p>\n"
-
-/***/ }),
-
-/***/ "./src/app/components/reload/reload.component.ts":
-/*!*******************************************************!*\
-  !*** ./src/app/components/reload/reload.component.ts ***!
-  \*******************************************************/
-/*! exports provided: ReloadComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReloadComponent", function() { return ReloadComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var ReloadComponent = /** @class */ (function () {
-    function ReloadComponent(http, route, router, _location) {
-        this.http = http;
-        this.route = route;
-        this.router = router;
-        this._location = _location;
-    }
-    ReloadComponent.prototype.ngOnInit = function () {
-        this._location.reload();
-    };
-    ReloadComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-reload',
-            template: __webpack_require__(/*! ./reload.component.html */ "./src/app/components/reload/reload.component.html"),
-            styles: [__webpack_require__(/*! ./reload.component.css */ "./src/app/components/reload/reload.component.css")]
-        }),
-        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
-            Location])
-    ], ReloadComponent);
-    return ReloadComponent;
 }());
 
 
@@ -1195,7 +1185,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"width:1000px; margin:auto;\">\n  <div *ngIf=\"!loggedIn\">\n    <form class=\"loginbox\" (submit)=\"onLoginSubmit()\">\n      <table style=\"border-collapse:collapse;\">\n          <hr/>\n          <tr>\n              <td><input type=\"text\" name=\"id\" [(ngModel)]=\"id\" placeholder=\"아이디\" style=\"width:120px; height:20px;\" /></td>\n              <td rowspan=\"2\"><input type=\"submit\" name=\"submit\" style=\"height:55px;\" value=\"로그인\" /></td>\n          </tr>\n          <tr>\n              <td><input type=\"password\" name=\"password\" [(ngModel)]=\"password\" placeholder=\"비밀번호\" style=\"width:120px; height:20px;\" /></td>\n          </tr>\n      </table>\n      <hr/><a class=\"link\" [routerLink]=\"['./join']\">회원가입</a><span class=\"link\"> | </span><a class=\"link\" [routerLink]=\"['./find']\">아이디/비밀번호 찾기</a></form>\n  </div>\n  <div *ngIf=\"loggedIn\">\n    <div class=\"loginbox\" style=\"text-align:center; font-size:13px;\">\n      <b>{{user.nickname}}</b>\n      <span>님, 반갑습니다</span><br/><hr/>\n      <b *ngIf=\"user.stop\" style=\"color:red;\">정지회원</b>\n      <b *ngIf=\"!user.stop\">클린회원</b><br/>\n      <a href=\"javascript:;\" onclick=\"info()\" class=\"link\">나의 정보</a><br/>\n      <a class=\"link\" [routerLink]=\"['./fix']\">회원정보수정</a> | \n      <a class=\"link\" (click)=\"onLogoutClick()\" href=\"javascript:;\">로그아웃</a><br/><hr/>\n      <span>가입일: {{user.joindate}}</span>\n    </div>\n  </div>\n  <div class=\"date\">\n    <span>make your own music</span><br/>\n    {{user}}\n  </div>\n</div>\n\n<div class=\"box\">\n  <a class=\"board\" [routerLink]=\"['./free']\">ㆍ자유게시판</a><hr/>\n  <div class=\"startdiv\">Test</div>\n</div>\n<br/><br/>\n\n<div class=\"box\">\n  <a class=\"board\" [routerLink]=\"['./music']\">ㆍ음악게시판</a><hr/>\n  <div class=\"startdiv\">Test</div>\n</div>\n<br/><br/>\n\n<div class=\"box\">\n  <a class=\"board\" [routerLink]=\"['./suggest']\">ㆍ건의게시판</a><hr/>\n  <div class=\"startdiv\">Test</div>\n</div>\n<br/><br/>\n"
+module.exports = "<div style=\"width:1000px; margin:auto;\">\r\n  <div *ngIf=\"!loggedIn\">\r\n    <form class=\"loginbox\" (submit)=\"onLoginSubmit()\">\r\n      <table style=\"border-collapse:collapse;\">\r\n          <hr/>\r\n          <tr>\r\n              <td><input type=\"text\" name=\"id\" [(ngModel)]=\"id\" placeholder=\"아이디\" style=\"width:120px; height:20px;\" /></td>\r\n              <td rowspan=\"2\"><input type=\"submit\" name=\"submit\" style=\"height:55px;\" value=\"로그인\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td><input type=\"password\" name=\"password\" [(ngModel)]=\"password\" placeholder=\"비밀번호\" style=\"width:120px; height:20px;\" /></td>\r\n          </tr>\r\n      </table>\r\n      <hr/><a class=\"link\" [routerLink]=\"['./join']\">회원가입</a><span class=\"link\"> | </span><a class=\"link\" [routerLink]=\"['./find']\">아이디/비밀번호 찾기</a></form>\r\n  </div>\r\n  <div *ngIf=\"loggedIn\">\r\n    <div class=\"loginbox\" style=\"text-align:center; font-size:13px;\">\r\n      <b>{{user.nickname}}</b>\r\n      <span>님, 반갑습니다</span><br/><hr/>\r\n      <b *ngIf=\"user.stop\" style=\"color:red;\">정지회원</b>\r\n      <b *ngIf=\"!user.stop\">클린회원</b><br/>\r\n      <a href=\"javascript:;\" onclick=\"info()\" class=\"link\">나의 정보</a><br/>\r\n      <a class=\"link\" [routerLink]=\"['./fix']\">회원정보수정</a> | \r\n      <a class=\"link\" (click)=\"onLogoutClick()\" href=\"javascript:;\">로그아웃</a><br/><hr/>\r\n      <span>가입일: {{user.joindate}}</span>\r\n    </div>\r\n  </div>\r\n  <div class=\"date\">\r\n    <span>make your own music</span><br/>\r\n    {{user}}\r\n  </div>\r\n</div>\r\n\r\n<div class=\"box\">\r\n  <a class=\"board\" [routerLink]=\"['./free']\">ㆍ자유게시판</a><hr/>\r\n  <div class=\"startdiv\">Test</div>\r\n</div>\r\n<br/><br/>\r\n\r\n<div class=\"box\">\r\n  <a class=\"board\" [routerLink]=\"['./music']\">ㆍ음악게시판</a><hr/>\r\n  <div class=\"startdiv\">Test</div>\r\n</div>\r\n<br/><br/>\r\n\r\n<div class=\"box\">\r\n  <a class=\"board\" [routerLink]=\"['./suggest']\">ㆍ건의게시판</a><hr/>\r\n  <div class=\"startdiv\">Test</div>\r\n</div>\r\n<br/><br/>\r\n"
 
 /***/ }),
 
@@ -1251,14 +1241,14 @@ var StartComponent = /** @class */ (function () {
                 _this.router.navigate(['./start']);
             }
             else {
-                // this.router.navigate(['localhost:3000/loginpage']);
-                _this.location.reload();
+                _this.router.navigate(['localhost:3000/loginpage']);
             }
         });
     };
     StartComponent.prototype.onLogoutClick = function () {
         var _this = this;
         this.handleuserService.logout().subscribe(function (data) {
+            _this.router.navigated = false;
             _this.router.navigate(['./start']);
         });
     };
@@ -1577,7 +1567,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box\">\n  <span id=\"visitor\">건의사항</span><hr/><br/>\n\n  <form (submit)=\"onWrite()\" *ngIf=\"loggedIn\">\n    <table style=\"width:700px; margin:auto\">\n      <tr>\n        <td>\n          <textarea cols=\"80\" rows=\"5\" name=\"comment\" [(ngModel)]=\"comment\"></textarea>\n        </td>\n        <td>\n          <input type=\"submit\" name=\"cmt\" value=\"작성\" style=\"width:100px; height:80px\"/>\n        </td>\n      </tr>\n    </table>\n  </form>\n\n  <table class=\"tb2\" *ngFor=\"let val of content\">\n    <tr style=\"height:110px; vertical-align:top;\">\n      <td style=\"text-align:center; vertical-align:middle; width:110px; border-right:1px solid rgb(0,91,159)\">\n        <img width=\"70\" height=\"70\"/>\n      </td>\n      <td>\n        <div style=\"font-size:12px; padding:2px; margin-left:5px; border-bottom:1px dotted rgb(0,91,159);\">\n          <b *ngIf=\"val.id == 'admin'\">\n            <a class=\"tblink\" href=\"javascript:;\">{{val.nickname}}</a>\n          </b>\n          <a *ngIf=\"val.id != 'admin'\" class=\"tblink\" href=\"javascript:;\">{{val.nickname}}</a>\n          <span style=\"font-size:12px; float:right;\">{{val.writedate}}</span>\n        </div>\n        <div style=\"padding-left:10px;\">\n          <pre class=\"contentView\">{{val.comment}}</pre>\n        </div>\n      </td>\n    </tr>\n  </table>\n\n</div>>"
+module.exports = "<div class=\"box\">\r\n  <span id=\"visitor\">건의사항</span><hr/><br/>\r\n\r\n  <form (submit)=\"onWrite()\" *ngIf=\"loggedIn\">\r\n    <table style=\"width:700px; margin:auto\">\r\n      <tr>\r\n        <td>\r\n          <textarea cols=\"80\" rows=\"5\" name=\"comment\" [(ngModel)]=\"comment\"></textarea>\r\n        </td>\r\n        <td>\r\n          <input type=\"submit\" name=\"cmt\" value=\"작성\" style=\"width:100px; height:80px\"/>\r\n        </td>\r\n      </tr>\r\n    </table>\r\n  </form>\r\n\r\n  <table class=\"tb2\" *ngFor=\"let val of content\">\r\n    <tr style=\"height:110px; vertical-align:top;\">\r\n      <td style=\"text-align:center; vertical-align:middle; width:110px; border-right:1px solid rgb(0,91,159)\">\r\n        <img width=\"70\" height=\"70\"/>\r\n      </td>\r\n      <td>\r\n        <div style=\"font-size:12px; padding:2px; margin-left:5px; border-bottom:1px dotted rgb(0,91,159);\">\r\n          <b *ngIf=\"val.id == 'admin'\">\r\n            <a class=\"tblink\" href=\"javascript:;\">{{val.nickname}}</a>\r\n          </b>\r\n          <a *ngIf=\"val.id != 'admin'\" class=\"tblink\" href=\"javascript:;\">{{val.nickname}}</a>\r\n          <span style=\"font-size:12px; float:right;\">{{val.writedate}}</span>\r\n        </div>\r\n        <div style=\"padding-left:10px;\">\r\n          <pre class=\"contentView\">{{val.comment}}</pre>\r\n        </div>\r\n      </td>\r\n    </tr>\r\n  </table>\r\n\r\n</div>>"
 
 /***/ }),
 
@@ -1637,6 +1627,8 @@ var SuggestComponent = /** @class */ (function () {
         };
         this.handleboardService.handleSuggest(formData).subscribe(function (data) {
             if (data.success) {
+                // this.router.navigate(['./suggest']);
+                _this.router.navigated = false;
                 _this.router.navigate(['./suggest']);
             }
             else {
@@ -1685,7 +1677,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box\"><span>글 작성</span>\n  <hr/><br/>\n  <form (submit)=\"submitWrite(fileInput.files)\">\n      <table style=\"margin:auto; width:700px; text-align:center;\">\n          <tr>\n              <td style=\"height:50px;\"><input type=\"text\" placeholder=\"제목\" name=\"title\" [(ngModel)]=\"title\" style=\"width:600px; height:30px;\" /></td>\n          </tr>\n          <tr>\n              <td><textarea cols=\"90\" rows=\"30\" name=\"content\" [(ngModel)]=\"content\"></textarea></td>\n          </tr>\n          <tr>\n              <td style=\"height:50px;\"><input type=\"text\" name=\"tag\" [(ngModel)]=\"tag\" placeholder=\"html 태그를 입력해주세요\" style=\"width:500px;\" /><br/><br/>\n                <input type=\"file\" name=\"image\" [(ngModel)]=\"image\" accept=\"image/*\" (change)=\"onFileChange(fileInput.files)\" /><span class=\"link\">이미지 (jpg,jpeg,png,gif)</span><br/>\n                <input type=\"file\" name=\"audio\" [(ngModel)]=\"audio\" accept=\"audio/*\" (change)=\"onFileChange(fileInput.files)\" /><span class=\"link\">음악 (mp3, ogg, wav)</span><br/>\n                <input type=\"submit\" name=\"submit\" value=\"작성\" style=\"float:right;\" /><input type=\"hidden\" name=\"boardtype\" [(ngModel)]=\"boardtype\" value=\"{{type}}\" /></td>\n          </tr>\n      </table>\n  </form>\n</div>\n"
+module.exports = "<div class=\"box\"><span>글 작성</span>\r\n  <hr/><br/>\r\n  <form (submit)=\"submitWrite(fileInput.files)\">\r\n      <table style=\"margin:auto; width:700px; text-align:center;\">\r\n          <tr>\r\n              <td style=\"height:50px;\"><input type=\"text\" placeholder=\"제목\" name=\"title\" [(ngModel)]=\"title\" style=\"width:600px; height:30px;\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td><textarea cols=\"90\" rows=\"30\" name=\"content\" [(ngModel)]=\"content\"></textarea></td>\r\n          </tr>\r\n          <tr>\r\n              <td style=\"height:50px;\"><input type=\"text\" name=\"tag\" [(ngModel)]=\"tag\" placeholder=\"html 태그를 입력해주세요\" style=\"width:500px;\" /><br/><br/>\r\n                <input type=\"file\" name=\"image\" [(ngModel)]=\"image\" accept=\"image/*\" (change)=\"onFileChange(fileInput.files)\" /><span class=\"link\">이미지 (jpg,jpeg,png,gif)</span><br/>\r\n                <input type=\"file\" name=\"audio\" [(ngModel)]=\"audio\" accept=\"audio/*\" (change)=\"onFileChange(fileInput.files)\" /><span class=\"link\">음악 (mp3, ogg, wav)</span><br/>\r\n                <input type=\"submit\" name=\"submit\" value=\"작성\" style=\"float:right;\" /><input type=\"hidden\" name=\"boardtype\" [(ngModel)]=\"boardtype\" value=\"{{type}}\" /></td>\r\n          </tr>\r\n      </table>\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1833,6 +1825,11 @@ var HandleboardService = /** @class */ (function () {
         headers.append('Content-type', 'application/json');
         return this.http.post('http://localhost:3000/handleSuggest', formData, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
+    HandleboardService.prototype.handleNotice = function (formData) {
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
+        headers.append('Content-type', 'application/json');
+        return this.http.post('http://localhost:3000/handleNotice', formData, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+    };
     HandleboardService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
         __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"]])
@@ -1906,6 +1903,11 @@ var HandleuserService = /** @class */ (function () {
         headers.append('Content-Type', 'application/json');
         return this.http.post('http://localhost:3000/ajax/subscribeboard', { subid: subid }, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
     };
+    HandleuserService.prototype.fixUser = function (user) {
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
+        headers.append('Content-Type', 'multipart/form-data');
+        return this.http.post('http://localhost:3000/handleFix', user, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
+    };
     HandleuserService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(
         // {providedIn: 'root'}
@@ -1973,7 +1975,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_0__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\PJH\Elevator2\angular-src\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\PJH\webNapp\Elevator_Angular\angular-src\src\main.ts */"./src/main.ts");
 
 
 /***/ })

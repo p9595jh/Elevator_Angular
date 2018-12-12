@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+// import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -26,7 +27,6 @@ import { FindComponent } from './components/find/find.component';
 import { FixComponent } from './components/fix/fix.component';
 import { NoticeComponent } from './components/notice/notice.component';
 import { SubadminComponent } from './components/subadmin/subadmin.component';
-import { ReloadComponent } from './components/reload/reload.component';
 
 const appRoutes: Routes = [
   { path: '', component: StartComponent },
@@ -66,8 +66,7 @@ const appRoutes: Routes = [
     FindComponent,
     FixComponent,
     NoticeComponent,
-    SubadminComponent,
-    ReloadComponent
+    SubadminComponent
   ],
   imports: [
     BrowserModule,

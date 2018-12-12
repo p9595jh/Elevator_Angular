@@ -1,10 +1,10 @@
 <div class="reg"><span style="float:left;">회원정보수정 </span><br/>
   <hr/><br/>
-  <form method="POST" action="./handleFix" enctype="multipart/form-data">
+  <form (submit)="onFixSubmit()">
       <table class="regtable" style="height:600px;">
           <tr>
               <td>기존 비밀번호<span class="regerr">*</span></td>
-              <td><input class="reginput" type="password" name="password" /></td>
+              <td><input class="reginput" type="password" name="password" [(ngModel)]="password" /></td>
           </tr>
           <tr>
               <td>새 비밀번호<span class="regerr">*</span></td>
@@ -12,19 +12,19 @@
           </tr>
           <tr>
               <td>닉네임<span class="regerr">*</span></td>
-              <td><input class="reginput" type="text" name="nickname" value="user.nickname" /></td>
+              <td><input class="reginput" type="text" name="nickname" [(ngModel)]="nickname" value="user.nickname" /></td>
           </tr>
           <tr>
               <td>좋아하는 장르</td>
-              <td><input class="reginput" type="text" name="genre" value="user.genre" /></td>
+              <td><input class="reginput" type="text" name="genre" [(ngModel)]="genre" value="user.genre" /></td>
           </tr>
           <tr>
               <td>한줄 자기소개</td>
-              <td><input class="reginput" type="text" name="intro" value="user.introduction" /></td>
+              <td><input class="reginput" type="text" name="intro" [(ngModel)]="intro" value="user.introduction" /></td>
           </tr>
           <tr>
               <td>프로필 이미지</td>
-              <td><input type="file" name="image" /></td>
+              <td><input type="file" name="image" [(ngModel)]="image" /></td>
           </tr>
           <tr>
               <td colspan="2" style="text-align:center;"><input type="submit" name="submit" value="수정" style="width:200px; height:50px;" /></td>
