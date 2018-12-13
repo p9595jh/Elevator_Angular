@@ -45,6 +45,10 @@ export class StartComponent implements OnInit, OnDestroy {
     }
   }
 
+  openWindow(userid: string) {
+    this.handleuserService.openWindow('http://localhost:3000/info?userid='+userid);
+  }
+
   onLoginSubmit() {
     const formData = {
       id: this.id,

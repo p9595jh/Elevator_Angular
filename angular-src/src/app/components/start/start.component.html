@@ -19,14 +19,14 @@
       <span>님, 반갑습니다</span><br/><hr/>
       <b *ngIf="user.stop" style="color:red;">정지회원</b>
       <b *ngIf="!user.stop">클린회원</b><br/>
-      <a href="javascript:;" onclick="info()" class="link">나의 정보</a><br/>
+      <a href="javascript:;" (click)="openWindow(user?.id)" class="link">나의 정보</a><br/>
       <a class="link" [routerLink]="['../fix']">회원정보수정</a> | 
       <a class="link" (click)="onLogoutClick()" href="javascript:;">로그아웃</a><br/><hr/>
       <span>가입일: {{user.joindate}}</span>
     </div>
   </div>
   <div class="date">
-    <span>make your own music</span><br/>
+    <span><img src="images/testimage.jpg" width="118" height="70" /></span><br/>
     <!-- {{user}} -->
   </div>
 </div>

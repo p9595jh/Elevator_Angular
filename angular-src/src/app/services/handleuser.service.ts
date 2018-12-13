@@ -3,15 +3,24 @@ import { Http, Headers, Response } from '@angular/http';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 
+function _window() {
+  return window;
+}
+
 @Injectable(
   // {providedIn: 'root'}
 )
 export class HandleuserService {
 
   constructor(
-    private http:Http,
-    private router:Router
+    private http: Http,
+    private router: Router
   ) { }
+
+  openWindow(url: string) {
+    const option = 'width=500, height=600, left=300, top=100, scrollbars=yes, toolbars=no, location=no';
+    _window().open(url, '', option);
+  }
 
   loggedIn() {
     let headers = new Headers();
@@ -19,7 +28,7 @@ export class HandleuserService {
     return this.http.get('http://localhost:3000/login/ng', {headers: headers}).pipe(map((res: Response) => res.json()));
   }
 
-  loggingIn(user) {
+  loggingIn(user: any) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/login', user, {headers: headers}).pipe(map((res: Response) => res.json()));
@@ -37,7 +46,7 @@ export class HandleuserService {
     return this.http.get('http://localhost:3000/logout', {headers: headers}).pipe(map((res: Response) => res.json()));
   }
 
-  handleRegi(user) {
+  handleRegi(user: any) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/handleRegi', user, {headers: headers}).pipe(map((res: Response) => res.json()));
@@ -49,7 +58,7 @@ export class HandleuserService {
     return this.http.post('http://localhost:3000/ajax/subscribeboard', {subid: subid}, {headers: headers}).pipe(map((res: Response) => res.json()));
   }
 
-  fixUser(user) {
+  fixUser(user: any) {
     let headers = new Headers();
     headers.append('Content-Type', 'multipart/form-data; boundary=----WebKitFormBoundaryl4oxlVSt9yblG8VC');
     // headers.append('Content-Type', 'application/json');
