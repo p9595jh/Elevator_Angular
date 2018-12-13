@@ -1,28 +1,48 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HandleuserService } from '../../services/handleuser.service';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-start',
   templateUrl: './start.component.html',
   styleUrls: ['./start.component.css']
 })
-export class StartComponent implements OnInit {
+export class StartComponent implements OnInit, OnDestroy {
   loggedIn: boolean;
   user: Object;
   id: String;
   password: String;
+  navigationSubscription;
 
   constructor(
     private handleuserService: HandleuserService,
     private router: Router
-  ) { }
+  ) {
+    this.navigationSubscription = this.router.events.subscribe((e: any) => {
+      if ( e instanceof NavigationEnd ) {
+        this.initialiseInvites();
+      }
+    })
+  }
 
   ngOnInit() {
     this.handleuserService.getLoginData().subscribe(data => {
       this.loggedIn = data.result;
       this.user = data.user;
     });
+  }
+
+  initialiseInvites() {
+    this.handleuserService.getLoginData().subscribe(data => {
+      this.loggedIn = data.result;
+      this.user = data.user;
+    });
+  }
+
+  ngOnDestroy() {
+    if ( this.navigationSubscription ) {
+      this.navigationSubscription.unsubscribe();
+    }
   }
 
   onLoginSubmit() {

@@ -27,11 +27,11 @@
   </table>
   <br/><br/>
 
-  <form method="POST" action="./write" *ngIf="loggedIn && !user.stop">
+  <form method="POST" action="./write" *ngIf="loggedIn && !user?.stop">
     <input type="submit" name="submit" value="글쓰기" style="float:right;"/>
     <input type="hidden" name="type" value="val.type"/>
   </form>
   <button style="float:right;" onclick="">재생목록</button>
   <button style="float:left;" onclick="">라이브</button>
-  <button *ngIf="user.id == sub.id" style="float:left;">라이브 생성</button>
+  <button *ngIf="user?.id == sub?.id" style="float:left;">라이브 생성</button>
 </div>

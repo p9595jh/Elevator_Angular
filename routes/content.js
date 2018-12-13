@@ -10,7 +10,6 @@ var SubContent = require('./subcontents.js');
 mongoose.connect('mongodb://localhost:27017/elevator');
 
 router.get('/', function(req, res, next) {
-    console.log(req.query);
     const type = req.query.type;
     const number = req.query.num;
     const width = 700;
@@ -89,7 +88,7 @@ router.get('/', function(req, res, next) {
 
                 var User = require('./user.js');
                 User.findOne({id: musics.id}, function(err1, output1) {
-                    res.render('content', {
+                    return res.json({
                         user: {
                             id: req.session.userid,
                             nickname: req.session.nickname,
@@ -147,7 +146,7 @@ router.get('/', function(req, res, next) {
                 }
                 var Sc = require('./subcontents.js');
                 Sc.find({type: subs.type}).sort({num:-1}).exec(function(err, all) {
-                    res.render('content', {
+                    return res.json({
                         user: {
                             id: req.session.userid,
                             nickname: req.session.nickname,

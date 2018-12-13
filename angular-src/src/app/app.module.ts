@@ -73,7 +73,9 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, {
+      onSameUrlNavigation: 'reload'
+    }),
     // RouterTestingModule.withRoutes(appRoutes),
     NgFlashMessagesModule.forRoot()
   ],
@@ -81,6 +83,11 @@ const appRoutes: Routes = [
     HandleuserService,
     HandleboardService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ],
+  exports: [
+    RouterModule
+  ]
 })
 export class AppModule { }

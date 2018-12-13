@@ -64,8 +64,8 @@ export class ContentComponent implements OnInit {
 
   onWriteComment() {
     const formData = {
-      board: this.board,
-      _id: this._id,
+      board: this.listurl,
+      _id: this.content._id,
       comment: this.comment
     };
     let headers = new Headers();
@@ -87,10 +87,10 @@ export class ContentComponent implements OnInit {
 
   onDeleteComment() {
     const formData = {
-      contentnum: this.contentnum,
+      contentnum: this.content.num,
       num: this.num,
-      id: this.id,
-      boardtype: this.commentBoardtype
+      id: this.content.id,
+      boardtype: this.paramType
     }
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -126,6 +126,7 @@ export class ContentComponent implements OnInit {
       }
       else {
         var recommendBtn = document.getElementById("recommendBtn");
+        if ( !data.recommend ) data.recommend = this.content.recommend;
         recommendBtn.innerHTML = "추천 " + data.recommend;
       }
     });

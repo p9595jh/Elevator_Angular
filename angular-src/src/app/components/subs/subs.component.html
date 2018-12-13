@@ -13,14 +13,14 @@
     <ng-container *ngFor="let val of sub">
       <li>
         <a class="link" style="font-size:16px;" href="javascript:;" (click)="onSubscribeBoard(val?.id)">{{val?.id}}</a> 
-        <span style="font-size:12px; color:grey;"> [{{val?.subscribes}}]</span>
+        <span style="font-size:12px; color:grey;"> [{{val?.subscribes?.length-1}}]</span>
       </li>
     </ng-container>
   </ul>
   <ul *ngIf="!loggedIn">
     <ng-container *ngFor="let val of sub">
       <li>
-        {{val?.id}}<span style="font-size:12px; color:grey;"> [{{val?.subscribes}}]</span>
+        {{val?.id}}<span style="font-size:12px; color:grey;"> [{{val?.subscribes?.length-1}}]</span>
       </li>
     </ng-container>
   </ul>
