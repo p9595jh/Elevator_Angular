@@ -1,8 +1,8 @@
 <div class="box" *ngIf="loggedIn">
   <span>구독한 게시판</span><hr/><br/>
-  <ul *ngFor="let val of user.subscribes">
+  <ul *ngFor="let val of user?.subscribes">
     <li>
-      <a class="link" style="font-size:16px;" [routerLink]="['./subboard']" [queryParams]="{type: val}">{{val}}</a>
+      <a class="link" style="font-size:16px;" [routerLink]="['../subboard']" [queryParams]="{type: val}">{{val}}</a>
     </li>
   </ul>
 </div>
@@ -12,15 +12,15 @@
   <ul *ngIf="loggedIn">
     <ng-container *ngFor="let val of sub">
       <li>
-        <a class="link" style="font-size:16px;" href="javascript:;" (click)="onSubscribeBoard(val.id)">{{val.id}}</a> 
-        <span style="font-size:12px; color:grey;">[{{val.subscribes-1}}]</span>
+        <a class="link" style="font-size:16px;" href="javascript:;" (click)="onSubscribeBoard(val?.id)">{{val?.id}}</a> 
+        <span style="font-size:12px; color:grey;"> [{{val?.subscribes}}]</span>
       </li>
     </ng-container>
   </ul>
   <ul *ngIf="!loggedIn">
     <ng-container *ngFor="let val of sub">
       <li>
-        {{val.id}} <span style="font-size:12px; color:grey;">[{{val.subscribes-1}}]</span>
+        {{val?.id}}<span style="font-size:12px; color:grey;"> [{{val?.subscribes}}]</span>
       </li>
     </ng-container>
   </ul>

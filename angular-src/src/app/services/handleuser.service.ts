@@ -51,7 +51,8 @@ export class HandleuserService {
 
   fixUser(user) {
     let headers = new Headers();
-    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Content-Type', 'multipart/form-data; boundary=----WebKitFormBoundaryl4oxlVSt9yblG8VC');
+    // headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/handleFix', user, {headers: headers}).pipe(map((res: Response) => res.json()));
   }
 

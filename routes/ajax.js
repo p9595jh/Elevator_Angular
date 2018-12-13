@@ -132,7 +132,9 @@ router.post('/stop', function(req, res) {
 router.post('/substop', function(req, res) {
     if ( req.session.userid != req.body.boardtype ) {
         console.log('not board admin');
-        return;
+        return res.json({
+            message: 'fail'
+        });
     }
 
     var boardtype = req.body.boardtype;

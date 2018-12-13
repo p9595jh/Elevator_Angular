@@ -18,9 +18,13 @@ router.post('/', function(req, res) {
                 errmsg: 'database failure'
             })
         }
+        console.log(req.body);
         var form = new formidable.IncomingForm();
+        // form.uploadDir = '/uploadFiles';
 
         form.parse(req, function(err, fields, files) {
+            console.log(fields);
+            console.log(files);
             var password = fields.password;
             var passwordNew = fields.passwordNew;
             var nickname = fields.nickname;
@@ -52,16 +56,17 @@ router.post('/', function(req, res) {
 
                 User.updateOne({id: req.session.userid}, {pw: passwordNew, nickname: nickname, genre: genre, introduction: introduction}, function(err1, output) {
                     if ( err1 ) {
-                        res.status(500).json({err: 'database failure'});
                         return res.json({
                             success: false,
                             errmsg: 'database failure'
                         })
                     }
-                    req.session.nickname = nickname;
-                    return res.render('./start', {
-                        success: true
-                    });
+                    else {
+                        req.session.nickname = nickname;
+                        return res.json({
+                            success: true
+                        });
+                    }
                 });
             }
         });

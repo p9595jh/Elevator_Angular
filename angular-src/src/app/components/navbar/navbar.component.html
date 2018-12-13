@@ -14,10 +14,10 @@
       <a [routerLink]="['./loginpage']" class="link">로그인</a>
     </li>
     <!-- have to add links to admin page here -->
-    <li *ngIf="loggedIn && user.id == 'admin'" [routerLinkActive]="['active']">
+    <li *ngIf="loggedIn && user?.id == 'admin'" [routerLinkActive]="['active']">
       <a [routerLink]="['./admin']" class="link">어드민</a>
     </li>
-    <li *ngIf="loggedIn && user.boardRequest == 2" [routerLinkActive]="['active']">
+    <li *ngIf="loggedIn && user?.boardRequest == 2" [routerLinkActive]="['active']">
         <a [routerLink]="['./subadmin']" class="link">어드민</a>
     </li>
   </ul>

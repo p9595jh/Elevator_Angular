@@ -34,7 +34,7 @@ export class AdminComponent implements OnInit {
   onStopUser(userid) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/ajax/stop', {userid: userid}, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(data => {
+    this.http.post('http://localhost:3000/ajax/stop', {userid: userid}, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(data => {
       if ( data.message == 'done' ) {
         if ( data.stop ) {
           document.getElementById(userid).style.color = "red";

@@ -10,8 +10,9 @@ var SubContent = require('./subcontents.js');
 mongoose.connect('mongodb://localhost:27017/elevator');
 
 router.get('/', function(req, res, next) {
-    var type = req.query.type;
-    var number = req.query.num;
+    console.log(req.query);
+    const type = req.query.type;
+    const number = req.query.num;
     const width = 700;
     const widthPercent = "70%";
 

@@ -32,18 +32,21 @@ export class SubsComponent implements OnInit {
   }
 
   onSubscribeBoard(subid) {
-    this.handleuserService.subscribeBoard(subid).subscribe(data => {
-      if ( data.message == 'done' ) {
-        this.router.navigate(['./subs']);
-      }
-      else {
-        this.flashMessage.showFlashMessage({
-          messages: ['에러 발생: ' + data.message],
-          type: 'danger',
-          timeout: 3000
-        });
-      }
-    })
+    if ( confirm('구독하시겠습니까?') ) {
+      this.handleuserService.subscribeBoard(subid).subscribe(data => {
+        if ( data.message == 'done' ) {
+          this.router.navigated = false;
+          this.router.navigate(['./subs']);
+        }
+        else {
+          this.flashMessage.showFlashMessage({
+            messages: ['에러 발생: ' + data.message],
+            type: 'danger',
+            timeout: 3000
+          });
+        }
+      })
+    }
   }
 
 }

@@ -11,20 +11,24 @@
     <br/>
     <span id="gradeSpan" style="float:right; font-size:13px;" #gradeSpan>평점 {{content.grade}} by {{content.gradeby.length}}명</span>
     <ng-container *ngIf="content.grade >= 3 && content.gradeby.length >= 1 && user.id == content.id && writer.boardRequest == 0">
-      <br/><button id="boardRequest" style="float:right;" onclick="">게시판 생성 요청</button>
+      <!-- content.grade / content.gradeby.length == average -->
+      <!-- if writer.boardRequest == 0, can request to admin to make own board -->
+      <!-- after requested, writer.boardRequest would be 1 -->
+      <!-- when admin accept the request, writer.boardRequest would be 2 and having own board -->
+      <br/><button id="boardRequest" style="float:right;" (click)="requestBoard()" #boardRequest>게시판 생성 요청</button>
     </ng-container>
     <ng-container *ngIf="user.id == 'admin' && writer.boardRequest == 1">
-      <br/><button id="boardRequest" style="float:right;" onclick="">게시판 생성 요청</button>
+      <br/><button id="boardRequest" style="float:right;" (click)="acceptBoard()" #boardRequest>게시판 생성 요청 수락</button>
     </ng-container>
   </ng-container><br/><br/>
 
-  <div style="text-align:center;" *ngIf="content.image != ''">
-    <img src="content.image" width="imageWidth"/>
+  <div style="text-align:center;" *ngIf="content?.image != ''">
+    <img src="content?.image" width="imageWidth"/>
     <br/><br/>
   </div>
-  <div style="text-align:center;" *ngIf="content.image != ''">
+  <div style="text-align:center;" *ngIf="content?.image != ''">
     <audio controls>
-      <source src="content.audio"/>
+      <source src="content?.audio"/>
     </audio>
     <br/><br/>
   </div>

@@ -131,4 +131,20 @@ export class ContentComponent implements OnInit {
     });
   }
 
+  requestBoard() {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    this.http.post('http://localhost:3000/ajax/boardrequest', {userid: this.content.id, _id: this.content._id}, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(data => {
+      document.getElementById("boardRequest").style.display = "none";
+    });
+  }
+
+  acceptBoard() {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    this.http.post('http://localhost:3000/ajax/acceptboardrequest', {userid: this.content.id, _id: this.content._id}, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(data => {
+      document.getElementById("boardRequest").style.display = "none";
+    });
+  }
+
 }

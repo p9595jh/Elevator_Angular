@@ -1,8 +1,8 @@
 <div style="width:1000px; margin:auto;">
   <div *ngIf="!loggedIn">
     <form class="loginbox" (submit)="onLoginSubmit()">
+      <hr/>
       <table style="border-collapse:collapse;">
-          <hr/>
           <tr>
               <td><input type="text" name="id" [(ngModel)]="id" placeholder="아이디" style="width:120px; height:20px;" /></td>
               <td rowspan="2"><input type="submit" name="submit" style="height:55px;" value="로그인" /></td>
@@ -11,7 +11,7 @@
               <td><input type="password" name="password" [(ngModel)]="password" placeholder="비밀번호" style="width:120px; height:20px;" /></td>
           </tr>
       </table>
-      <hr/><a class="link" [routerLink]="['./join']">회원가입</a><span class="link"> | </span><a class="link" [routerLink]="['./find']">아이디/비밀번호 찾기</a></form>
+      <hr/><a class="link" [routerLink]="['../join']">회원가입</a><span class="link"> | </span><a class="link" [routerLink]="['../find']">아이디/비밀번호 찾기</a></form>
   </div>
   <div *ngIf="loggedIn">
     <div class="loginbox" style="text-align:center; font-size:13px;">
@@ -20,31 +20,31 @@
       <b *ngIf="user.stop" style="color:red;">정지회원</b>
       <b *ngIf="!user.stop">클린회원</b><br/>
       <a href="javascript:;" onclick="info()" class="link">나의 정보</a><br/>
-      <a class="link" [routerLink]="['./fix']">회원정보수정</a> | 
+      <a class="link" [routerLink]="['../fix']">회원정보수정</a> | 
       <a class="link" (click)="onLogoutClick()" href="javascript:;">로그아웃</a><br/><hr/>
       <span>가입일: {{user.joindate}}</span>
     </div>
   </div>
   <div class="date">
     <span>make your own music</span><br/>
-    {{user}}
+    <!-- {{user}} -->
   </div>
 </div>
 
 <div class="box">
-  <a class="board" [routerLink]="['./free']">ㆍ자유게시판</a><hr/>
+  <a class="board" [routerLink]="['../free']">ㆍ자유게시판</a><hr/>
   <div class="startdiv">Test</div>
 </div>
 <br/><br/>
 
 <div class="box">
-  <a class="board" [routerLink]="['./music']">ㆍ음악게시판</a><hr/>
+  <a class="board" [routerLink]="['../music']">ㆍ음악게시판</a><hr/>
   <div class="startdiv">Test</div>
 </div>
 <br/><br/>
 
 <div class="box">
-  <a class="board" [routerLink]="['./suggest']">ㆍ건의게시판</a><hr/>
+  <a class="board" [routerLink]="['../suggest']">ㆍ건의게시판</a><hr/>
   <div class="startdiv">Test</div>
 </div>
 <br/><br/>

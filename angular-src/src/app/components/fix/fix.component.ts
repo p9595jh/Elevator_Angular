@@ -43,8 +43,9 @@ export class FixComponent implements OnInit {
       nickname: this.nickname,
       genre: this.genre,
       intro: this.intro,
-      image: this.image.name
+      image: this.image
     }
+    console.log(formData);
     this.handleuserService.fixUser(formData).subscribe(data => {
       if ( data.success ) {
         this.router.navigate(['./start']);

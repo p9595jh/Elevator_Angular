@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HandleuserService } from '../../services/handleuser.service';
 import { Router } from '@angular/router';
 
-import { Http, Headers, Response } from '@angular/http';
-import { map } from 'rxjs/operators';
-
 @Component({
   selector: 'app-start',
   templateUrl: './start.component.html',
@@ -18,9 +15,7 @@ export class StartComponent implements OnInit {
 
   constructor(
     private handleuserService: HandleuserService,
-    private router: Router,
-    private http:Http,
-    private location: Location
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -38,6 +33,7 @@ export class StartComponent implements OnInit {
 
     this.handleuserService.loggingIn(formData).subscribe(data => {
       if ( data.success ) {
+        this.router.navigated = false;
         this.router.navigate(['./start']);
       }
       else {
