@@ -287,7 +287,7 @@ var AdminComponent = /** @class */ (function () {
         var _this = this;
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-type', 'application/json');
-        this.http.get('http://localhost:3000/admin', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
+        this.http.get(this.handleuserService.ServerAddress + '/admin', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
             if (data.result) {
                 _this.users = data.users;
             }
@@ -297,13 +297,13 @@ var AdminComponent = /** @class */ (function () {
         });
     };
     AdminComponent.prototype.openInfoWindow = function (userid) {
-        this.handleuserService.openWindow('http://localhost:3000/info?userid=' + userid);
+        this.handleuserService.openWindow(this.handleuserService.ServerAddress + '/info?userid=' + userid);
     };
     AdminComponent.prototype.onStopUser = function (userid) {
         var _this = this;
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        this.http.post('http://localhost:3000/ajax/stop', { userid: userid }, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
+        this.http.post(this.handleuserService.ServerAddress + '/ajax/stop', { userid: userid }, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
             if (data.message == 'done') {
                 if (data.stop) {
                     document.getElementById(userid).style.color = "red";
@@ -428,7 +428,7 @@ var ContentComponent = /** @class */ (function () {
             _this.loggedIn = data.result;
             var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["Headers"]();
             headers.append('Content-Type', 'application/json');
-            _this.http.get('http://localhost:3000/content?type=' + _this.paramType + '&num=' + _this.paramNum, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) { return res.json(); })).subscribe(function (result) {
+            _this.http.get(_this.handleuserService.ServerAddress + '/content?type=' + _this.paramType + '&num=' + _this.paramNum, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) { return res.json(); })).subscribe(function (result) {
                 _this.user = result.user;
                 _this.imageWidth = result.imageWidth;
                 _this.content = result.content;
@@ -450,7 +450,7 @@ var ContentComponent = /** @class */ (function () {
         }
     };
     ContentComponent.prototype.openInfoWindow = function (userid) {
-        this.handleuserService.openWindow('http://localhost:3000/info?userid=' + userid);
+        this.handleuserService.openWindow(this.handleuserService.ServerAddress + '/info?userid=' + userid);
     };
     ContentComponent.prototype.onWriteComment = function () {
         var _this = this;
@@ -461,7 +461,7 @@ var ContentComponent = /** @class */ (function () {
         };
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        this.http.post('http://localhost:3000/comment', formData, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
+        this.http.post(this.handleuserService.ServerAddress + '/comment', formData, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
             if (data.success) {
                 _this.router.navigated = false;
                 _this.router.navigate(['./content'], { queryParams: { type: _this.paramType, num: _this.paramNum } });
@@ -485,7 +485,7 @@ var ContentComponent = /** @class */ (function () {
             };
             var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["Headers"]();
             headers.append('Content-Type', 'application/json');
-            this.http.post('http://localhost:3000/delete/' + this.paramType, formData, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
+            this.http.post(this.handleuserService.ServerAddress + '/delete/' + this.paramType, formData, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
                 if (data.success) {
                     _this.router.navigated = false;
                     _this.router.navigate(['./' + _this.listurl], { queryParams: { type: _this.paramType } });
@@ -510,7 +510,7 @@ var ContentComponent = /** @class */ (function () {
         };
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        this.http.post('http://localhost:3000/delete/comment', formData, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
+        this.http.post(this.handleuserService.ServerAddress + '/delete/comment', formData, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
             if (data.success) {
                 _this.router.navigated = false;
                 _this.router.navigate(['./content'], { queryParams: { type: _this.paramType, num: _this.paramNum } });
@@ -535,7 +535,7 @@ var ContentComponent = /** @class */ (function () {
         };
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        this.http.post('http://localhost:3000/ajax', formData, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
+        this.http.post(this.handleuserService.ServerAddress + '/ajax', formData, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
             if (data.msg == 'duplicate') {
                 _this.flashMessage.showFlashMessage({
                     messages: ['이미 추천하셨습니다'],
@@ -559,14 +559,14 @@ var ContentComponent = /** @class */ (function () {
     ContentComponent.prototype.requestBoard = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        this.http.post('http://localhost:3000/ajax/boardrequest', { userid: this.content.id, _id: this.content._id }, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
+        this.http.post(this.handleuserService.ServerAddress + '/ajax/boardrequest', { userid: this.content.id, _id: this.content._id }, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
             document.getElementById("boardRequest").style.display = "none";
         });
     };
     ContentComponent.prototype.acceptBoard = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        this.http.post('http://localhost:3000/ajax/acceptboardrequest', { userid: this.content.id, _id: this.content._id }, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
+        this.http.post(this.handleuserService.ServerAddress + '/ajax/acceptboardrequest', { userid: this.content.id, _id: this.content._id }, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
             document.getElementById("boardRequest").style.display = "none";
         });
     };
@@ -624,6 +624,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _services_handleuser_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/handleuser.service */ "./src/app/services/handleuser.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -636,9 +637,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var FindComponent = /** @class */ (function () {
-    function FindComponent(http) {
+    function FindComponent(http, handleuserService) {
         this.http = http;
+        this.handleuserService = handleuserService;
     }
     FindComponent.prototype.ngOnInit = function () {
     };
@@ -647,7 +650,7 @@ var FindComponent = /** @class */ (function () {
             var code = document.getElementById("findid").value;
             var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
             headers.append('Content-Type', 'application/json');
-            this.http.post('http://localhost:3000/ajax/find', { type: type, code: code }, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
+            this.http.post(this.handleuserService.ServerAddress + '/ajax/find', { type: type, code: code }, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
                 document.getElementById("idresult").innerHTML = data.result;
             });
         }
@@ -655,7 +658,7 @@ var FindComponent = /** @class */ (function () {
             var code = document.getElementById("findpw").value;
             var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
             headers.append('Content-Type', 'application/json');
-            this.http.post('http://localhost:3000/ajax/find', { type: type, code: code }, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
+            this.http.post(this.handleuserService.ServerAddress + '/ajax/find', { type: type, code: code }, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
                 document.getElementById("pwresult").innerHTML = data.result;
             });
         }
@@ -666,7 +669,8 @@ var FindComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./find.component.html */ "./src/app/components/find/find.component.html"),
             styles: [__webpack_require__(/*! ./find.component.css */ "./src/app/components/find/find.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"]])
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"],
+            _services_handleuser_service__WEBPACK_IMPORTED_MODULE_3__["HandleuserService"]])
     ], FindComponent);
     return FindComponent;
 }());
@@ -756,7 +760,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box\"><span>자유게시판</span>\r\n  <hr/><br/><br/>\r\n  <table class=\"tb\">\r\n    <tr style=\"height:25px; font-weight:bold\">\r\n      <td style=\"width:70px\">번호</td>\r\n      <td style=\"width:140px\">제목</td>\r\n      <td style=\"width:65px\">작성자</td>\r\n      <td style=\"width:100px\">날짜</td>\r\n      <td style=\"width:55px\">조회수</td>\r\n      <td style=\"width:40px\">추천</td>\r\n    </tr>\r\n\r\n    <ng-container *ngFor=\"let val of free\">\r\n      <tr class=\"trhover\" style=\"height:20px;\">\r\n        <td>{{val.num}}</td>\r\n        <td style=\"text-align:left; padding:50px;\">\r\n          <a class=\"link\" [routerLink]=\"['../content']\" [queryParams]=\"{type: 'free', num: val.num}\">{{val.title}}</a>\r\n          <span style=\"font-size:12px; color:grey;\" *ngIf=\"val.comment.length > 0\"> [{{val.comment.length}}]</span>\r\n        </td>\r\n        <td>\r\n          <a class=\"link\" href=\"javascript:;\" (click)=\"openInfoWindow(val?.id)\">{{val.nickname}}</a>\r\n        </td>\r\n        <td>{{val.writedate}}</td>\r\n        <td>{{val.hit}}</td>\r\n        <td>{{val.recommend}}</td>\r\n      </tr>\r\n    </ng-container>\r\n\r\n  </table>\r\n  <br/><br/>\r\n\r\n  <button *ngIf=\"loggedIn && !user?.stop\" style=\"float:right;\" onclick=\"location.href='http://localhost:3000/write?type=free'\">글쓰기</button>\r\n</div>\r\n"
+module.exports = "<div class=\"box\"><span>자유게시판</span>\r\n  <hr/><br/><br/>\r\n  <table class=\"tb\">\r\n    <tr style=\"height:25px; font-weight:bold\">\r\n      <td style=\"width:70px\">번호</td>\r\n      <td style=\"width:140px\">제목</td>\r\n      <td style=\"width:65px\">작성자</td>\r\n      <td style=\"width:100px\">날짜</td>\r\n      <td style=\"width:55px\">조회수</td>\r\n      <td style=\"width:40px\">추천</td>\r\n    </tr>\r\n\r\n    <ng-container *ngFor=\"let val of free\">\r\n      <tr class=\"trhover\" style=\"height:20px;\">\r\n        <td>{{val.num}}</td>\r\n        <td style=\"text-align:left; padding:50px;\">\r\n          <a class=\"link\" [routerLink]=\"['../content']\" [queryParams]=\"{type: 'free', num: val.num}\">{{val.title}}</a>\r\n          <span style=\"font-size:12px; color:grey;\" *ngIf=\"val.comment.length > 0\"> [{{val.comment.length}}]</span>\r\n        </td>\r\n        <td>\r\n          <a class=\"link\" href=\"javascript:;\" (click)=\"openInfoWindow(val?.id)\">{{val.nickname}}</a>\r\n        </td>\r\n        <td>{{val.writedate}}</td>\r\n        <td>{{val.hit}}</td>\r\n        <td>{{val.recommend}}</td>\r\n      </tr>\r\n    </ng-container>\r\n\r\n  </table>\r\n  <br/><br/>\r\n\r\n  <button *ngIf=\"loggedIn && !user?.stop\" style=\"float:right;\" (click)=\"toWritePage()\">글쓰기</button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -800,7 +804,10 @@ var FreeComponent = /** @class */ (function () {
         });
     }
     FreeComponent.prototype.openInfoWindow = function (userid) {
-        this.handleuserService.openWindow('http://localhost:3000/info?userid=' + userid);
+        this.handleuserService.openWindow('this.handleuserService.ServerAddress + /info?userid=' + userid);
+    };
+    FreeComponent.prototype.toWritePage = function () {
+        location.href = this.handleuserService.ServerAddress + "/write?type=free";
     };
     FreeComponent.prototype.initialiseInvites = function () {
         this.ngOnInit();
@@ -1054,7 +1061,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box\"><span>음악게시판</span>\r\n  <hr/><br/><br/>\r\n  <table class=\"tb\">\r\n    <tr style=\"height:25px; font-weight:bold\">\r\n      <td style=\"width:70px\">번호</td>\r\n      <td style=\"width:140px\">제목</td>\r\n      <td style=\"width:65px\">작성자</td>\r\n      <td style=\"width:100px\">날짜</td>\r\n      <td style=\"width:55px\">조회수</td>\r\n      <td style=\"width:40px\">전체평점</td>\r\n    </tr>\r\n\r\n    <ng-container *ngFor=\"let val of music\">\r\n      <tr class=\"trhover\" style=\"height:20px;\">\r\n        <td>{{val.num}}</td>\r\n        <td style=\"text-align:left; padding:50px;\">\r\n          <a class=\"link\" [routerLink]=\"['../content']\" [queryParams]=\"{type: 'music', num: val?.num}\">{{val?.title}}</a> \r\n          <span style=\"font-size:12px; color:grey;\" *ngIf=\"val?.comment?.length > 0\">[{{val?.comment?.length}}]</span>\r\n        </td>\r\n        <td>\r\n          <a class=\"link\" href=\"javascript:;\" (click)=\"openInfoWindow(val?.id)\">{{val?.nickname}}</a>\r\n        </td>\r\n        <td>{{val?.writedate}}</td>\r\n        <td>{{val?.hit}}</td>\r\n        <td>{{val?.grade}}</td>\r\n      </tr>\r\n    </ng-container>\r\n\r\n  </table>\r\n  <br/><br/>\r\n\r\n  <button *ngIf=\"loggedIn && !user?.stop\" style=\"float:right;\" onclick=\"location.href='http://localhost:3000/write?type=music'\">글쓰기</button>\r\n</div>"
+module.exports = "<div class=\"box\"><span>음악게시판</span>\r\n  <hr/><br/><br/>\r\n  <table class=\"tb\">\r\n    <tr style=\"height:25px; font-weight:bold\">\r\n      <td style=\"width:70px\">번호</td>\r\n      <td style=\"width:140px\">제목</td>\r\n      <td style=\"width:65px\">작성자</td>\r\n      <td style=\"width:100px\">날짜</td>\r\n      <td style=\"width:55px\">조회수</td>\r\n      <td style=\"width:40px\">전체평점</td>\r\n    </tr>\r\n\r\n    <ng-container *ngFor=\"let val of music\">\r\n      <tr class=\"trhover\" style=\"height:20px;\">\r\n        <td>{{val.num}}</td>\r\n        <td style=\"text-align:left; padding:50px;\">\r\n          <a class=\"link\" [routerLink]=\"['../content']\" [queryParams]=\"{type: 'music', num: val?.num}\">{{val?.title}}</a> \r\n          <span style=\"font-size:12px; color:grey;\" *ngIf=\"val?.comment?.length > 0\">[{{val?.comment?.length}}]</span>\r\n        </td>\r\n        <td>\r\n          <a class=\"link\" href=\"javascript:;\" (click)=\"openInfoWindow(val?.id)\">{{val?.nickname}}</a>\r\n        </td>\r\n        <td>{{val?.writedate}}</td>\r\n        <td>{{val?.hit}}</td>\r\n        <td>{{val?.grade}}</td>\r\n      </tr>\r\n    </ng-container>\r\n\r\n  </table>\r\n  <br/><br/>\r\n\r\n  <button *ngIf=\"loggedIn && !user?.stop\" style=\"float:right;\" (click)=\"toWritePage()\">글쓰기</button>\r\n</div>"
 
 /***/ }),
 
@@ -1111,8 +1118,11 @@ var MusicComponent = /** @class */ (function () {
             this.navigationSubscription.unsubscribe();
         }
     };
+    MusicComponent.prototype.toWritePage = function () {
+        location.href = this.handleuserService.ServerAddress + '/write?type=music';
+    };
     MusicComponent.prototype.openInfoWindow = function (userid) {
-        this.handleuserService.openWindow('http://localhost:3000/info?userid=' + userid);
+        this.handleuserService.openWindow(this.handleuserService.ServerAddress + '/info?userid=' + userid);
     };
     MusicComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1303,7 +1313,7 @@ var NoticeComponent = /** @class */ (function () {
         this.ngOnInit();
     };
     NoticeComponent.prototype.openInfoWindow = function (userid) {
-        this.handleuserService.openWindow('http://localhost:3000/info?userid=' + userid);
+        this.handleuserService.openWindow(this.handleuserService.ServerAddress + '/info?userid=' + userid);
     };
     NoticeComponent.prototype.ngOnDestroy = function () {
         if (this.navigationSubscription) {
@@ -1365,7 +1375,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"width:1000px; margin:auto;\">\r\n  <div *ngIf=\"!loggedIn\">\r\n    <form class=\"loginbox\" (submit)=\"onLoginSubmit()\">\r\n      <hr/>\r\n      <table style=\"border-collapse:collapse;\">\r\n          <tr>\r\n              <td><input type=\"text\" name=\"id\" [(ngModel)]=\"id\" placeholder=\"아이디\" style=\"width:120px; height:20px;\" /></td>\r\n              <td rowspan=\"2\"><input type=\"submit\" name=\"submit\" style=\"height:55px;\" value=\"로그인\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td><input type=\"password\" name=\"password\" [(ngModel)]=\"password\" placeholder=\"비밀번호\" style=\"width:120px; height:20px;\" /></td>\r\n          </tr>\r\n      </table>\r\n      <hr/><a class=\"link\" [routerLink]=\"['../join']\">회원가입</a><span class=\"link\"> | </span><a class=\"link\" [routerLink]=\"['../find']\">아이디/비밀번호 찾기</a></form>\r\n  </div>\r\n  <div *ngIf=\"loggedIn\">\r\n    <div class=\"loginbox\" style=\"text-align:center; font-size:13px;\">\r\n      <b>{{user.nickname}}</b>\r\n      <span>님, 반갑습니다</span><br/><hr/>\r\n      <b *ngIf=\"user.stop\" style=\"color:red;\">정지회원</b>\r\n      <b *ngIf=\"!user.stop\">클린회원</b><br/>\r\n      <a href=\"javascript:;\" (click)=\"openInfoWindow(user?.id)\" class=\"link\">나의 정보</a><br/>\r\n      <a class=\"link\" href=\"http://localhost:3000/fix\">회원정보수정</a> | \r\n      <a class=\"link\" (click)=\"onLogoutClick()\" href=\"javascript:;\">로그아웃</a><br/><hr/>\r\n      <span>가입일: {{user.joindate}}</span>\r\n    </div>\r\n  </div>\r\n  <div class=\"date\">\r\n    <span><img src=\"images/testimage.jpg\" width=\"118\" height=\"70\" /></span><br/>\r\n    <!-- {{user}} -->\r\n  </div>\r\n</div>\r\n\r\n<div class=\"box\">\r\n  <a class=\"board\" [routerLink]=\"['../free']\">ㆍ자유게시판</a><hr/>\r\n  <div class=\"startdiv\" *ngFor=\"let val of free\">\r\n    <a class=\"link\" [routerLink]=\"['../content']\" [queryParams]=\"{type: 'free', num: val.num}\">{{val?.title}}</a><br/>\r\n  </div>\r\n</div>\r\n<br/><br/>\r\n\r\n<div class=\"box\">\r\n  <a class=\"board\" [routerLink]=\"['../music']\">ㆍ음악게시판</a><hr/>\r\n  <div class=\"startdiv\" *ngFor=\"let val of music\">\r\n    <a class=\"link\" [routerLink]=\"['../content']\" [queryParams]=\"{type: 'music', num: val.num}\">{{val?.title}}</a><br/>\r\n  </div>\r\n</div>\r\n<br/><br/>\r\n\r\n<div class=\"box\">\r\n  <a class=\"board\" [routerLink]=\"['../suggest']\">ㆍ건의게시판</a><hr/>\r\n  <div class=\"startdiv\" *ngFor=\"let val of suggest\">\r\n    <a class=\"link\" [routerLink]=\"['../suggest']\" [queryParams]=\"{id: val?.num}\">{{val?.comment}}</a><br/>\r\n  </div>\r\n</div>\r\n<br/><br/>\r\n"
+module.exports = "<div style=\"width:1000px; margin:auto;\">\r\n  <div *ngIf=\"!loggedIn\">\r\n    <form class=\"loginbox\" (submit)=\"onLoginSubmit()\">\r\n      <hr/>\r\n      <table style=\"border-collapse:collapse;\">\r\n          <tr>\r\n              <td><input type=\"text\" name=\"id\" [(ngModel)]=\"id\" placeholder=\"아이디\" style=\"width:120px; height:20px;\" /></td>\r\n              <td rowspan=\"2\"><input type=\"submit\" name=\"submit\" style=\"height:55px;\" value=\"로그인\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td><input type=\"password\" name=\"password\" [(ngModel)]=\"password\" placeholder=\"비밀번호\" style=\"width:120px; height:20px;\" /></td>\r\n          </tr>\r\n      </table>\r\n      <hr/><a class=\"link\" [routerLink]=\"['../join']\">회원가입</a><span class=\"link\"> | </span><a class=\"link\" [routerLink]=\"['../find']\">아이디/비밀번호 찾기</a></form>\r\n  </div>\r\n  <div *ngIf=\"loggedIn\">\r\n    <div class=\"loginbox\" style=\"text-align:center; font-size:13px;\">\r\n      <b>{{user.nickname}}</b>\r\n      <span>님, 반갑습니다</span><br/><hr/>\r\n      <b *ngIf=\"user.stop\" style=\"color:red;\">정지회원</b>\r\n      <b *ngIf=\"!user.stop\">클린회원</b><br/>\r\n      <a href=\"javascript:;\" (click)=\"openInfoWindow(user?.id)\" class=\"link\">나의 정보</a><br/>\r\n      <a class=\"link\" (click)=\"toFixPage()\">회원정보수정</a> | \r\n      <a class=\"link\" (click)=\"onLogoutClick()\" href=\"javascript:;\">로그아웃</a><br/><hr/>\r\n      <span>가입일: {{user.joindate}}</span>\r\n    </div>\r\n  </div>\r\n  <div class=\"date\">\r\n    <img src=\"images/logo.png\" width=\"750\" height=\"120\" />\r\n  </div>\r\n</div><br/><br/>\r\n\r\n<div class=\"box\">\r\n  <a class=\"board\" [routerLink]=\"['../free']\">ㆍ자유게시판</a><hr/>\r\n  <div class=\"startdiv\" *ngFor=\"let val of free\">\r\n    <a class=\"link\" [routerLink]=\"['../content']\" [queryParams]=\"{type: 'free', num: val.num}\">{{val?.title}}</a><br/>\r\n  </div>\r\n</div>\r\n<br/><br/>\r\n\r\n<div class=\"box\">\r\n  <a class=\"board\" [routerLink]=\"['../music']\">ㆍ음악게시판</a><hr/>\r\n  <div class=\"startdiv\" *ngFor=\"let val of music\">\r\n    <a class=\"link\" [routerLink]=\"['../content']\" [queryParams]=\"{type: 'music', num: val.num}\">{{val?.title}}</a><br/>\r\n  </div>\r\n</div>\r\n<br/><br/>\r\n\r\n<div class=\"box\">\r\n  <a class=\"board\" [routerLink]=\"['../suggest']\">ㆍ건의게시판</a><hr/>\r\n  <div class=\"startdiv\" *ngFor=\"let val of suggest\">\r\n    <a class=\"link\" [routerLink]=\"['../suggest']\" [queryParams]=\"{id: val?.num}\">{{val?.comment}}</a><br/>\r\n  </div>\r\n</div>\r\n<br/><br/>\r\n"
 
 /***/ }),
 
@@ -1440,7 +1450,10 @@ var StartComponent = /** @class */ (function () {
         }
     };
     StartComponent.prototype.openInfoWindow = function (userid) {
-        this.handleuserService.openWindow('http://localhost:3000/info?userid=' + userid);
+        this.handleuserService.openWindow(this.handleuserService.ServerAddress + '/info?userid=' + userid);
+    };
+    StartComponent.prototype.toFixPage = function () {
+        location.href = this.handleuserService.ServerAddress + '/fix';
     };
     StartComponent.prototype.onLoginSubmit = function () {
         var _this = this;
@@ -1548,7 +1561,7 @@ var SubadminComponent = /** @class */ (function () {
         var _this = this;
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-type', 'application/json');
-        this.http.get('http://localhost:3000/subadmin', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
+        this.http.get(this.handleuserService.ServerAddress + '/subadmin', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
             if (data.result) {
                 _this.sub = data.sub;
                 _this.clean = data.clean;
@@ -1560,13 +1573,13 @@ var SubadminComponent = /** @class */ (function () {
         });
     };
     SubadminComponent.prototype.openInfoWindow = function (userid) {
-        this.handleuserService.openWindow('http://localhost:3000/info?userid=' + userid);
+        this.handleuserService.openWindow(this.handleuserService.ServerAddress + '/info?userid=' + userid);
     };
     SubadminComponent.prototype.onStopUser = function (userid) {
         var _this = this;
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        this.http.post('http://localhost:3000/ajax/substop', { boardtype: this.sub.id, userid: userid }, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
+        this.http.post(this.handleuserService.ServerAddress + '/ajax/substop', { boardtype: this.sub.id, userid: userid }, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
             if (data.message == 'done') {
                 if (data.stop) {
                     document.getElementById(userid).style.color = "red";
@@ -1700,19 +1713,19 @@ var SubboardComponent = /** @class */ (function () {
         }
     };
     SubboardComponent.prototype.toWritePage = function () {
-        location.href = "http://localhost:3000/write?type=" + this.type;
+        location.href = this.handleuserService.ServerAddress + "/write?type=" + this.type;
     };
     SubboardComponent.prototype.openInfoWindow = function (userid) {
-        this.handleuserService.openWindow('http://localhost:3000/info?userid=' + userid);
+        this.handleuserService.openWindow(this.handleuserService.ServerAddress + '/info?userid=' + userid);
     };
     SubboardComponent.prototype.openPlayListWindow = function (userid) {
-        this.handleuserService.openWindow('http://localhost:3000/openplaylist?userid=' + userid);
+        this.handleuserService.openWindow(this.handleuserService.ServerAddress + '/openplaylist?userid=' + userid);
     };
     SubboardComponent.prototype.openViewLiveWindow = function (userid) {
-        this.handleuserService.openWindow('http://localhost:3000/live/view?userid=' + userid);
+        this.handleuserService.openWindow(this.handleuserService.ServerAddress + '/live/view?userid=' + userid);
     };
     SubboardComponent.prototype.openMakeLiveWindow = function (userid) {
-        this.handleuserService.openWindow('http://localhost:3000/live/make?userid=' + userid);
+        this.handleuserService.openWindow(this.handleuserService.ServerAddress + '/live/make?userid=' + userid);
     };
     SubboardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1932,7 +1945,7 @@ var SuggestComponent = /** @class */ (function () {
         });
     };
     SuggestComponent.prototype.openInfoWindow = function (userid) {
-        this.handleuserService.openWindow('http://localhost:3000/info?userid=' + userid);
+        this.handleuserService.openWindow(this.handleuserService.ServerAddress + '/info?userid=' + userid);
     };
     SuggestComponent.prototype.initialiseInvites = function () {
         this.ngOnInit();
@@ -1994,6 +2007,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _handleuser_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./handleuser.service */ "./src/app/services/handleuser.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2006,63 +2020,66 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var HandleboardService = /** @class */ (function () {
-    function HandleboardService(http) {
+    function HandleboardService(http, handleuserService) {
         this.http = http;
+        this.handleuserService = handleuserService;
     }
     HandleboardService.prototype.getFrees = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3000/free', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+        return this.http.get(this.handleuserService.ServerAddress + '/free', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     HandleboardService.prototype.getMusics = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3000/music', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+        return this.http.get(this.handleuserService.ServerAddress + '/music', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     HandleboardService.prototype.getSuggests = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3000/suggest', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+        return this.http.get(this.handleuserService.ServerAddress + '/suggest', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     HandleboardService.prototype.getSubcontents = function (type) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3000/subboard?type=' + type, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+        return this.http.get(this.handleuserService.ServerAddress + '/subboard?type=' + type, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     HandleboardService.prototype.getNotices = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3000/notice', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+        return this.http.get(this.handleuserService.ServerAddress + '/notice', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     HandleboardService.prototype.getSubs = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3000/subs', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+        return this.http.get(this.handleuserService.ServerAddress + '/subs', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     HandleboardService.prototype.getStartPageInfos = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3000/start', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+        return this.http.get(this.handleuserService.ServerAddress + '/start', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     HandleboardService.prototype.handleWrite = function (formData) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('enctype', 'multipart/form-data');
-        return this.http.post('http://localhost:3000/handleWrite', formData, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+        return this.http.post(this.handleuserService.ServerAddress + '/handleWrite', formData, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     HandleboardService.prototype.handleSuggest = function (formData) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-type', 'application/json');
-        return this.http.post('http://localhost:3000/handleSuggest', formData, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+        return this.http.post(this.handleuserService.ServerAddress + '/handleSuggest', formData, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     HandleboardService.prototype.handleNotice = function (formData) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-type', 'application/json');
-        return this.http.post('http://localhost:3000/handleNotice', formData, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+        return this.http.post(this.handleuserService.ServerAddress + '/handleNotice', formData, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     HandleboardService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"]])
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"],
+            _handleuser_service__WEBPACK_IMPORTED_MODULE_3__["HandleuserService"]])
     ], HandleboardService);
     return HandleboardService;
 }());
@@ -2105,6 +2122,7 @@ var HandleuserService = /** @class */ (function () {
     function HandleuserService(http, router) {
         this.http = http;
         this.router = router;
+        this.ServerAddress = 'http://localhost:3000';
     }
     HandleuserService.prototype.openWindow = function (url) {
         var option = 'width=500, height=600, left=300, top=100, scrollbars=yes, toolbars=no, location=no';
@@ -2113,38 +2131,32 @@ var HandleuserService = /** @class */ (function () {
     HandleuserService.prototype.loggedIn = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3000/login/ng', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
+        return this.http.get(this.ServerAddress + '/login/ng', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
     };
     HandleuserService.prototype.loggingIn = function (user) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/login', user, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
+        return this.http.post(this.ServerAddress + '/login', user, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
     };
     HandleuserService.prototype.getLoginData = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3000/login/data', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
+        return this.http.get(this.ServerAddress + '/login/data', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
     };
     HandleuserService.prototype.logout = function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3000/logout', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
+        return this.http.get(this.ServerAddress + '/logout', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
     };
     HandleuserService.prototype.handleRegi = function (user) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/handleRegi', user, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
+        return this.http.post(this.ServerAddress + '/handleRegi', user, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
     };
     HandleuserService.prototype.subscribeBoard = function (subid) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/ajax/subscribeboard', { subid: subid }, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
-    };
-    HandleuserService.prototype.fixUser = function (user) {
-        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
-        headers.append('Content-Type', 'multipart/form-data; boundary=----WebKitFormBoundaryl4oxlVSt9yblG8VC');
-        // headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/handleFix', user, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
+        return this.http.post(this.ServerAddress + '/ajax/subscribeboard', { subid: subid }, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
     };
     HandleuserService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(
