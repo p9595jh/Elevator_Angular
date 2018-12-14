@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { NgFlashMessageService } from 'ng-flash-messages';
 
-import { Http, Headers, Response } from '@angular/http';
 import { HandleuserService } from '../../services/handleuser.service';
 import { HandleboardService } from '../../services/handleboard.service';
 
@@ -11,7 +10,8 @@ import { HandleboardService } from '../../services/handleboard.service';
   templateUrl: './suggest.component.html',
   styleUrls: ['./suggest.component.css']
 })
-export class SuggestComponent implements OnInit {
+export class SuggestComponent implements OnInit, OnDestroy {
+  navigationSubscription;
   loggedIn: boolean;
   content: any[];
   comment: String;
@@ -20,9 +20,14 @@ export class SuggestComponent implements OnInit {
     private handleuserService: HandleuserService,
     private handleboardService: HandleboardService,
     private router: Router,
-    private http: Http,
     private flashMessage: NgFlashMessageService
-  ) { }
+  ) {
+    this.navigationSubscription = this.router.events.subscribe((e: any) => {
+      if ( e instanceof NavigationEnd ) {
+        this.initialiseInvites();
+      }
+    });
+  }
 
   ngOnInit() {
     this.handleuserService.loggedIn().subscribe(data => {
@@ -32,6 +37,20 @@ export class SuggestComponent implements OnInit {
       });
     });
 
+  }
+
+  openInfoWindow(userid: string) {
+    this.handleuserService.openWindow('http://localhost:3000/info?userid='+userid);
+  }
+
+  initialiseInvites() {
+    this.ngOnInit();
+  }
+
+  ngOnDestroy() {
+    if ( this.navigationSubscription ) {
+      this.navigationSubscription.unsubscribe();
+    }
   }
 
   onWrite() {

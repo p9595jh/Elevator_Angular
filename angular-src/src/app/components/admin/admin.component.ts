@@ -3,6 +3,7 @@ import { Http, Headers, Response } from '@angular/http';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { NgFlashMessageService } from 'ng-flash-messages';
+import { HandleuserService } from '../../services/handleuser.service';
 
 @Component({
   selector: 'app-admin',
@@ -15,7 +16,8 @@ export class AdminComponent implements OnInit {
   constructor(
     private http: Http,
     private router: Router,
-    private flashMessage: NgFlashMessageService
+    private flashMessage: NgFlashMessageService,
+    private handleuserService: HandleuserService
   ) { }
 
   ngOnInit() {
@@ -29,6 +31,10 @@ export class AdminComponent implements OnInit {
         this.router.navigate(['./start']);
       }
     })
+  }
+
+  openInfoWindow(userid: string) {
+    this.handleuserService.openWindow('http://localhost:3000/info?userid='+userid);
   }
 
   onStopUser(userid) {

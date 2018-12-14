@@ -19,8 +19,7 @@
       <span>님, 반갑습니다</span><br/><hr/>
       <b *ngIf="user.stop" style="color:red;">정지회원</b>
       <b *ngIf="!user.stop">클린회원</b><br/>
-      <a href="javascript:;" (click)="openWindow(user?.id)" class="link">나의 정보</a><br/>
-      <!-- <a class="link" [routerLink]="['../fix']">회원정보수정</a> |  -->
+      <a href="javascript:;" (click)="openInfoWindow(user?.id)" class="link">나의 정보</a><br/>
       <a class="link" href="http://localhost:3000/fix">회원정보수정</a> | 
       <a class="link" (click)="onLogoutClick()" href="javascript:;">로그아웃</a><br/><hr/>
       <span>가입일: {{user.joindate}}</span>
@@ -34,18 +33,24 @@
 
 <div class="box">
   <a class="board" [routerLink]="['../free']">ㆍ자유게시판</a><hr/>
-  <div class="startdiv">Test</div>
+  <div class="startdiv" *ngFor="let val of free">
+    <a class="link" [routerLink]="['../content']" [queryParams]="{type: 'free', num: val.num}">{{val?.title}}</a><br/>
+  </div>
 </div>
 <br/><br/>
 
 <div class="box">
   <a class="board" [routerLink]="['../music']">ㆍ음악게시판</a><hr/>
-  <div class="startdiv">Test</div>
+  <div class="startdiv" *ngFor="let val of music">
+    <a class="link" [routerLink]="['../content']" [queryParams]="{type: 'music', num: val.num}">{{val?.title}}</a><br/>
+  </div>
 </div>
 <br/><br/>
 
 <div class="box">
   <a class="board" [routerLink]="['../suggest']">ㆍ건의게시판</a><hr/>
-  <div class="startdiv">Test</div>
+  <div class="startdiv" *ngFor="let val of suggest">
+    <a class="link" [routerLink]="['../content#'+val?.num]">{{val?.comment}}</a><br/>
+  </div>
 </div>
 <br/><br/>

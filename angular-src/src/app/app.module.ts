@@ -21,11 +21,11 @@ import { ContentComponent } from './components/content/content.component';
 import { NgFlashMessagesModule } from 'ng-flash-messages';
 import { HandleuserService } from './services/handleuser.service';
 import { HandleboardService } from './services/handleboard.service';
-import { WriteComponent } from './components/write/write.component';
+// import { WriteComponent } from './components/write/write.component';
 import { SubsComponent } from './components/subs/subs.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { FindComponent } from './components/find/find.component';
-import { FixComponent } from './components/fix/fix.component';
+// import { FixComponent } from './components/fix/fix.component';
 import { NoticeComponent } from './components/notice/notice.component';
 import { SubadminComponent } from './components/subadmin/subadmin.component';
 
@@ -42,10 +42,10 @@ const appRoutes: Routes = [
   { path: 'join', component: JoinComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'find', component: FindComponent },
-  { path: 'fix', component: FixComponent },
+  // { path: 'fix', component: FixComponent },
   { path: 'notice', component: NoticeComponent },
   { path: 'subadmin', component: SubadminComponent },
-  { path: 'astart', component: StartComponent }
+  // { path: 'astart', component: StartComponent }
 ]
 
 @NgModule({
@@ -62,11 +62,11 @@ const appRoutes: Routes = [
     MusicComponent,
     ContentComponent,
     JoinComponent,
-    WriteComponent,
+    // WriteComponent,
     SubsComponent,
     AdminComponent,
     FindComponent,
-    FixComponent,
+    // FixComponent,
     NoticeComponent,
     SubadminComponent
   ],

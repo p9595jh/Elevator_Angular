@@ -17,7 +17,9 @@
           <a class="link" [routerLink]="['../content']" [queryParams]="{type: 'free', num: val.num}">{{val.title}}</a>
           <span style="font-size:12px; color:grey;" *ngIf="val.comment.length > 0"> [{{val.comment.length}}]</span>
         </td>
-        <td>{{val.nickname}}</td>
+        <td>
+          <a class="link" href="javascript:;" (click)="openInfoWindow(val?.id)">{{val.nickname}}</a>
+        </td>
         <td>{{val.writedate}}</td>
         <td>{{val.hit}}</td>
         <td>{{val.recommend}}</td>
@@ -27,8 +29,5 @@
   </table>
   <br/><br/>
 
-  <form method="POST" action="./write" *ngIf="loggedIn">
-    <input type="submit" name="submit" value="글쓰기" style="float:right;"/>
-    <input type="hidden" name="type" value="free"/>
-  </form>
+  <button *ngIf="loggedIn && !user?.stop" style="float:right;" onclick="location.href='http://localhost:3000/write?type=free'">글쓰기</button>
 </div>

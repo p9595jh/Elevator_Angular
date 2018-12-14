@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<div id=\"content\">\n  <ng-flash-message></ng-flash-message>\n  <router-outlet></router-outlet>\n</div>\n<app-footer></app-footer>\n"
+module.exports = "<app-navbar></app-navbar>\r\n<div id=\"content\">\r\n  <ng-flash-message></ng-flash-message>\r\n  <router-outlet></router-outlet>\r\n</div>\r\n<app-footer></app-footer>\r\n"
 
 /***/ }),
 
@@ -111,13 +111,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(ng_flash_messages__WEBPACK_IMPORTED_MODULE_16__);
 /* harmony import */ var _services_handleuser_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./services/handleuser.service */ "./src/app/services/handleuser.service.ts");
 /* harmony import */ var _services_handleboard_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./services/handleboard.service */ "./src/app/services/handleboard.service.ts");
-/* harmony import */ var _components_write_write_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/write/write.component */ "./src/app/components/write/write.component.ts");
-/* harmony import */ var _components_subs_subs_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/subs/subs.component */ "./src/app/components/subs/subs.component.ts");
-/* harmony import */ var _components_admin_admin_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/admin/admin.component */ "./src/app/components/admin/admin.component.ts");
-/* harmony import */ var _components_find_find_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/find/find.component */ "./src/app/components/find/find.component.ts");
-/* harmony import */ var _components_fix_fix_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/fix/fix.component */ "./src/app/components/fix/fix.component.ts");
-/* harmony import */ var _components_notice_notice_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/notice/notice.component */ "./src/app/components/notice/notice.component.ts");
-/* harmony import */ var _components_subadmin_subadmin_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/subadmin/subadmin.component */ "./src/app/components/subadmin/subadmin.component.ts");
+/* harmony import */ var _components_subs_subs_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/subs/subs.component */ "./src/app/components/subs/subs.component.ts");
+/* harmony import */ var _components_admin_admin_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/admin/admin.component */ "./src/app/components/admin/admin.component.ts");
+/* harmony import */ var _components_find_find_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/find/find.component */ "./src/app/components/find/find.component.ts");
+/* harmony import */ var _components_notice_notice_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/notice/notice.component */ "./src/app/components/notice/notice.component.ts");
+/* harmony import */ var _components_subadmin_subadmin_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/subadmin/subadmin.component */ "./src/app/components/subadmin/subadmin.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -145,11 +143,11 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+// import { WriteComponent } from './components/write/write.component';
 
 
 
-
-
+// import { FixComponent } from './components/fix/fix.component';
 
 
 var appRoutes = [
@@ -157,18 +155,17 @@ var appRoutes = [
     { path: 'start', component: _components_start_start_component__WEBPACK_IMPORTED_MODULE_7__["StartComponent"] },
     { path: 'free', component: _components_free_free_component__WEBPACK_IMPORTED_MODULE_9__["FreeComponent"] },
     { path: 'music', component: _components_music_music_component__WEBPACK_IMPORTED_MODULE_10__["MusicComponent"] },
-    { path: 'subs', component: _components_subs_subs_component__WEBPACK_IMPORTED_MODULE_20__["SubsComponent"] },
+    { path: 'subs', component: _components_subs_subs_component__WEBPACK_IMPORTED_MODULE_19__["SubsComponent"] },
     { path: 'subboard', component: _components_subboard_subboard_component__WEBPACK_IMPORTED_MODULE_11__["SubboardComponent"] },
     { path: 'suggest', component: _components_suggest_suggest_component__WEBPACK_IMPORTED_MODULE_12__["SuggestComponent"] },
     { path: 'loginpage', component: _components_loginpage_loginpage_component__WEBPACK_IMPORTED_MODULE_13__["LoginpageComponent"] },
     { path: 'content', component: _components_content_content_component__WEBPACK_IMPORTED_MODULE_15__["ContentComponent"] },
     { path: 'join', component: _components_join_join_component__WEBPACK_IMPORTED_MODULE_14__["JoinComponent"] },
-    { path: 'admin', component: _components_admin_admin_component__WEBPACK_IMPORTED_MODULE_21__["AdminComponent"] },
-    { path: 'find', component: _components_find_find_component__WEBPACK_IMPORTED_MODULE_22__["FindComponent"] },
-    { path: 'fix', component: _components_fix_fix_component__WEBPACK_IMPORTED_MODULE_23__["FixComponent"] },
-    { path: 'notice', component: _components_notice_notice_component__WEBPACK_IMPORTED_MODULE_24__["NoticeComponent"] },
-    { path: 'subadmin', component: _components_subadmin_subadmin_component__WEBPACK_IMPORTED_MODULE_25__["SubadminComponent"] },
-    { path: 'astart', component: _components_start_start_component__WEBPACK_IMPORTED_MODULE_7__["StartComponent"] }
+    { path: 'admin', component: _components_admin_admin_component__WEBPACK_IMPORTED_MODULE_20__["AdminComponent"] },
+    { path: 'find', component: _components_find_find_component__WEBPACK_IMPORTED_MODULE_21__["FindComponent"] },
+    // { path: 'fix', component: FixComponent },
+    { path: 'notice', component: _components_notice_notice_component__WEBPACK_IMPORTED_MODULE_22__["NoticeComponent"] },
+    { path: 'subadmin', component: _components_subadmin_subadmin_component__WEBPACK_IMPORTED_MODULE_23__["SubadminComponent"] },
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -188,13 +185,13 @@ var AppModule = /** @class */ (function () {
                 _components_music_music_component__WEBPACK_IMPORTED_MODULE_10__["MusicComponent"],
                 _components_content_content_component__WEBPACK_IMPORTED_MODULE_15__["ContentComponent"],
                 _components_join_join_component__WEBPACK_IMPORTED_MODULE_14__["JoinComponent"],
-                _components_write_write_component__WEBPACK_IMPORTED_MODULE_19__["WriteComponent"],
-                _components_subs_subs_component__WEBPACK_IMPORTED_MODULE_20__["SubsComponent"],
-                _components_admin_admin_component__WEBPACK_IMPORTED_MODULE_21__["AdminComponent"],
-                _components_find_find_component__WEBPACK_IMPORTED_MODULE_22__["FindComponent"],
-                _components_fix_fix_component__WEBPACK_IMPORTED_MODULE_23__["FixComponent"],
-                _components_notice_notice_component__WEBPACK_IMPORTED_MODULE_24__["NoticeComponent"],
-                _components_subadmin_subadmin_component__WEBPACK_IMPORTED_MODULE_25__["SubadminComponent"]
+                // WriteComponent,
+                _components_subs_subs_component__WEBPACK_IMPORTED_MODULE_19__["SubsComponent"],
+                _components_admin_admin_component__WEBPACK_IMPORTED_MODULE_20__["AdminComponent"],
+                _components_find_find_component__WEBPACK_IMPORTED_MODULE_21__["FindComponent"],
+                // FixComponent,
+                _components_notice_notice_component__WEBPACK_IMPORTED_MODULE_22__["NoticeComponent"],
+                _components_subadmin_subadmin_component__WEBPACK_IMPORTED_MODULE_23__["SubadminComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -243,7 +240,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box\">\r\n  <table class=\"admintable\">\r\n    <tr>\r\n      <th>ID</th>\r\n      <th>관리</th>\r\n    </tr>\r\n    <ng-container *ngFor=\"let val of users\">\r\n      <tr *ngIf=\"val.id != 'admin' && !val.stop\">\r\n        <td><b style=\"cursor:pointer;\" id=\"val.id\" [attr.id]=\"val.id\" onclick=\"\">{{val.id}}</b></td>\r\n        <td><button (click)=\"onStopUser(val.id)\" id=\"val.id + 'button'\" [attr.id]=\"val.id + 'button'\">정지</button></td>\r\n      </tr>\r\n      <tr *ngIf=\"val.id != 'admin' && val.stop\">\r\n        <td><b style=\"cursor:pointer; color:red;\" id=\"val.id\" [attr.id]=\"val.id\" onclick=\"\">{{val.id}}</b></td>\r\n        <td><button (click)=\"onStopUser(val.id)\" id=\"val.id + 'button'\" [attr.id]=\"val.id + 'button'\">해제</button></td>\r\n      </tr>\r\n    </ng-container>\r\n  </table>\r\n</div>\r\n"
+module.exports = "<div class=\"box\">\r\n  <table class=\"admintable\">\r\n    <tr>\r\n      <th>ID</th>\r\n      <th>관리</th>\r\n    </tr>\r\n    <ng-container *ngFor=\"let val of users\">\r\n      <tr *ngIf=\"val.id != 'admin' && !val.stop\">\r\n        <td><b style=\"cursor:pointer;\" id=\"val.id\" [attr.id]=\"val.id\" (click)=\"openInfoWindow(val?.id)\">{{val.id}}</b></td>\r\n        <td><button (click)=\"onStopUser(val.id)\" id=\"val.id + 'button'\" [attr.id]=\"val.id + 'button'\">정지</button></td>\r\n      </tr>\r\n      <tr *ngIf=\"val.id != 'admin' && val.stop\">\r\n        <td><b style=\"cursor:pointer; color:red;\" id=\"val.id\" [attr.id]=\"val.id\" (click)=\"openInfoWindow(val?.id)\">{{val.id}}</b></td>\r\n        <td><button (click)=\"onStopUser(val.id)\" id=\"val.id + 'button'\" [attr.id]=\"val.id + 'button'\">해제</button></td>\r\n      </tr>\r\n    </ng-container>\r\n  </table>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -263,6 +260,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ng-flash-messages */ "./node_modules/ng-flash-messages/ng-flash-messages.umd.js");
 /* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(ng_flash_messages__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _services_handleuser_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/handleuser.service */ "./src/app/services/handleuser.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -277,11 +275,13 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var AdminComponent = /** @class */ (function () {
-    function AdminComponent(http, router, flashMessage) {
+    function AdminComponent(http, router, flashMessage, handleuserService) {
         this.http = http;
         this.router = router;
         this.flashMessage = flashMessage;
+        this.handleuserService = handleuserService;
     }
     AdminComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -295,6 +295,9 @@ var AdminComponent = /** @class */ (function () {
                 _this.router.navigate(['./start']);
             }
         });
+    };
+    AdminComponent.prototype.openInfoWindow = function (userid) {
+        this.handleuserService.openWindow('http://localhost:3000/info?userid=' + userid);
     };
     AdminComponent.prototype.onStopUser = function (userid) {
         var _this = this;
@@ -338,7 +341,8 @@ var AdminComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"],
             _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
-            ng_flash_messages__WEBPACK_IMPORTED_MODULE_4__["NgFlashMessageService"]])
+            ng_flash_messages__WEBPACK_IMPORTED_MODULE_4__["NgFlashMessageService"],
+            _services_handleuser_service__WEBPACK_IMPORTED_MODULE_5__["HandleuserService"]])
     ], AdminComponent);
     return AdminComponent;
 }());
@@ -365,7 +369,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box\">\r\n  <span style=\"font-size:20px;\">{{content?.title}}</span>\r\n  <span style=\"float:right;\">\r\n    <a class=\"tblink\" href=\"javascript:;\" onclick=\"\">{{content?.nickname}}</a>\r\n  </span>\r\n  <hr/>\r\n  <span style=\"float:right; font-size:13px;\">{{content?.writedate}}</span>\r\n  <br/>\r\n  <span style=\"float:right; font-size:13px;\">조회 {{content?.hit}} 댓글 {{content?.comment?.length}}</span>\r\n  <ng-container *ngIf=\"listurl == 'music'\">\r\n    <br/>\r\n    <span id=\"gradeSpan\" style=\"float:right; font-size:13px;\" #gradeSpan>평점 {{content?.grade}} by {{content?.gradeby?.length}}명</span>\r\n    <ng-container *ngIf=\"content?.grade >= 3 && content?.gradeby?.length >= 1 && user?.id == content?.id && writer?.boardRequest == 0\">\r\n      <!-- content.grade / content.gradeby.length == average -->\r\n      <!-- if writer.boardRequest == 0, can request to admin to make own board -->\r\n      <!-- after requested, writer.boardRequest would be 1 -->\r\n      <!-- when admin accept the request, writer.boardRequest would be 2 and having own board -->\r\n      <br/><button id=\"boardRequest\" style=\"float:right;\" (click)=\"requestBoard()\" #boardRequest>게시판 생성 요청</button>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"user.id == 'admin' && writer.boardRequest == 1\">\r\n      <br/><button id=\"boardRequest\" style=\"float:right;\" (click)=\"acceptBoard()\" #boardRequest>게시판 생성 요청 수락</button>\r\n    </ng-container>\r\n  </ng-container><br/><br/>\r\n\r\n  <div style=\"text-align:center;\" *ngIf=\"content?.image != ''\">\r\n    <img [attr.src]=\"content?.image\" width=\"imageWidth\" />\r\n    <br/><br/>\r\n  </div>\r\n  <div style=\"text-align:center;\" *ngIf=\"content?.audio != ''\">\r\n    <audio controls>\r\n      <source [attr.src]=\"content?.audio\" />\r\n    </audio>\r\n    <br/><br/>\r\n  </div>\r\n  <div style=\"padding:20px;\">\r\n    <pre class=\"contentView\">{{content?.content}}</pre>\r\n  </div><br/><br/><br/>\r\n\r\n  <div style=\"text-align:center;\">\r\n    <ng-container *ngIf=\"listurl == 'music' && loggedIn\">\r\n      <select id=\"grade\" *ngIf=\"listurl == 'music' && loggedIn\" #grade>\r\n        <option value=\"5\">★★★★★</option>\r\n        <option value=\"4\">★★★★</option>\r\n        <option value=\"3\">★★★</option>\r\n        <option value=\"2\">★★</option>\r\n        <option value=\"1\">★</option>\r\n      </select>\r\n      <button (click)=\"onRecommend()\" id=\"recommendbtn\">평가</button>\r\n    </ng-container>\r\n    <button *ngIf=\"loggedIn && listurl != 'music'\" id=\"recommendbtn\" (click)=\"onRecommend()\" #recommendBtn>추천 {{content?.recommend}}</button>\r\n  </div><br/><hr/>\r\n\r\n  <!-- ###################### written comment part ###################### -->\r\n  <table class=\"tb2\" *ngFor=\"let val of content?.comment\">\r\n    <tr style=\"height:110px; vertical-align:top;\">\r\n      <td style=\"text-align:center; vertical-align:middle; width:110px; border-right:1px solid rgb(0,91,159);\">\r\n        <img [attr.src]=\"'images/profileimages/'+val?.id\" width=\"70\" height=\"70\" />\r\n      </td>\r\n      <td style=\"vertical-align:top;\">\r\n        <div style=\"font-size:12px; padding:2px; margin-left:5px; border-bottom:1px dotted rgb(0,91,159);\">\r\n          <b *ngIf=\"val.id == 'admin'\"><a class=\"tblink\" href=\"javascript:;\" onclick=\"\">{{val.nickname}}</a></b>\r\n          <a *ngIf=\"val.id != 'admin'\" class=\"tblink\" href=\"javascript:;\" onclick=\"\">{{val.nickname}}</a>\r\n          <span style=\"font-size:12px; float:right;\">\r\n            <form *ngIf=\"user.id == val.id || user.id == 'admin' || boardtype == user.id\" (submit)=\"onDeleteComment()\" id=\"removeCmt+{{val?.num}}\" [attr.id]=\"'removeCmt'+val?.num\" style=\"display:none;\">\r\n              <input type=\"hidden\" name=\"contentnum\" [(ngModel)]=\"contentnum\" value=\"{{content?.num}}\" />\r\n              <input type=\"hidden\" name=\"num\" [(ngModel)]=\"num\" value=\"{{val.num}}\" />\r\n              <input type=\"hidden\" name=\"id\" [(ngModel)]=\"id\" value=\"{{val.id}}\" />\r\n              <input type=\"hidden\" name=\"boardtype\" [(ngModel)]=\"commentBoardtype\" value=\"{{boardtype}}\" />\r\n            </form>\r\n            <a *ngIf=\"user?.id == val?.id || user?.id == 'admin' || boardtype == user?.id\" class=\"link\" href=\"javascript:;\" onclick=\"document.getElementById('removeCmt' + val.num).submit()\">삭제</a>\r\n            <span> {{val?.writedate}}</span>\r\n          </span>\r\n        </div>\r\n        <div style=\"padding-left:10px;\">\r\n          <pre class=\"contentView\" *ngIf=\"content.id == val.id\" style=\"color:blue;\">{{val?.comment}}</pre>\r\n          <pre class=\"contentView\" *ngIf=\"content.id != val.id\">{{val?.comment}}</pre>\r\n        </div>\r\n      </td>\r\n      <td style=\"text-align:right;\"></td>\r\n    </tr>\r\n  </table><br/>\r\n\r\n  <!-- ###################### writing comment part ###################### -->\r\n  <form *ngIf=\"loggedIn && !user?.stop\" (submit)=\"onWriteComment()\">\r\n    <br/>\r\n    <table style=\"width:700px; margin:auto;\">\r\n      <tr>\r\n        <td><textarea cols=\"80\" rows=\"5\" name=\"comment\" [(ngModel)]=\"comment\"></textarea></td>\r\n        <td><input type=\"submit\" name=\"cmt\" value=\"댓글달기\" style=\"width:100px; height:80px;\" /></td>\r\n      </tr>\r\n    </table>\r\n    <br/>\r\n  </form>\r\n  <hr/><button style=\"float:right;\" [routerLink]=\"['../listurl']\" [queryParams]=\"{type: boardtype}\">목록</button><br/><br/>\r\n</div>\r\n\r\n<div class=\"box\">\r\n  <span>{{type}}</span><hr/><br/><br/>\r\n  <table class=\"tb\">\r\n    <tr style=\"height:25px; font-weight:bold\">\r\n      <td style=\"width:70px\">번호</td>\r\n      <td style=\"width:140px\">제목</td>\r\n      <td style=\"width:65px\">작성자</td>\r\n      <td style=\"width:100px\">날짜</td>\r\n      <td style=\"width:55px\">조회수</td>\r\n      <td style=\"width:40px\">추천</td>\r\n    </tr>\r\n\r\n    <ng-container *ngFor=\"let val of all\">\r\n      <tr class=\"trhover\" style=\"height:20px;\">\r\n        <td>{{val.num}}</td>\r\n        <td style=\"text-align:left; padding:50px;\">\r\n          <a class=\"link\" [routerLink]=\"['./content', {type: boardtype, num: val.num}]\">{{val?.title}}</a> \r\n          <span style=\"font-size:12px; color:grey;\" *ngIf=\"val.comment.length > 0\"> [{{val?.comment?.length}}]</span>\r\n        </td>\r\n        <td>{{val?.nickname}}</td>\r\n        <td>{{val?.writedate}}</td>\r\n        <td>{{val?.hit}}</td>\r\n        <td>{{val?.recommend}}</td>\r\n      </tr>\r\n    </ng-container>\r\n\r\n  </table>\r\n</div>\r\n"
+module.exports = "<div class=\"box\">\r\n  <span style=\"font-size:20px;\">{{content?.title}}</span>\r\n  <span style=\"float:right;\">\r\n    <a class=\"tblink\" href=\"javascript:;\" (click)=\"openInfoWindow(content?.id)\">{{content?.nickname}}</a>\r\n  </span>\r\n  <hr/>\r\n  <span style=\"float:right; font-size:13px;\">{{content?.writedate}}</span>\r\n  <br/>\r\n  <span style=\"float:right; font-size:13px;\">조회 {{content?.hit}} 댓글 {{content?.comment?.length}}</span>\r\n  <div>\r\n    <p>content.grade: {{content?.grade}}</p>\r\n    <p>content.gradeby.length: {{content?.gardeby?.length}}</p>\r\n    <p>user.id: {{user?.id}}</p>\r\n    <p>content.id: {{content?.id}}</p>\r\n    <p>writer.boardRequest: {{writer?.boardRequest}}</p>\r\n  </div>\r\n  <ng-container *ngIf=\"listurl == 'music'\">\r\n    <br/>\r\n    <span id=\"gradeSpan\" style=\"float:right; font-size:13px;\" #gradeSpan>평점 {{content?.grade}} by {{content?.gradeby?.length}}명</span>\r\n    <ng-container *ngIf=\"content?.grade >= 3 && content?.gradeby?.length >= 1 && user?.id == content?.id && writer?.boardRequest == 0\">\r\n      <!-- content.grade / content.gradeby.length == average -->\r\n      <!-- if writer.boardRequest == 0, can request to admin to make own board -->\r\n      <!-- after requested, writer.boardRequest is gonna be 1 -->\r\n      <!-- when admin accepts the request, writer.boardRequest is gonna be 2 and having own board -->\r\n      <br/><button id=\"boardRequest\" style=\"float:right;\" (click)=\"requestBoard()\" #boardRequest>게시판 생성 요청</button>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"user.id == 'admin' && writer.boardRequest == 1\">\r\n      <br/><button id=\"boardRequest\" style=\"float:right;\" (click)=\"acceptBoard()\" #boardRequest>게시판 생성 요청 수락</button>\r\n    </ng-container>\r\n  </ng-container><br/><br/>\r\n\r\n  <div style=\"text-align:center;\" *ngIf=\"content?.image != ''\">\r\n    <img [attr.src]=\"content?.image\" width=\"imageWidth\" />\r\n    <br/><br/>\r\n  </div>\r\n  <div style=\"text-align:center;\" *ngIf=\"content?.audio != ''\">\r\n    <audio controls>\r\n      <source [attr.src]=\"content?.audio\" />\r\n    </audio>\r\n    <br/><br/>\r\n  </div>\r\n  <div style=\"padding:20px;\">\r\n    <pre class=\"contentView\">{{content?.content}}</pre>\r\n  </div><br/><br/><br/>\r\n\r\n  <div style=\"text-align:center;\">\r\n    <ng-container *ngIf=\"listurl == 'music' && loggedIn\">\r\n      <select id=\"grade\" *ngIf=\"listurl == 'music' && loggedIn\" #grade>\r\n        <option value=\"5\">★★★★★</option>\r\n        <option value=\"4\">★★★★</option>\r\n        <option value=\"3\">★★★</option>\r\n        <option value=\"2\">★★</option>\r\n        <option value=\"1\">★</option>\r\n      </select>\r\n      <button (click)=\"onRecommend()\" id=\"recommendbtn\">평가</button>\r\n    </ng-container>\r\n    <button *ngIf=\"loggedIn && listurl != 'music'\" id=\"recommendbtn\" (click)=\"onRecommend()\" #recommendBtn>추천 {{content?.recommend}}</button>\r\n  </div><br/><hr/>\r\n\r\n  <!-- ###################### written comment part ###################### -->\r\n  <table class=\"tb2\" *ngFor=\"let val of content?.comment\">\r\n    <tr style=\"height:110px; vertical-align:top;\">\r\n      <td style=\"text-align:center; vertical-align:middle; width:110px; border-right:1px solid rgb(0,91,159);\">\r\n        <img [attr.src]=\"'images/profileimages/'+val?.id\" width=\"70\" height=\"70\" />\r\n      </td>\r\n      <td style=\"vertical-align:top;\">\r\n        <div style=\"font-size:12px; padding:2px; margin-left:5px; border-bottom:1px dotted rgb(0,91,159);\">\r\n          <b *ngIf=\"val.id == 'admin'\"><a class=\"tblink\" href=\"javascript:;\" (click)=\"openInfoWindow(val?.id)\">{{val.nickname}}</a></b>\r\n          <a *ngIf=\"val.id != 'admin'\" class=\"tblink\" href=\"javascript:;\" (click)=\"openInfoWindow(val?.id)\">{{val.nickname}}</a>\r\n          <span style=\"font-size:12px; float:right;\">\r\n            <form *ngIf=\"user.id == val.id || user.id == 'admin' || boardtype == user.id\" (submit)=\"onDeleteComment()\" id=\"removeCmt+{{val?.num}}\" [attr.id]=\"'removeCmt'+val?.num\" style=\"display:none;\">\r\n              <input type=\"hidden\" name=\"contentnum\" [(ngModel)]=\"contentnum\" value=\"{{content?.num}}\" />\r\n              <input type=\"hidden\" name=\"num\" [(ngModel)]=\"num\" value=\"{{val.num}}\" />\r\n              <input type=\"hidden\" name=\"id\" [(ngModel)]=\"id\" value=\"{{val.id}}\" />\r\n              <input type=\"hidden\" name=\"boardtype\" [(ngModel)]=\"commentBoardtype\" value=\"{{boardtype}}\" />\r\n            </form>\r\n            <a *ngIf=\"user?.id == val?.id || user?.id == 'admin' || boardtype == user?.id\" class=\"link\" href=\"javascript:;\" onclick=\"document.getElementById('removeCmt' + val.num).submit()\">삭제</a>\r\n            <span> {{val?.writedate}}</span>\r\n          </span>\r\n        </div>\r\n        <div style=\"padding-left:10px;\">\r\n          <pre class=\"contentView\" *ngIf=\"content.id == val.id\" style=\"color:blue;\">{{val?.comment}}</pre>\r\n          <pre class=\"contentView\" *ngIf=\"content.id != val.id\">{{val?.comment}}</pre>\r\n        </div>\r\n      </td>\r\n      <td style=\"text-align:right;\"></td>\r\n    </tr>\r\n  </table><br/>\r\n\r\n  <!-- ###################### writing comment part ###################### -->\r\n  <form *ngIf=\"loggedIn && !user?.stop\" (submit)=\"onWriteComment()\">\r\n    <br/>\r\n    <table style=\"width:700px; margin:auto;\">\r\n      <tr>\r\n        <td><textarea cols=\"80\" rows=\"5\" name=\"comment\" [(ngModel)]=\"comment\"></textarea></td>\r\n        <td><input type=\"submit\" name=\"cmt\" value=\"댓글달기\" style=\"width:100px; height:80px;\" /></td>\r\n      </tr>\r\n    </table>\r\n    <br/>\r\n  </form>\r\n  <hr/>\r\n  <button *ngIf=\"user?.id == content?.id || user?.id == 'admin' || boardtype == user.id\" style=\"float:right;\" (click)=\"onDeleteContent()\">삭제</button>\r\n  <button style=\"float:right;\" [routerLink]=\"['../'+listurl]\" [queryParams]=\"{type: boardtype}\">목록</button><br/><br/>\r\n</div>\r\n\r\n<div class=\"box\">\r\n  <span>{{type}}</span><hr/><br/><br/>\r\n  <table class=\"tb\">\r\n    <tr style=\"height:25px; font-weight:bold\">\r\n      <td style=\"width:70px\">번호</td>\r\n      <td style=\"width:140px\">제목</td>\r\n      <td style=\"width:65px\">작성자</td>\r\n      <td style=\"width:100px\">날짜</td>\r\n      <td style=\"width:55px\">조회수</td>\r\n      <td style=\"width:40px\">추천</td>\r\n    </tr>\r\n\r\n    <ng-container *ngFor=\"let val of all\">\r\n      <tr class=\"trhover\" style=\"height:20px;\">\r\n        <td>{{val.num}}</td>\r\n        <td style=\"text-align:left; padding:50px;\">\r\n          <a class=\"link\" [routerLink]=\"['./content', {type: boardtype, num: val.num}]\">{{val?.title}}</a> \r\n          <span style=\"font-size:12px; color:grey;\" *ngIf=\"val.comment.length > 0\"> [{{val?.comment?.length}}]</span>\r\n        </td>\r\n        <td>\r\n          <a class=\"link\" href=\"javascript:;\" (click)=\"openInfoWindow(val?.id)\">{{val?.nickname}}</a>\r\n        </td>\r\n        <td>{{val?.writedate}}</td>\r\n        <td>{{val?.hit}}</td>\r\n        <td>{{val?.recommend}}</td>\r\n      </tr>\r\n    </ng-container>\r\n\r\n  </table>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -403,6 +407,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var ContentComponent = /** @class */ (function () {
     function ContentComponent(handleuserService, router, http, route, flashMessage) {
+        var _this = this;
         this.handleuserService = handleuserService;
         this.router = router;
         this.http = http;
@@ -410,6 +415,11 @@ var ContentComponent = /** @class */ (function () {
         this.flashMessage = flashMessage;
         this.paramType = this.route.snapshot.queryParamMap.get('type');
         this.paramNum = this.route.snapshot.queryParamMap.get('num');
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            if (e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"]) {
+                _this.initialiseInvites();
+            }
+        });
     }
     ContentComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -425,31 +435,45 @@ var ContentComponent = /** @class */ (function () {
                 _this.listurl = result.listurl;
                 _this.boardtype = result.boardtype;
                 _this.all = result.all;
+                _this.writer = result.writer;
             });
         });
     };
-    ContentComponent.prototype.onWriteComment = function () {
+    ContentComponent.prototype.initialiseInvites = function () {
+        this.ngOnInit();
+    };
+    ContentComponent.prototype.ngOnDestroy = function () {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    };
+    ContentComponent.prototype.openInfoWindow = function (userid) {
+        this.handleuserService.openWindow('http://localhost:3000/info?userid=' + userid);
+    };
+    ContentComponent.prototype.onDeleteContent = function () {
         var _this = this;
-        var formData = {
-            board: this.listurl,
-            _id: this.content._id,
-            comment: this.comment
-        };
-        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["Headers"]();
-        headers.append('Content-Type', 'application/json');
-        this.http.post('http://localhost:3000/comment', formData, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
-            if (data.success) {
-                _this.router.navigated = false;
-                _this.router.navigate(['./content'], { queryParams: { type: _this.paramType, num: _this.paramNum } });
-            }
-            else {
-                _this.flashMessage.showFlashMessage({
-                    messages: [data.msg],
-                    type: 'danger',
-                    timeout: 3000
-                });
-            }
-        });
+        if (confirm('정말 삭제하시겠습니까?')) {
+            var formData = {
+                id: this.content.id,
+                num: this.content.num,
+                boardtype: this.paramType
+            };
+            var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["Headers"]();
+            headers.append('Content-Type', 'application/json');
+            this.http.post('http://localhost:3000/delete/' + this.paramType, formData, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
+                if (data.success) {
+                    _this.router.navigated = false;
+                    _this.router.navigate(['./' + _this.listurl], { queryParams: { type: _this.paramType } });
+                }
+                else {
+                    _this.flashMessage.showFlashMessage({
+                        messages: ['에러가 발생하였습니다'],
+                        type: 'danger',
+                        timeout: 3000
+                    });
+                }
+            });
+        }
     };
     ContentComponent.prototype.onDeleteComment = function () {
         var _this = this;
@@ -480,22 +504,30 @@ var ContentComponent = /** @class */ (function () {
         var count = this.paramType == 'music' ? document.getElementById('grade').value : 1;
         var formData = {
             boardtype: this.paramType,
-            _id: this.content._id,
             id: this.user.id,
-            count: count
+            count: count,
+            num: this.content.num
         };
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_3__["Headers"]();
         headers.append('Content-Type', 'application/json');
         this.http.post('http://localhost:3000/ajax', formData, { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
-            if (_this.paramType == 'music') {
-                var gradeSpan = document.getElementById("gradeSpan");
-                gradeSpan.innerHTML = "평점 " + data.grade + " by " + data.people + "명";
+            if (data.msg == 'duplicate') {
+                _this.flashMessage.showFlashMessage({
+                    messages: ['이미 추천하셨습니다'],
+                    type: 'danger',
+                    timeout: 3000
+                });
             }
             else {
-                var recommendBtn = document.getElementById("recommendBtn");
-                if (!data.recommend)
-                    data.recommend = _this.content.recommend;
-                recommendBtn.innerHTML = "추천 " + data.recommend;
+                if (_this.paramType == 'music') {
+                    var gradeSpan = document.getElementById("gradeSpan");
+                    gradeSpan.innerHTML = "평점 " + data.grade + " by " + data.people + "명";
+                }
+                else {
+                    var recommendBtn = document.getElementById("recommendBtn");
+                    // if ( !data.recommend ) data.recommend = this.content.recommend;
+                    recommendBtn.innerHTML = "추천 " + data.recommend;
+                }
             }
         });
     };
@@ -618,117 +650,6 @@ var FindComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/components/fix/fix.component.css":
-/*!**************************************************!*\
-  !*** ./src/app/components/fix/fix.component.css ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/components/fix/fix.component.html":
-/*!***************************************************!*\
-  !*** ./src/app/components/fix/fix.component.html ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"reg\"><span style=\"float:left;\">회원정보수정 </span><br/>\r\n  <hr/><br/>\r\n  <form (submit)=\"onFixSubmit()\">\r\n      <table class=\"regtable\" style=\"height:600px;\">\r\n          <tr>\r\n              <td>기존 비밀번호 <span class=\"regerr\">*</span></td>\r\n              <td><input class=\"reginput\" type=\"password\" name=\"password\" [(ngModel)]=\"password\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td>새 비밀번호 <span class=\"regerr\">*</span></td>\r\n              <td><input class=\"reginput\" type=\"password\" name=\"passwordNew\" [(ngModel)]=\"passwordNew\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td>닉네임 <span class=\"regerr\">*</span></td>\r\n              <td><input class=\"reginput\" type=\"text\" name=\"nickname\" [(ngModel)]=\"nickname\" value=\"user?.nickname\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td>좋아하는 장르</td>\r\n              <td><input class=\"reginput\" type=\"text\" name=\"genre\" [(ngModel)]=\"genre\" value=\"user?.genre\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td>한줄 자기소개</td>\r\n              <td><input class=\"reginput\" type=\"text\" name=\"intro\" [(ngModel)]=\"intro\" value=\"user?.introduction\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td>프로필 이미지</td>\r\n              <td><input type=\"file\" name=\"image\" [(ngModel)]=\"image\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td colspan=\"2\" style=\"text-align:center;\"><input type=\"submit\" name=\"submit\" value=\"수정\" style=\"width:200px; height:50px;\" /></td>\r\n          </tr>\r\n      </table>\r\n  </form><br/>\r\n  <hr/><span class=\"regerr\">* </span><span>표시가 된 곳은 필수 입력사항입니다</span><br/><br/>\r\n  <span class=\"link\">회원코드: {{user?._id}}</span>\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "./src/app/components/fix/fix.component.ts":
-/*!*************************************************!*\
-  !*** ./src/app/components/fix/fix.component.ts ***!
-  \*************************************************/
-/*! exports provided: FixComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FixComponent", function() { return FixComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ng-flash-messages */ "./node_modules/ng-flash-messages/ng-flash-messages.umd.js");
-/* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(ng_flash_messages__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _services_handleuser_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/handleuser.service */ "./src/app/services/handleuser.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var FixComponent = /** @class */ (function () {
-    function FixComponent(http, flashMessage, handleuserService, router) {
-        this.http = http;
-        this.flashMessage = flashMessage;
-        this.handleuserService = handleuserService;
-        this.router = router;
-    }
-    FixComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
-        headers.append('Content-type', 'application/json');
-        this.http.get('http://localhost:3000/fix', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); })).subscribe(function (data) {
-            _this.user = data.user;
-        });
-    };
-    FixComponent.prototype.onFixSubmit = function () {
-        var _this = this;
-        var formData = {
-            password: this.password,
-            passwordNew: this.passwordNew,
-            nickname: this.nickname,
-            genre: this.genre,
-            intro: this.intro,
-            image: this.image
-        };
-        console.log(formData);
-        this.handleuserService.fixUser(formData).subscribe(function (data) {
-            if (data.success) {
-                _this.router.navigate(['./start']);
-            }
-            else {
-                _this.flashMessage.showFlashMessage({
-                    messages: [data.errmsg],
-                    type: 'danger',
-                    timeout: 3000
-                });
-            }
-        });
-    };
-    FixComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-fix',
-            template: __webpack_require__(/*! ./fix.component.html */ "./src/app/components/fix/fix.component.html"),
-            styles: [__webpack_require__(/*! ./fix.component.css */ "./src/app/components/fix/fix.component.css")]
-        }),
-        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"],
-            ng_flash_messages__WEBPACK_IMPORTED_MODULE_3__["NgFlashMessageService"],
-            _services_handleuser_service__WEBPACK_IMPORTED_MODULE_4__["HandleuserService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]])
-    ], FixComponent);
-    return FixComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/components/footer/footer.component.css":
 /*!********************************************************!*\
   !*** ./src/app/components/footer/footer.component.css ***!
@@ -810,7 +731,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box\"><span>자유게시판</span>\r\n  <hr/><br/><br/>\r\n  <table class=\"tb\">\r\n    <tr style=\"height:25px; font-weight:bold\">\r\n      <td style=\"width:70px\">번호</td>\r\n      <td style=\"width:140px\">제목</td>\r\n      <td style=\"width:65px\">작성자</td>\r\n      <td style=\"width:100px\">날짜</td>\r\n      <td style=\"width:55px\">조회수</td>\r\n      <td style=\"width:40px\">추천</td>\r\n    </tr>\r\n\r\n    <ng-container *ngFor=\"let val of free\">\r\n      <tr class=\"trhover\" style=\"height:20px;\">\r\n        <td>{{val.num}}</td>\r\n        <td style=\"text-align:left; padding:50px;\">\r\n          <a class=\"link\" [routerLink]=\"['../content']\" [queryParams]=\"{type: 'free', num: val.num}\">{{val.title}}</a>\r\n          <span style=\"font-size:12px; color:grey;\" *ngIf=\"val.comment.length > 0\"> [{{val.comment.length}}]</span>\r\n        </td>\r\n        <td>{{val.nickname}}</td>\r\n        <td>{{val.writedate}}</td>\r\n        <td>{{val.hit}}</td>\r\n        <td>{{val.recommend}}</td>\r\n      </tr>\r\n    </ng-container>\r\n\r\n  </table>\r\n  <br/><br/>\r\n\r\n  <form method=\"POST\" action=\"./write\" *ngIf=\"loggedIn\">\r\n    <input type=\"submit\" name=\"submit\" value=\"글쓰기\" style=\"float:right;\"/>\r\n    <input type=\"hidden\" name=\"type\" value=\"free\"/>\r\n  </form>\r\n</div>"
+module.exports = "<div class=\"box\"><span>자유게시판</span>\r\n  <hr/><br/><br/>\r\n  <table class=\"tb\">\r\n    <tr style=\"height:25px; font-weight:bold\">\r\n      <td style=\"width:70px\">번호</td>\r\n      <td style=\"width:140px\">제목</td>\r\n      <td style=\"width:65px\">작성자</td>\r\n      <td style=\"width:100px\">날짜</td>\r\n      <td style=\"width:55px\">조회수</td>\r\n      <td style=\"width:40px\">추천</td>\r\n    </tr>\r\n\r\n    <ng-container *ngFor=\"let val of free\">\r\n      <tr class=\"trhover\" style=\"height:20px;\">\r\n        <td>{{val.num}}</td>\r\n        <td style=\"text-align:left; padding:50px;\">\r\n          <a class=\"link\" [routerLink]=\"['../content']\" [queryParams]=\"{type: 'free', num: val.num}\">{{val.title}}</a>\r\n          <span style=\"font-size:12px; color:grey;\" *ngIf=\"val.comment.length > 0\"> [{{val.comment.length}}]</span>\r\n        </td>\r\n        <td>\r\n          <a class=\"link\" href=\"javascript:;\" (click)=\"openInfoWindow(val?.id)\">{{val.nickname}}</a>\r\n        </td>\r\n        <td>{{val.writedate}}</td>\r\n        <td>{{val.hit}}</td>\r\n        <td>{{val.recommend}}</td>\r\n      </tr>\r\n    </ng-container>\r\n\r\n  </table>\r\n  <br/><br/>\r\n\r\n  <button *ngIf=\"loggedIn && !user?.stop\" style=\"float:right;\" onclick=\"location.href='http://localhost:3000/write?type=free'\">글쓰기</button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -825,8 +746,9 @@ module.exports = "<div class=\"box\"><span>자유게시판</span>\r\n  <hr/><br/
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FreeComponent", function() { return FreeComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_handleuser_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/handleuser.service */ "./src/app/services/handleuser.service.ts");
-/* harmony import */ var _services_handleboard_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/handleboard.service */ "./src/app/services/handleboard.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_handleuser_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/handleuser.service */ "./src/app/services/handleuser.service.ts");
+/* harmony import */ var _services_handleboard_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/handleboard.service */ "./src/app/services/handleboard.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -839,11 +761,30 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var FreeComponent = /** @class */ (function () {
-    function FreeComponent(handleuserService, handleboardService) {
+    function FreeComponent(handleuserService, handleboardService, router) {
+        var _this = this;
         this.handleuserService = handleuserService;
         this.handleboardService = handleboardService;
+        this.router = router;
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            if (e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"]) {
+                _this.initialiseInvites();
+            }
+        });
     }
+    FreeComponent.prototype.openInfoWindow = function (userid) {
+        this.handleuserService.openWindow('http://localhost:3000/info?userid=' + userid);
+    };
+    FreeComponent.prototype.initialiseInvites = function () {
+        this.ngOnInit();
+    };
+    FreeComponent.prototype.ngOnDestroy = function () {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    };
     FreeComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.handleuserService.loggedIn().subscribe(function (data) {
@@ -859,8 +800,9 @@ var FreeComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./free.component.html */ "./src/app/components/free/free.component.html"),
             styles: [__webpack_require__(/*! ./free.component.css */ "./src/app/components/free/free.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_handleuser_service__WEBPACK_IMPORTED_MODULE_1__["HandleuserService"],
-            _services_handleboard_service__WEBPACK_IMPORTED_MODULE_2__["HandleboardService"]])
+        __metadata("design:paramtypes", [_services_handleuser_service__WEBPACK_IMPORTED_MODULE_2__["HandleuserService"],
+            _services_handleboard_service__WEBPACK_IMPORTED_MODULE_3__["HandleboardService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], FreeComponent);
     return FreeComponent;
 }());
@@ -887,7 +829,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"reg\"><span style=\"float:left;\">회원가입 <span class=\"regerr\"></span></span><br/>\n    <hr/><br/>\n    <form (submit)=\"submitRegister()\">\n        <table class=\"regtable\">\n            <tr>\n                <td>아이디<span class=\"regerr\"> *</span></td>\n                <td><input class=\"reginput\" type=\"text\" name=\"id\" [(ngModel)]=\"id\" /></td>\n            </tr>\n            <tr>\n                <td>비밀번호<span class=\"regerr\"> *</span></td>\n                <td><input class=\"reginput\" type=\"password\" name=\"password\" [(ngModel)]=\"password\" /></td>\n            </tr>\n            <tr>\n                <td>이메일<span class=\"regerr\"> *</span></td>\n                <td><input class=\"reginput\" type=\"text\" name=\"email\" [(ngModel)]=\"email\" /></td>\n            </tr>\n            <tr>\n                <td>닉네임<span class=\"regerr\"> *</span></td>\n                <td><input class=\"reginput\" type=\"text\" name=\"nickname\" [(ngModel)]=\"nickname\" /></td>\n            </tr>\n            <tr>\n                <td>즐겨듣는 장르</td>\n                <td><input class=\"reginput\" type=\"text\" name=\"genre\" [(ngModel)]=\"genre\" /></td>\n            </tr>\n            <tr>\n                <td>자기소개 한마디</td>\n                <td><input class=\"reginput\" type=\"text\" name=\"intro\" [(ngModel)]=\"intro\" /></td>\n            </tr>\n            <tr>\n                <td colspan=\"2\" style=\"text-align:center;\"><input type=\"submit\" name=\"submit\" value=\"회원가입\" style=\"width:200px; height:50px;\" /></td>\n            </tr>\n        </table><br/>\n        <hr/><span class=\"regerr\">* </span><span class=\"regerr\" style=\"color:black;\">표시가 된 곳은 필수 입력사항입니다.</span><br/><br/><span class=\"link\">회원가입 이후 회원정보수정에서 회원코드를 메모해놓으세요. 추후 아이디/비밀번호 찾기에 필요합니다.</span></form>\n  </div>\n  "
+module.exports = "<div class=\"reg\"><span style=\"float:left;\">회원가입 <span class=\"regerr\"></span></span><br/>\r\n    <hr/><br/>\r\n    <form (submit)=\"submitRegister()\">\r\n        <table class=\"regtable\">\r\n            <tr>\r\n                <td>아이디<span class=\"regerr\"> *</span></td>\r\n                <td><input class=\"reginput\" type=\"text\" name=\"id\" [(ngModel)]=\"id\" /></td>\r\n            </tr>\r\n            <tr>\r\n                <td>비밀번호<span class=\"regerr\"> *</span></td>\r\n                <td><input class=\"reginput\" type=\"password\" name=\"password\" [(ngModel)]=\"password\" /></td>\r\n            </tr>\r\n            <tr>\r\n                <td>이메일<span class=\"regerr\"> *</span></td>\r\n                <td><input class=\"reginput\" type=\"text\" name=\"email\" [(ngModel)]=\"email\" /></td>\r\n            </tr>\r\n            <tr>\r\n                <td>닉네임<span class=\"regerr\"> *</span></td>\r\n                <td><input class=\"reginput\" type=\"text\" name=\"nickname\" [(ngModel)]=\"nickname\" /></td>\r\n            </tr>\r\n            <tr>\r\n                <td>즐겨듣는 장르</td>\r\n                <td><input class=\"reginput\" type=\"text\" name=\"genre\" [(ngModel)]=\"genre\" /></td>\r\n            </tr>\r\n            <tr>\r\n                <td>자기소개 한마디</td>\r\n                <td><input class=\"reginput\" type=\"text\" name=\"intro\" [(ngModel)]=\"intro\" /></td>\r\n            </tr>\r\n            <tr>\r\n                <td colspan=\"2\" style=\"text-align:center;\"><input type=\"submit\" name=\"submit\" value=\"회원가입\" style=\"width:200px; height:50px;\" /></td>\r\n            </tr>\r\n        </table><br/>\r\n        <hr/><span class=\"regerr\">* </span><span class=\"regerr\" style=\"color:black;\">표시가 된 곳은 필수 입력사항입니다.</span><br/><br/><span class=\"link\">회원가입 이후 회원정보수정에서 회원코드를 메모해놓으세요. 추후 아이디/비밀번호 찾기에 필요합니다.</span></form>\r\n  </div>\r\n  "
 
 /***/ }),
 
@@ -989,7 +931,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"reg\" style=\"border-width:0px\"><span style=\"float:left\">로그인</span><br/>\n  <hr/><br/><br/>\n  <form (submit)=\"onLoginSubmit()\">\n    <input type=\"text\" name=\"id\" [(ngModel)]=\"id\" placeholder=\"아이디\" style=\"width:300px; height:50px\"/><br/><br/>\n    <input type=\"password\" name=\"password\" [(ngModel)]=\"password\" placeholder=\"비밀번호\" style=\"width:300px; height:50px\"/><br/><br/>\n    <input type=\"submit\" name=\"submit\" value=\"로그인\" style=\"width:300px; height:50px\"/><br/><br/>\n  </form><br/>\n  <hr/><a class=\"link\" [routerLink]=\"['./join']\" style=\"font-size:15px\">회원가입</a><span> | </span><a class=\"link\" [routerLink]=\"['./find']\" style=\"font-size:15px\">아이디/비밀번호 찾기</a>\n</div>"
+module.exports = "<div class=\"reg\" style=\"border-width:0px\"><span style=\"float:left\">로그인</span><br/>\r\n  <hr/><br/><br/>\r\n  <form (submit)=\"onLoginSubmit()\">\r\n    <input type=\"text\" name=\"id\" [(ngModel)]=\"id\" placeholder=\"아이디\" style=\"width:300px; height:50px\"/><br/><br/>\r\n    <input type=\"password\" name=\"password\" [(ngModel)]=\"password\" placeholder=\"비밀번호\" style=\"width:300px; height:50px\"/><br/><br/>\r\n    <input type=\"submit\" name=\"submit\" value=\"로그인\" style=\"width:300px; height:50px\"/><br/><br/>\r\n  </form><br/>\r\n  <hr/><a class=\"link\" [routerLink]=\"['./join']\" style=\"font-size:15px\">회원가입</a><span> | </span><a class=\"link\" [routerLink]=\"['./find']\" style=\"font-size:15px\">아이디/비밀번호 찾기</a>\r\n</div>"
 
 /***/ }),
 
@@ -1087,7 +1029,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box\"><span>음악게시판</span>\r\n  <hr/><br/><br/>\r\n  <table class=\"tb\">\r\n    <tr style=\"height:25px; font-weight:bold\">\r\n      <td style=\"width:70px\">번호</td>\r\n      <td style=\"width:140px\">제목</td>\r\n      <td style=\"width:65px\">작성자</td>\r\n      <td style=\"width:100px\">날짜</td>\r\n      <td style=\"width:55px\">조회수</td>\r\n      <td style=\"width:40px\">전체평점</td>\r\n    </tr>\r\n\r\n    <ng-container *ngFor=\"let val of music\">\r\n      <tr class=\"trhover\" style=\"height:20px;\">\r\n        <td>{{val.num}}</td>\r\n        <td style=\"text-align:left; padding:50px;\">\r\n          <a class=\"link\" [routerLink]=\"['../content']\" [queryParams]=\"{type: 'music', num: val?.num}\">{{val?.title}}</a> \r\n          <span style=\"font-size:12px; color:grey;\" *ngIf=\"val?.comment?.length > 0\">[{{val?.comment?.length}}]</span>\r\n        </td>\r\n        <td>{{val?.nickname}}</td>\r\n        <td>{{val?.writedate}}</td>\r\n        <td>{{val?.hit}}</td>\r\n        <td>{{val?.grade}}</td>\r\n      </tr>\r\n    </ng-container>\r\n\r\n  </table>\r\n  <br/><br/>\r\n\r\n  <form method=\"POST\" action=\"./write\" *ngIf=\"loggedIn\">\r\n    <input type=\"submit\" name=\"submit\" value=\"글쓰기\" style=\"float:right;\"/>\r\n    <input type=\"hidden\" name=\"type\" value=\"music\"/>\r\n  </form>\r\n</div>"
+module.exports = "<div class=\"box\"><span>음악게시판</span>\r\n  <hr/><br/><br/>\r\n  <table class=\"tb\">\r\n    <tr style=\"height:25px; font-weight:bold\">\r\n      <td style=\"width:70px\">번호</td>\r\n      <td style=\"width:140px\">제목</td>\r\n      <td style=\"width:65px\">작성자</td>\r\n      <td style=\"width:100px\">날짜</td>\r\n      <td style=\"width:55px\">조회수</td>\r\n      <td style=\"width:40px\">전체평점</td>\r\n    </tr>\r\n\r\n    <ng-container *ngFor=\"let val of music\">\r\n      <tr class=\"trhover\" style=\"height:20px;\">\r\n        <td>{{val.num}}</td>\r\n        <td style=\"text-align:left; padding:50px;\">\r\n          <a class=\"link\" [routerLink]=\"['../content']\" [queryParams]=\"{type: 'music', num: val?.num}\">{{val?.title}}</a> \r\n          <span style=\"font-size:12px; color:grey;\" *ngIf=\"val?.comment?.length > 0\">[{{val?.comment?.length}}]</span>\r\n        </td>\r\n        <td>\r\n          <a class=\"link\" href=\"javascript:;\" (click)=\"openInfoWindow(val?.id)\">{{val?.nickname}}</a>\r\n        </td>\r\n        <td>{{val?.writedate}}</td>\r\n        <td>{{val?.hit}}</td>\r\n        <td>{{val?.grade}}</td>\r\n      </tr>\r\n    </ng-container>\r\n\r\n  </table>\r\n  <br/><br/>\r\n\r\n  <button *ngIf=\"loggedIn && !user?.stop\" style=\"float:right;\" onclick=\"location.href='http://localhost:3000/write?type=music'\">글쓰기</button>\r\n</div>"
 
 /***/ }),
 
@@ -1102,8 +1044,9 @@ module.exports = "<div class=\"box\"><span>음악게시판</span>\r\n  <hr/><br/
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MusicComponent", function() { return MusicComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_handleuser_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/handleuser.service */ "./src/app/services/handleuser.service.ts");
-/* harmony import */ var _services_handleboard_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/handleboard.service */ "./src/app/services/handleboard.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_handleuser_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/handleuser.service */ "./src/app/services/handleuser.service.ts");
+/* harmony import */ var _services_handleboard_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/handleboard.service */ "./src/app/services/handleboard.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1116,10 +1059,18 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var MusicComponent = /** @class */ (function () {
-    function MusicComponent(handleuserService, handleboardService) {
+    function MusicComponent(handleuserService, handleboardService, router) {
+        var _this = this;
         this.handleuserService = handleuserService;
         this.handleboardService = handleboardService;
+        this.router = router;
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            if (e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"]) {
+                _this.ngOnInit();
+            }
+        });
     }
     MusicComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1130,14 +1081,23 @@ var MusicComponent = /** @class */ (function () {
             });
         });
     };
+    MusicComponent.prototype.ngOnDestroy = function () {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    };
+    MusicComponent.prototype.openInfoWindow = function (userid) {
+        this.handleuserService.openWindow('http://localhost:3000/info?userid=' + userid);
+    };
     MusicComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-music',
             template: __webpack_require__(/*! ./music.component.html */ "./src/app/components/music/music.component.html"),
             styles: [__webpack_require__(/*! ./music.component.css */ "./src/app/components/music/music.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_handleuser_service__WEBPACK_IMPORTED_MODULE_1__["HandleuserService"],
-            _services_handleboard_service__WEBPACK_IMPORTED_MODULE_2__["HandleboardService"]])
+        __metadata("design:paramtypes", [_services_handleuser_service__WEBPACK_IMPORTED_MODULE_2__["HandleuserService"],
+            _services_handleboard_service__WEBPACK_IMPORTED_MODULE_3__["HandleboardService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], MusicComponent);
     return MusicComponent;
 }());
@@ -1195,14 +1155,28 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var NavbarComponent = /** @class */ (function () {
     function NavbarComponent(handleuserService, router) {
+        var _this = this;
         this.handleuserService = handleuserService;
         this.router = router;
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            if (e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"]) {
+                _this.initialiseInvites();
+            }
+        });
     }
     NavbarComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.handleuserService.loggedIn().subscribe(function (data) {
             _this.loggedIn = data.result;
         });
+    };
+    NavbarComponent.prototype.initialiseInvites = function () {
+        this.ngOnInit();
+    };
+    NavbarComponent.prototype.ngOnDestroy = function () {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
     };
     NavbarComponent.prototype.onLogoutClick = function () {
         var _this = this;
@@ -1245,7 +1219,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box\">\r\n  <span id=\"visitor\">공지사항</span><hr/><br/>\r\n\r\n  <form (submit)=\"onWrite()\" *ngIf=\"user.id == 'admin'\">\r\n    <table style=\"width:700px; margin:auto;\">\r\n      <tr>\r\n        <td><textarea cols=\"80\" rows=\"5\" name=\"comment\"></textarea></td>\r\n        <td><input type=\"submit\" name=\"cmt\" value=\"작성\" style=\"width:100px; height:80px;\" /></td>\r\n      </tr>\r\n    </table>\r\n  </form><br/>\r\n\r\n  <table class=\"tb2\" *ngFor=\"let val of content\">\r\n    <tr style=\"height:110px; vertical-align:top;\">\r\n        <td style=\"text-align:center; vertical-align:middle; width:110px; border-right:1px solid rgb(0,91,159);\">\r\n          <img src=\"'images/profileimages/' + val.id\" width=\"70\" height=\"70\" />\r\n        </td>\r\n        <td>\r\n            <div style=\"font-size:12px; padding:2px; margin-left:5px; border-bottom:1px dotted rgb(0,91,159);\">\r\n              <b *ngIf=\"val.id == 'admin'\">\r\n                <a class=\"tblink\" href=\"javascript:;\" onclick=\"\">{{val.nickname}}</a>\r\n              </b>\r\n              <a *ngIf=\"val.id != 'admin'\" class=\"tblink\" href=\"javascript:;\" onclick=\"\">{{val.nickname}}</a>\r\n              <span style=\"font-size:12px; float:right;\">{{val.writedate}}</span>\r\n            </div>\r\n            <div style=\"padding-left:10px;\">\r\n              <pre class=\"contentView\">{{val.comment}}</pre>\r\n            </div>\r\n        </td>\r\n        <td style=\"text-align:right;\"></td>\r\n    </tr>\r\n  </table>\r\n</div>\r\n"
+module.exports = "<div class=\"box\">\r\n  <span id=\"visitor\">공지사항</span><hr/><br/>\r\n\r\n  <form (submit)=\"onWrite()\" *ngIf=\"user.id == 'admin'\">\r\n    <table style=\"width:700px; margin:auto;\">\r\n      <tr>\r\n        <td><textarea cols=\"80\" rows=\"5\" name=\"comment\"></textarea></td>\r\n        <td><input type=\"submit\" name=\"cmt\" value=\"작성\" style=\"width:100px; height:80px;\" /></td>\r\n      </tr>\r\n    </table>\r\n  </form><br/>\r\n\r\n  <table class=\"tb2\" *ngFor=\"let val of content\">\r\n    <tr style=\"height:110px; vertical-align:top;\">\r\n        <td style=\"text-align:center; vertical-align:middle; width:110px; border-right:1px solid rgb(0,91,159);\">\r\n          <img src=\"'images/profileimages/' + val.id\" width=\"70\" height=\"70\" />\r\n        </td>\r\n        <td>\r\n            <div style=\"font-size:12px; padding:2px; margin-left:5px; border-bottom:1px dotted rgb(0,91,159);\">\r\n              <b *ngIf=\"val.id == 'admin'\">\r\n                <a class=\"tblink\" href=\"javascript:;\" (click)=\"openInfoWindow(val?.id)\">{{val.nickname}}</a>\r\n              </b>\r\n              <a *ngIf=\"val.id != 'admin'\" class=\"tblink\" href=\"javascript:;\" (click)=\"openInfoWindow(val?.id)\">{{val.nickname}}</a>\r\n              <span style=\"font-size:12px; float:right;\">{{val.writedate}}</span>\r\n            </div>\r\n            <div style=\"padding-left:10px;\">\r\n              <pre class=\"contentView\">{{val.comment}}</pre>\r\n            </div>\r\n        </td>\r\n        <td style=\"text-align:right;\"></td>\r\n    </tr>\r\n  </table>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1264,6 +1238,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ng-flash-messages */ "./node_modules/ng-flash-messages/ng-flash-messages.umd.js");
 /* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(ng_flash_messages__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _services_handleuser_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/handleuser.service */ "./src/app/services/handleuser.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1277,11 +1252,19 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var NoticeComponent = /** @class */ (function () {
-    function NoticeComponent(handleboardService, router, flashMessage) {
+    function NoticeComponent(handleboardService, handleuserService, router, flashMessage) {
+        var _this = this;
         this.handleboardService = handleboardService;
+        this.handleuserService = handleuserService;
         this.router = router;
         this.flashMessage = flashMessage;
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            if (e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"]) {
+                _this.initialiseInvites();
+            }
+        });
     }
     NoticeComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1289,6 +1272,17 @@ var NoticeComponent = /** @class */ (function () {
             _this.user = data.user;
             _this.content = data.content;
         });
+    };
+    NoticeComponent.prototype.initialiseInvites = function () {
+        this.ngOnInit();
+    };
+    NoticeComponent.prototype.openInfoWindow = function (userid) {
+        this.handleuserService.openWindow('http://localhost:3000/info?userid=' + userid);
+    };
+    NoticeComponent.prototype.ngOnDestroy = function () {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
     };
     NoticeComponent.prototype.onWrite = function () {
         var _this = this;
@@ -1316,6 +1310,7 @@ var NoticeComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./notice.component.css */ "./src/app/components/notice/notice.component.css")]
         }),
         __metadata("design:paramtypes", [_services_handleboard_service__WEBPACK_IMPORTED_MODULE_1__["HandleboardService"],
+            _services_handleuser_service__WEBPACK_IMPORTED_MODULE_4__["HandleuserService"],
             _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
             ng_flash_messages__WEBPACK_IMPORTED_MODULE_3__["NgFlashMessageService"]])
     ], NoticeComponent);
@@ -1344,7 +1339,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"width:1000px; margin:auto;\">\n  <div *ngIf=\"!loggedIn\">\n    <form class=\"loginbox\" (submit)=\"onLoginSubmit()\">\n      <hr/>\n      <table style=\"border-collapse:collapse;\">\n          <tr>\n              <td><input type=\"text\" name=\"id\" [(ngModel)]=\"id\" placeholder=\"아이디\" style=\"width:120px; height:20px;\" /></td>\n              <td rowspan=\"2\"><input type=\"submit\" name=\"submit\" style=\"height:55px;\" value=\"로그인\" /></td>\n          </tr>\n          <tr>\n              <td><input type=\"password\" name=\"password\" [(ngModel)]=\"password\" placeholder=\"비밀번호\" style=\"width:120px; height:20px;\" /></td>\n          </tr>\n      </table>\n      <hr/><a class=\"link\" [routerLink]=\"['../join']\">회원가입</a><span class=\"link\"> | </span><a class=\"link\" [routerLink]=\"['../find']\">아이디/비밀번호 찾기</a></form>\n  </div>\n  <div *ngIf=\"loggedIn\">\n    <div class=\"loginbox\" style=\"text-align:center; font-size:13px;\">\n      <b>{{user.nickname}}</b>\n      <span>님, 반갑습니다</span><br/><hr/>\n      <b *ngIf=\"user.stop\" style=\"color:red;\">정지회원</b>\n      <b *ngIf=\"!user.stop\">클린회원</b><br/>\n      <a href=\"javascript:;\" (click)=\"openWindow(user?.id)\" class=\"link\">나의 정보</a><br/>\n      <!-- <a class=\"link\" [routerLink]=\"['../fix']\">회원정보수정</a> |  -->\n      <a class=\"link\" href=\"http://localhost:3000/fix\">회원정보수정</a> | \n      <a class=\"link\" (click)=\"onLogoutClick()\" href=\"javascript:;\">로그아웃</a><br/><hr/>\n      <span>가입일: {{user.joindate}}</span>\n    </div>\n  </div>\n  <div class=\"date\">\n    <span><img src=\"images/testimage.jpg\" width=\"118\" height=\"70\" /></span><br/>\n    <!-- {{user}} -->\n  </div>\n</div>\n\n<div class=\"box\">\n  <a class=\"board\" [routerLink]=\"['../free']\">ㆍ자유게시판</a><hr/>\n  <div class=\"startdiv\">Test</div>\n</div>\n<br/><br/>\n\n<div class=\"box\">\n  <a class=\"board\" [routerLink]=\"['../music']\">ㆍ음악게시판</a><hr/>\n  <div class=\"startdiv\">Test</div>\n</div>\n<br/><br/>\n\n<div class=\"box\">\n  <a class=\"board\" [routerLink]=\"['../suggest']\">ㆍ건의게시판</a><hr/>\n  <div class=\"startdiv\">Test</div>\n</div>\n<br/><br/>\n"
+module.exports = "<div style=\"width:1000px; margin:auto;\">\r\n  <div *ngIf=\"!loggedIn\">\r\n    <form class=\"loginbox\" (submit)=\"onLoginSubmit()\">\r\n      <hr/>\r\n      <table style=\"border-collapse:collapse;\">\r\n          <tr>\r\n              <td><input type=\"text\" name=\"id\" [(ngModel)]=\"id\" placeholder=\"아이디\" style=\"width:120px; height:20px;\" /></td>\r\n              <td rowspan=\"2\"><input type=\"submit\" name=\"submit\" style=\"height:55px;\" value=\"로그인\" /></td>\r\n          </tr>\r\n          <tr>\r\n              <td><input type=\"password\" name=\"password\" [(ngModel)]=\"password\" placeholder=\"비밀번호\" style=\"width:120px; height:20px;\" /></td>\r\n          </tr>\r\n      </table>\r\n      <hr/><a class=\"link\" [routerLink]=\"['../join']\">회원가입</a><span class=\"link\"> | </span><a class=\"link\" [routerLink]=\"['../find']\">아이디/비밀번호 찾기</a></form>\r\n  </div>\r\n  <div *ngIf=\"loggedIn\">\r\n    <div class=\"loginbox\" style=\"text-align:center; font-size:13px;\">\r\n      <b>{{user.nickname}}</b>\r\n      <span>님, 반갑습니다</span><br/><hr/>\r\n      <b *ngIf=\"user.stop\" style=\"color:red;\">정지회원</b>\r\n      <b *ngIf=\"!user.stop\">클린회원</b><br/>\r\n      <a href=\"javascript:;\" (click)=\"openInfoWindow(user?.id)\" class=\"link\">나의 정보</a><br/>\r\n      <a class=\"link\" href=\"http://localhost:3000/fix\">회원정보수정</a> | \r\n      <a class=\"link\" (click)=\"onLogoutClick()\" href=\"javascript:;\">로그아웃</a><br/><hr/>\r\n      <span>가입일: {{user.joindate}}</span>\r\n    </div>\r\n  </div>\r\n  <div class=\"date\">\r\n    <span><img src=\"images/testimage.jpg\" width=\"118\" height=\"70\" /></span><br/>\r\n    <!-- {{user}} -->\r\n  </div>\r\n</div>\r\n\r\n<div class=\"box\">\r\n  <a class=\"board\" [routerLink]=\"['../free']\">ㆍ자유게시판</a><hr/>\r\n  <div class=\"startdiv\" *ngFor=\"let val of free\">\r\n    <a class=\"link\" [routerLink]=\"['../content']\" [queryParams]=\"{type: 'free', num: val.num}\">{{val?.title}}</a><br/>\r\n  </div>\r\n</div>\r\n<br/><br/>\r\n\r\n<div class=\"box\">\r\n  <a class=\"board\" [routerLink]=\"['../music']\">ㆍ음악게시판</a><hr/>\r\n  <div class=\"startdiv\" *ngFor=\"let val of music\">\r\n    <a class=\"link\" [routerLink]=\"['../content']\" [queryParams]=\"{type: 'music', num: val.num}\">{{val?.title}}</a><br/>\r\n  </div>\r\n</div>\r\n<br/><br/>\r\n\r\n<div class=\"box\">\r\n  <a class=\"board\" [routerLink]=\"['../suggest']\">ㆍ건의게시판</a><hr/>\r\n  <div class=\"startdiv\" *ngFor=\"let val of suggest\">\r\n    <a class=\"link\" [routerLink]=\"['../content#'+val?.num]\">{{val?.comment}}</a><br/>\r\n  </div>\r\n</div>\r\n<br/><br/>\r\n"
 
 /***/ }),
 
@@ -1361,6 +1356,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_handleuser_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/handleuser.service */ "./src/app/services/handleuser.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_handleboard_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/handleboard.service */ "./src/app/services/handleboard.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1373,11 +1369,20 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var StartComponent = /** @class */ (function () {
-    function StartComponent(handleuserService, router) {
+    function StartComponent(handleuserService, handleboardService, router, route) {
         var _this = this;
         this.handleuserService = handleuserService;
+        this.handleboardService = handleboardService;
         this.router = router;
+        this.route = route;
+        if (this.route.snapshot.queryParamMap.get('goto')) {
+            this.goto = this.route.snapshot.queryParamMap.get('goto');
+            this.type = this.route.snapshot.queryParamMap.get('type');
+            this.num = this.route.snapshot.queryParamMap.get('num');
+            this.router.navigate(['./' + this.goto], { queryParams: { type: this.type, num: this.num } });
+        }
         this.navigationSubscription = this.router.events.subscribe(function (e) {
             if (e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"]) {
                 _this.initialiseInvites();
@@ -1389,6 +1394,11 @@ var StartComponent = /** @class */ (function () {
         this.handleuserService.getLoginData().subscribe(function (data) {
             _this.loggedIn = data.result;
             _this.user = data.user;
+            _this.handleboardService.getStartPageInfos().subscribe(function (result) {
+                _this.free = result.free;
+                _this.music = result.music;
+                _this.suggest = result.suggest;
+            });
         });
     };
     StartComponent.prototype.initialiseInvites = function () {
@@ -1403,7 +1413,7 @@ var StartComponent = /** @class */ (function () {
             this.navigationSubscription.unsubscribe();
         }
     };
-    StartComponent.prototype.openWindow = function (userid) {
+    StartComponent.prototype.openInfoWindow = function (userid) {
         this.handleuserService.openWindow('http://localhost:3000/info?userid=' + userid);
     };
     StartComponent.prototype.onLoginSubmit = function () {
@@ -1436,7 +1446,9 @@ var StartComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./start.component.css */ "./src/app/components/start/start.component.css")]
         }),
         __metadata("design:paramtypes", [_services_handleuser_service__WEBPACK_IMPORTED_MODULE_1__["HandleuserService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+            _services_handleboard_service__WEBPACK_IMPORTED_MODULE_3__["HandleboardService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
     ], StartComponent);
     return StartComponent;
 }());
@@ -1463,7 +1475,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box\">\r\n    <table class=\"admintable\">\r\n      <tr>\r\n        <th>ID</th>\r\n        <th>관리</th>\r\n      </tr>\r\n      <ng-container *ngFor=\"let val of sub.stops\">\r\n        <tr>\r\n          <td><b style=\"cursor:pointer; color:red;\" id=\"val.id\" [attr.id]=\"val.id\" onclick=\"\">{{val.id}}</b></td>\r\n          <td><button (click)=\"onStopUser(val.id)\" id=\"val.id + 'button'\" [attr.id]=\"val.id + 'button'\">해제</button></td>\r\n        </tr>\r\n        <tr *ngIf=\"val.id != user.id || val.id != 'admin'\">\r\n          <td><b style=\"cursor:pointer;\" id=\"val.id\" onclick=\"\">{{val.id}}</b></td>\r\n          <td><button (click)=\"onStopUser(val.id)\" id=\"val.id + 'button'\">정지</button></td>\r\n        </tr>\r\n      </ng-container>\r\n    </table>\r\n  </div>\r\n  "
+module.exports = "<div class=\"box\">\r\n    <table class=\"admintable\">\r\n      <tr>\r\n        <th>ID</th>\r\n        <th>관리</th>\r\n      </tr>\r\n      <ng-container *ngFor=\"let val of sub.stops\">\r\n        <tr>\r\n          <td><b style=\"cursor:pointer; color:red;\" id=\"val.id\" [attr.id]=\"val.id\" (click)=\"openInfoWindow(val?.id)\">{{val.id}}</b></td>\r\n          <td><button (click)=\"onStopUser(val.id)\" id=\"val.id + 'button'\" [attr.id]=\"val.id + 'button'\">해제</button></td>\r\n        </tr>\r\n        <tr *ngIf=\"val.id != user.id || val.id != 'admin'\">\r\n          <td><b style=\"cursor:pointer;\" id=\"val.id\" (click)=\"openInfoWindow(val?.id)\">{{val.id}}</b></td>\r\n          <td><button (click)=\"onStopUser(val.id)\" id=\"val.id + 'button'\">정지</button></td>\r\n        </tr>\r\n      </ng-container>\r\n    </table>\r\n  </div>\r\n  "
 
 /***/ }),
 
@@ -1483,6 +1495,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ng-flash-messages */ "./node_modules/ng-flash-messages/ng-flash-messages.umd.js");
 /* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(ng_flash_messages__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _services_handleuser_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/handleuser.service */ "./src/app/services/handleuser.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1497,11 +1510,13 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var SubadminComponent = /** @class */ (function () {
-    function SubadminComponent(http, router, flashMessage) {
+    function SubadminComponent(http, router, flashMessage, handleuserService) {
         this.http = http;
         this.router = router;
         this.flashMessage = flashMessage;
+        this.handleuserService = handleuserService;
     }
     SubadminComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1517,6 +1532,9 @@ var SubadminComponent = /** @class */ (function () {
                 _this.router.navigate(['./start']);
             }
         });
+    };
+    SubadminComponent.prototype.openInfoWindow = function (userid) {
+        this.handleuserService.openWindow('http://localhost:3000/info?userid=' + userid);
     };
     SubadminComponent.prototype.onStopUser = function (userid) {
         var _this = this;
@@ -1560,7 +1578,8 @@ var SubadminComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"],
             _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
-            ng_flash_messages__WEBPACK_IMPORTED_MODULE_4__["NgFlashMessageService"]])
+            ng_flash_messages__WEBPACK_IMPORTED_MODULE_4__["NgFlashMessageService"],
+            _services_handleuser_service__WEBPACK_IMPORTED_MODULE_5__["HandleuserService"]])
     ], SubadminComponent);
     return SubadminComponent;
 }());
@@ -1587,7 +1606,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box\"><span>{{title}}</span>\r\n  <hr/><br/><br/>\r\n  <table class=\"tb\">\r\n    <tr style=\"height:25px; font-weight:bold\">\r\n      <td style=\"width:70px\">번호</td>\r\n      <td style=\"width:140px\">제목</td>\r\n      <td style=\"width:65px\">작성자</td>\r\n      <td style=\"width:100px\">날짜</td>\r\n      <td style=\"width:55px\">조회수</td>\r\n      <td style=\"width:40px\">추천</td>\r\n    </tr>\r\n\r\n    <ng-container *ngFor=\"let val of subcontents\">\r\n      <tr class=\"trhover\" style=\"height:20px;\">\r\n        <td>{{val.num}}</td>\r\n        <td style=\"text-align:left; padding:50px;\">\r\n          <a class=\"link\" [routerLink]=\"['../content']\" [queryParams]=\"{type: val?.type, num: val?.num}\">{{val.title}}</a> \r\n          <span style=\"font-size:12px; color:grey;\" *ngIf=\"val.comment.length > 0\"> [{{val.comment.length}}]</span>\r\n        </td>\r\n        <td>{{val.nickname}}</td>\r\n        <td>{{val.writedate}}</td>\r\n        <td>{{val.hit}}</td>\r\n        <td>{{val.recommend}}</td>\r\n      </tr>\r\n    </ng-container>\r\n\r\n  </table>\r\n  <br/><br/>\r\n\r\n  <form method=\"POST\" action=\"./write\" *ngIf=\"loggedIn && !user?.stop\">\r\n    <input type=\"submit\" name=\"submit\" value=\"글쓰기\" style=\"float:right;\"/>\r\n    <input type=\"hidden\" name=\"type\" value=\"val.type\"/>\r\n  </form>\r\n  <button style=\"float:right;\" onclick=\"\">재생목록</button>\r\n  <button style=\"float:left;\" onclick=\"\">라이브</button>\r\n  <button *ngIf=\"user?.id == sub?.id\" style=\"float:left;\">라이브 생성</button>\r\n</div>"
+module.exports = "<div class=\"box\"><span>{{title}}</span>\r\n  <hr/><br/><br/>\r\n  <table class=\"tb\">\r\n    <tr style=\"height:25px; font-weight:bold\">\r\n      <td style=\"width:70px\">번호</td>\r\n      <td style=\"width:140px\">제목</td>\r\n      <td style=\"width:65px\">작성자</td>\r\n      <td style=\"width:100px\">날짜</td>\r\n      <td style=\"width:55px\">조회수</td>\r\n      <td style=\"width:40px\">추천</td>\r\n    </tr>\r\n\r\n    <ng-container *ngFor=\"let val of subcontents\">\r\n      <tr class=\"trhover\" style=\"height:20px;\">\r\n        <td>{{val.num}}</td>\r\n        <td style=\"text-align:left; padding:50px;\">\r\n          <a class=\"link\" [routerLink]=\"['../content']\" [queryParams]=\"{type: val?.type, num: val?.num}\">{{val.title}}</a> \r\n          <span style=\"font-size:12px; color:grey;\" *ngIf=\"val.comment.length > 0\"> [{{val.comment.length}}]</span>\r\n        </td>\r\n        <td>\r\n          <a class=\"link\" href=\"javascript:;\" (click)=\"openinfoWindow(val?.id)\">{{val.nickname}}</a>\r\n        </td>\r\n        <td>{{val.writedate}}</td>\r\n        <td>{{val.hit}}</td>\r\n        <td>{{val.recommend}}</td>\r\n      </tr>\r\n    </ng-container>\r\n\r\n  </table>\r\n  <br/><br/>\r\n\r\n  <button *ngIf=\"loggedIn && !user?.stop\" style=\"float:right;\" onclick=\"location.href='http://localhost:3000/write?type='+sub.id\">글쓰기</button>\r\n  <button style=\"float:right;\" (click)=\"openPlayListWindow(sub?.id)\">재생목록</button>\r\n  <button style=\"float:left;\" (click)=\"openViewLiveWindow(sub?.id)\">라이브</button>\r\n  <button *ngIf=\"user?.id == sub?.id\" style=\"float:left;\" (click)=\"openMakeLiveWindow(sub?.id)\">라이브 생성</button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1620,11 +1639,17 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var SubboardComponent = /** @class */ (function () {
     function SubboardComponent(handleuserService, handleboardService, route, router) {
+        var _this = this;
         this.handleuserService = handleuserService;
         this.handleboardService = handleboardService;
         this.route = route;
         this.router = router;
         this.type = this.route.snapshot.queryParamMap.get('type');
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            if (e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"]) {
+                _this.ngOnInit();
+            }
+        });
     }
     SubboardComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1642,6 +1667,23 @@ var SubboardComponent = /** @class */ (function () {
                 }
             });
         });
+    };
+    SubboardComponent.prototype.ngOnDestroy = function () {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    };
+    SubboardComponent.prototype.openInfoWindow = function (userid) {
+        this.handleuserService.openWindow('http://localhost:3000/info?userid=' + userid);
+    };
+    SubboardComponent.prototype.openPlayListWindow = function (userid) {
+        this.handleuserService.openWindow('http://localhost:3000/openplaylist?userid=' + userid);
+    };
+    SubboardComponent.prototype.openViewLiveWindow = function (userid) {
+        this.handleuserService.openWindow('http://localhost:3000/live/view?userid=' + userid);
+    };
+    SubboardComponent.prototype.openMakeLiveWindow = function (userid) {
+        this.handleuserService.openWindow('http://localhost:3000/live/make?userid=' + userid);
     };
     SubboardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1715,10 +1757,16 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var SubsComponent = /** @class */ (function () {
     function SubsComponent(handleuserService, router, flashMessage, handleboardService) {
+        var _this = this;
         this.handleuserService = handleuserService;
         this.router = router;
         this.flashMessage = flashMessage;
         this.handleboardService = handleboardService;
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            if (e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_3__["NavigationEnd"]) {
+                _this.initialiseInvites();
+            }
+        });
     }
     SubsComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1729,6 +1777,14 @@ var SubsComponent = /** @class */ (function () {
                 _this.user = data.user;
             });
         });
+    };
+    SubsComponent.prototype.initialiseInvites = function () {
+        this.ngOnInit();
+    };
+    SubsComponent.prototype.ngOnDestroy = function () {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
     };
     SubsComponent.prototype.onSubscribeBoard = function (subid) {
         var _this = this;
@@ -1784,7 +1840,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"box\">\r\n  <span id=\"visitor\">건의사항</span><hr/><br/>\r\n\r\n  <form (submit)=\"onWrite()\" *ngIf=\"loggedIn\">\r\n    <table style=\"width:700px; margin:auto\">\r\n      <tr>\r\n        <td>\r\n          <textarea cols=\"80\" rows=\"5\" name=\"comment\" [(ngModel)]=\"comment\"></textarea>\r\n        </td>\r\n        <td>\r\n          <input type=\"submit\" name=\"cmt\" value=\"작성\" style=\"width:100px; height:80px\"/>\r\n        </td>\r\n      </tr>\r\n    </table>\r\n  </form>\r\n\r\n  <table class=\"tb2\" *ngFor=\"let val of content\">\r\n    <tr style=\"height:110px; vertical-align:top;\">\r\n      <td style=\"text-align:center; vertical-align:middle; width:110px; border-right:1px solid rgb(0,91,159)\">\r\n        <img width=\"70\" height=\"70\"/>\r\n      </td>\r\n      <td>\r\n        <div style=\"font-size:12px; padding:2px; margin-left:5px; border-bottom:1px dotted rgb(0,91,159);\">\r\n          <b *ngIf=\"val.id == 'admin'\">\r\n            <a class=\"tblink\" href=\"javascript:;\">{{val.nickname}}</a>\r\n          </b>\r\n          <a *ngIf=\"val.id != 'admin'\" class=\"tblink\" href=\"javascript:;\">{{val.nickname}}</a>\r\n          <span style=\"font-size:12px; float:right;\">{{val.writedate}}</span>\r\n        </div>\r\n        <div style=\"padding-left:10px;\">\r\n          <pre class=\"contentView\">{{val.comment}}</pre>\r\n        </div>\r\n      </td>\r\n    </tr>\r\n  </table>\r\n\r\n</div>"
+module.exports = "<div class=\"box\">\r\n  <span id=\"visitor\">건의사항</span><hr/><br/>\r\n\r\n  <form (submit)=\"onWrite()\" *ngIf=\"loggedIn\">\r\n    <table style=\"width:700px; margin:auto\">\r\n      <tr>\r\n        <td>\r\n          <textarea cols=\"80\" rows=\"5\" name=\"comment\" [(ngModel)]=\"comment\"></textarea>\r\n        </td>\r\n        <td>\r\n          <input type=\"submit\" name=\"cmt\" value=\"작성\" style=\"width:100px; height:80px\"/>\r\n        </td>\r\n      </tr>\r\n    </table>\r\n  </form>\r\n\r\n  <table class=\"tb2\" *ngFor=\"let val of content\">\r\n    <tr style=\"height:110px; vertical-align:top;\" [attr.id]=\"val.num\">\r\n      <td style=\"text-align:center; vertical-align:middle; width:110px; border-right:1px solid rgb(0,91,159)\">\r\n        <img width=\"70\" height=\"70\"/>\r\n      </td>\r\n      <td>\r\n        <div style=\"font-size:12px; padding:2px; margin-left:5px; border-bottom:1px dotted rgb(0,91,159);\">\r\n          <b *ngIf=\"val.id == 'admin'\">\r\n            <a class=\"tblink\" href=\"javascript:;\" (click)=\"openInfoWindow(val?.id)\">{{val.nickname}}</a>\r\n          </b>\r\n          <a *ngIf=\"val.id != 'admin'\" class=\"tblink\" href=\"javascript:;\" (click)=\"openinfoWindow(val?.id)\">{{val.nickname}}</a>\r\n          <span style=\"font-size:12px; float:right;\">{{val.writedate}}</span>\r\n        </div>\r\n        <div style=\"padding-left:10px;\">\r\n          <pre class=\"contentView\">{{val.comment}}</pre>\r\n        </div>\r\n      </td>\r\n    </tr>\r\n  </table>\r\n\r\n</div>"
 
 /***/ }),
 
@@ -1802,9 +1858,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ng-flash-messages */ "./node_modules/ng-flash-messages/ng-flash-messages.umd.js");
 /* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(ng_flash_messages__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
-/* harmony import */ var _services_handleuser_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/handleuser.service */ "./src/app/services/handleuser.service.ts");
-/* harmony import */ var _services_handleboard_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/handleboard.service */ "./src/app/services/handleboard.service.ts");
+/* harmony import */ var _services_handleuser_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/handleuser.service */ "./src/app/services/handleuser.service.ts");
+/* harmony import */ var _services_handleboard_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/handleboard.service */ "./src/app/services/handleboard.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1819,14 +1874,18 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var SuggestComponent = /** @class */ (function () {
-    function SuggestComponent(handleuserService, handleboardService, router, http, flashMessage) {
+    function SuggestComponent(handleuserService, handleboardService, router, flashMessage) {
+        var _this = this;
         this.handleuserService = handleuserService;
         this.handleboardService = handleboardService;
         this.router = router;
-        this.http = http;
         this.flashMessage = flashMessage;
+        this.navigationSubscription = this.router.events.subscribe(function (e) {
+            if (e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"]) {
+                _this.initialiseInvites();
+            }
+        });
     }
     SuggestComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1836,6 +1895,17 @@ var SuggestComponent = /** @class */ (function () {
                 _this.content = data.content;
             });
         });
+    };
+    SuggestComponent.prototype.openInfoWindow = function (userid) {
+        this.handleuserService.openWindow('http://localhost:3000/info?userid=' + userid);
+    };
+    SuggestComponent.prototype.initialiseInvites = function () {
+        this.ngOnInit();
+    };
+    SuggestComponent.prototype.ngOnDestroy = function () {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
     };
     SuggestComponent.prototype.onWrite = function () {
         var _this = this;
@@ -1863,110 +1933,12 @@ var SuggestComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./suggest.component.html */ "./src/app/components/suggest/suggest.component.html"),
             styles: [__webpack_require__(/*! ./suggest.component.css */ "./src/app/components/suggest/suggest.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_handleuser_service__WEBPACK_IMPORTED_MODULE_4__["HandleuserService"],
-            _services_handleboard_service__WEBPACK_IMPORTED_MODULE_5__["HandleboardService"],
+        __metadata("design:paramtypes", [_services_handleuser_service__WEBPACK_IMPORTED_MODULE_3__["HandleuserService"],
+            _services_handleboard_service__WEBPACK_IMPORTED_MODULE_4__["HandleboardService"],
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
-            _angular_http__WEBPACK_IMPORTED_MODULE_3__["Http"],
             ng_flash_messages__WEBPACK_IMPORTED_MODULE_2__["NgFlashMessageService"]])
     ], SuggestComponent);
     return SuggestComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/components/write/write.component.css":
-/*!******************************************************!*\
-  !*** ./src/app/components/write/write.component.css ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/components/write/write.component.html":
-/*!*******************************************************!*\
-  !*** ./src/app/components/write/write.component.html ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"box\"><span>글 작성</span>\n  <hr/><br/>\n  <form (submit)=\"submitWrite(fileInput.files)\">\n      <table style=\"margin:auto; width:700px; text-align:center;\">\n          <tr>\n              <td style=\"height:50px;\"><input type=\"text\" placeholder=\"제목\" name=\"title\" [(ngModel)]=\"title\" style=\"width:600px; height:30px;\" /></td>\n          </tr>\n          <tr>\n              <td><textarea cols=\"90\" rows=\"30\" name=\"content\" [(ngModel)]=\"content\"></textarea></td>\n          </tr>\n          <tr>\n              <td style=\"height:50px;\"><input type=\"text\" name=\"tag\" [(ngModel)]=\"tag\" placeholder=\"html 태그를 입력해주세요\" style=\"width:500px;\" /><br/><br/>\n                <input type=\"file\" name=\"image\" [(ngModel)]=\"image\" accept=\"image/*\" (change)=\"onFileChange(fileInput.files)\" /><span class=\"link\">이미지 (jpg,jpeg,png,gif)</span><br/>\n                <input type=\"file\" name=\"audio\" [(ngModel)]=\"audio\" accept=\"audio/*\" (change)=\"onFileChange(fileInput.files)\" /><span class=\"link\">음악 (mp3, ogg, wav)</span><br/>\n                <input type=\"submit\" name=\"submit\" value=\"작성\" style=\"float:right;\" /><input type=\"hidden\" name=\"boardtype\" [(ngModel)]=\"boardtype\" value=\"{{type}}\" /></td>\n          </tr>\n      </table>\n  </form>\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/components/write/write.component.ts":
-/*!*****************************************************!*\
-  !*** ./src/app/components/write/write.component.ts ***!
-  \*****************************************************/
-/*! exports provided: WriteComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WriteComponent", function() { return WriteComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_handleuser_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/handleuser.service */ "./src/app/services/handleuser.service.ts");
-/* harmony import */ var _services_handleboard_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/handleboard.service */ "./src/app/services/handleboard.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ng-flash-messages */ "./node_modules/ng-flash-messages/ng-flash-messages.umd.js");
-/* harmony import */ var ng_flash_messages__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(ng_flash_messages__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var WriteComponent = /** @class */ (function () {
-    function WriteComponent(handleuserService, handleboardSerivce, router, http, flashMessage) {
-        this.handleuserService = handleuserService;
-        this.handleboardSerivce = handleboardSerivce;
-        this.router = router;
-        this.http = http;
-        this.flashMessage = flashMessage;
-    }
-    WriteComponent.prototype.ngOnInit = function () {
-        this.fileSrc = '';
-    };
-    WriteComponent.prototype.onFileChange = function (files) {
-        var _this = this;
-        if (files && files.length > 0) {
-            var file = files[0];
-            var reader_1 = new FileReader();
-            reader_1.readAsDataURL(file);
-            reader_1.onload = function () {
-                _this.fileSrc = reader_1.result;
-            };
-        }
-    };
-    WriteComponent.prototype.submitWrite = function () {
-    };
-    WriteComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-write',
-            template: __webpack_require__(/*! ./write.component.html */ "./src/app/components/write/write.component.html"),
-            styles: [__webpack_require__(/*! ./write.component.css */ "./src/app/components/write/write.component.css")]
-        }),
-        __metadata("design:paramtypes", [_services_handleuser_service__WEBPACK_IMPORTED_MODULE_1__["HandleuserService"],
-            _services_handleboard_service__WEBPACK_IMPORTED_MODULE_2__["HandleboardService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
-            _angular_http__WEBPACK_IMPORTED_MODULE_5__["Http"],
-            ng_flash_messages__WEBPACK_IMPORTED_MODULE_4__["NgFlashMessageService"]])
-    ], WriteComponent);
-    return WriteComponent;
 }());
 
 
@@ -2031,6 +2003,11 @@ var HandleboardService = /** @class */ (function () {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
         return this.http.get('http://localhost:3000/subs', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+    };
+    HandleboardService.prototype.getStartPageInfos = function () {
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        return this.http.get('http://localhost:3000/start', { headers: headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     HandleboardService.prototype.handleWrite = function (formData) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
@@ -2200,7 +2177,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_0__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\PJH\Elevator2\angular-src\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\PJH\webNapp\Elevator_Angular\angular-src\src\main.ts */"./src/main.ts");
 
 
 /***/ })

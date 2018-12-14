@@ -1,20 +1,30 @@
 <div class="box">
   <span style="font-size:20px;">{{content?.title}}</span>
   <span style="float:right;">
-    <a class="tblink" href="javascript:;" onclick="">{{content?.nickname}}</a>
+    <a class="tblink" href="javascript:;" (click)="openInfoWindow(content?.id)">{{content?.nickname}}</a>
   </span>
   <hr/>
   <span style="float:right; font-size:13px;">{{content?.writedate}}</span>
   <br/>
   <span style="float:right; font-size:13px;">조회 {{content?.hit}} 댓글 {{content?.comment?.length}}</span>
+
+  <!-- part for debugging, but not working -->
+  <div>
+    <p>content.grade: {{content?.grade}}</p>
+    <p>content.gradeby.length: {{content?.gardeby?.length}}</p>
+    <p>user.id: {{user?.id}}</p>
+    <p>content.id: {{content?.id}}</p>
+    <p>writer.boardRequest: {{writer?.boardRequest}}</p>
+  </div>
+  
   <ng-container *ngIf="listurl == 'music'">
     <br/>
     <span id="gradeSpan" style="float:right; font-size:13px;" #gradeSpan>평점 {{content?.grade}} by {{content?.gradeby?.length}}명</span>
     <ng-container *ngIf="content?.grade >= 3 && content?.gradeby?.length >= 1 && user?.id == content?.id && writer?.boardRequest == 0">
       <!-- content.grade / content.gradeby.length == average -->
       <!-- if writer.boardRequest == 0, can request to admin to make own board -->
-      <!-- after requested, writer.boardRequest would be 1 -->
-      <!-- when admin accept the request, writer.boardRequest would be 2 and having own board -->
+      <!-- after requested, writer.boardRequest is gonna be 1 -->
+      <!-- when admin accepts the request, writer.boardRequest is gonna be 2 and having own board -->
       <br/><button id="boardRequest" style="float:right;" (click)="requestBoard()" #boardRequest>게시판 생성 요청</button>
     </ng-container>
     <ng-container *ngIf="user.id == 'admin' && writer.boardRequest == 1">
@@ -58,8 +68,8 @@
       </td>
       <td style="vertical-align:top;">
         <div style="font-size:12px; padding:2px; margin-left:5px; border-bottom:1px dotted rgb(0,91,159);">
-          <b *ngIf="val.id == 'admin'"><a class="tblink" href="javascript:;" onclick="">{{val.nickname}}</a></b>
-          <a *ngIf="val.id != 'admin'" class="tblink" href="javascript:;" onclick="">{{val.nickname}}</a>
+          <b *ngIf="val.id == 'admin'"><a class="tblink" href="javascript:;" (click)="openInfoWindow(val?.id)">{{val.nickname}}</a></b>
+          <a *ngIf="val.id != 'admin'" class="tblink" href="javascript:;" (click)="openInfoWindow(val?.id)">{{val.nickname}}</a>
           <span style="font-size:12px; float:right;">
             <form *ngIf="user.id == val.id || user.id == 'admin' || boardtype == user.id" (submit)="onDeleteComment()" id="removeCmt+{{val?.num}}" [attr.id]="'removeCmt'+val?.num" style="display:none;">
               <input type="hidden" name="contentnum" [(ngModel)]="contentnum" value="{{content?.num}}" />
@@ -91,7 +101,9 @@
     </table>
     <br/>
   </form>
-  <hr/><button style="float:right;" [routerLink]="['../listurl']" [queryParams]="{type: boardtype}">목록</button><br/><br/>
+  <hr/>
+  <button *ngIf="user?.id == content?.id || user?.id == 'admin' || boardtype == user.id" style="float:right;" (click)="onDeleteContent()">삭제</button>
+  <button style="float:right;" [routerLink]="['../'+listurl]" [queryParams]="{type: boardtype}">목록</button><br/><br/>
 </div>
 
 <div class="box">
@@ -113,7 +125,9 @@
           <a class="link" [routerLink]="['./content', {type: boardtype, num: val.num}]">{{val?.title}}</a> 
           <span style="font-size:12px; color:grey;" *ngIf="val.comment.length > 0"> [{{val?.comment?.length}}]</span>
         </td>
-        <td>{{val?.nickname}}</td>
+        <td>
+          <a class="link" href="javascript:;" (click)="openInfoWindow(val?.id)">{{val?.nickname}}</a>
+        </td>
         <td>{{val?.writedate}}</td>
         <td>{{val?.hit}}</td>
         <td>{{val?.recommend}}</td>

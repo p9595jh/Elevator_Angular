@@ -3,7 +3,7 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 
 router.use(bodyParser.urlencoded({ extended: true }));
-router.post('/', function(req, res, next) {
+router.get('/', function(req, res, next) {
     res.render('write', {
         title: '글 작성',
         user: {
@@ -13,7 +13,7 @@ router.post('/', function(req, res, next) {
             joindate: req.session.joindate,
             boardRequest: req.session.boardRequest
         },
-        type: req.body.type
+        type: req.query.type
     });
 });
 

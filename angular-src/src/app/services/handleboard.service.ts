@@ -43,6 +43,12 @@ export class HandleboardService {
     return this.http.get('http://localhost:3000/subs', {headers: headers}).pipe(map((res: Response) => res.json()));
   }
 
+  getStartPageInfos() {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/start', {headers: headers}).pipe(map((res: Response) => res.json()));
+  }
+
   handleWrite(formData: any) {
     let headers = new Headers();
     headers.append('enctype', 'multipart/form-data');

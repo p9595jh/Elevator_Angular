@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HandleuserService } from '../../services/handleuser.service';
 import { HandleboardService } from '../../services/handleboard.service';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { NgFlashMessageService } from 'ng-flash-messages';
 
 @Component({
@@ -9,7 +9,8 @@ import { NgFlashMessageService } from 'ng-flash-messages';
   templateUrl: './subs.component.html',
   styleUrls: ['./subs.component.css']
 })
-export class SubsComponent implements OnInit {
+export class SubsComponent implements OnInit, OnDestroy {
+  navigationSubscription;
   loggedIn: Boolean;
   sub: Object[];
   user: Object;
@@ -19,7 +20,13 @@ export class SubsComponent implements OnInit {
     private router: Router,
     private flashMessage: NgFlashMessageService,
     private handleboardService: HandleboardService
-  ) { }
+  ) {
+    this.navigationSubscription = this.router.events.subscribe((e: any) => {
+      if ( e instanceof NavigationEnd ) {
+        this.initialiseInvites();
+      }
+    });
+  }
 
   ngOnInit() {
     this.handleuserService.loggedIn().subscribe(data => {
@@ -29,6 +36,16 @@ export class SubsComponent implements OnInit {
         this.user = data.user;
       })
     });
+  }
+
+  initialiseInvites() {
+    this.ngOnInit();
+  }
+
+  ngOnDestroy() {
+    if ( this.navigationSubscription ) {
+      this.navigationSubscription.unsubscribe();
+    }
   }
 
   onSubscribeBoard(subid) {

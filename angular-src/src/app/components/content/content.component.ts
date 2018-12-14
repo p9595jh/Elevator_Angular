@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HandleuserService } from '../../services/handleuser.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 import { Http, Headers, Response } from '@angular/http';
 import { map } from 'rxjs/operators';
@@ -11,7 +11,8 @@ import { NgFlashMessageService } from 'ng-flash-messages';
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
 })
-export class ContentComponent implements OnInit {
+export class ContentComponent implements OnInit, OnDestroy {
+  navigationSubscription;
   paramType: String;
   paramNum: String;
 
@@ -23,15 +24,10 @@ export class ContentComponent implements OnInit {
   listurl: String;
   boardtype: String;
   all: Object[];
+  writer: any;
 
-  board: String;
-  _id: String;
   comment: String;
-
-  contentnum: Number;
   num: Number;
-  id: String;
-  commentBoardtype: String;
 
   constructor(
     private handleuserService: HandleuserService,
@@ -42,6 +38,11 @@ export class ContentComponent implements OnInit {
   ) {
     this.paramType = this.route.snapshot.queryParamMap.get('type');
     this.paramNum = this.route.snapshot.queryParamMap.get('num');
+    this.navigationSubscription = this.router.events.subscribe((e: any) => {
+      if ( e instanceof NavigationEnd ) {
+        this.initialiseInvites();
+      }
+    });
   }
 
   ngOnInit() {
@@ -58,8 +59,23 @@ export class ContentComponent implements OnInit {
         this.listurl = result.listurl;
         this.boardtype = result.boardtype;
         this.all = result.all;
+        this.writer = result.writer;
       });
     });
+  }
+
+  initialiseInvites() {
+    this.ngOnInit();
+  }
+
+  ngOnDestroy() {
+    if ( this.navigationSubscription ) {
+      this.navigationSubscription.unsubscribe();
+    }
+  }
+
+  openInfoWindow(userid: string) {
+    this.handleuserService.openWindow('http://localhost:3000/info?userid='+userid);
   }
 
   onWriteComment() {
@@ -83,6 +99,31 @@ export class ContentComponent implements OnInit {
         });
       }
     });
+  }
+
+  onDeleteContent() {
+    if ( confirm('정말 삭제하시겠습니까?') ) {
+      const formData = {
+        id: this.content.id,
+        num: this.content.num,
+        boardtype: this.paramType
+      }
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      this.http.post('http://localhost:3000/delete/'+this.paramType, formData, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(data => {
+        if ( data.success ) {
+          this.router.navigated = false;
+          this.router.navigate(['./'+this.listurl], {queryParams: {type: this.paramType}});
+        }
+        else {
+          this.flashMessage.showFlashMessage({
+            messages: ['에러가 발생하였습니다'],
+            type: 'danger',
+            timeout: 3000
+          });
+        }
+      });
+    }
   }
 
   onDeleteComment() {
@@ -113,21 +154,30 @@ export class ContentComponent implements OnInit {
     var count = this.paramType == 'music' ? (<HTMLSelectElement> document.getElementById('grade')).value : 1;
     const formData = {
       boardtype: this.paramType,
-      _id: this.content._id,
       id: this.user.id,
-      count: count
+      count: count,
+      num: this.content.num
     }
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     this.http.post('http://localhost:3000/ajax', formData, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(data => {
-      if ( this.paramType == 'music' ) {
-        var gradeSpan = document.getElementById("gradeSpan");
-        gradeSpan.innerHTML = "평점 " + data.grade + " by " + data.people + "명";
+      if ( data.msg == 'duplicate' ) {
+        this.flashMessage.showFlashMessage({
+          messages: ['이미 추천하셨습니다'],
+          type: 'danger',
+          timeout: 3000
+        });
       }
       else {
-        var recommendBtn = document.getElementById("recommendBtn");
-        if ( !data.recommend ) data.recommend = this.content.recommend;
-        recommendBtn.innerHTML = "추천 " + data.recommend;
+        if ( this.paramType == 'music' ) {
+          var gradeSpan = document.getElementById("gradeSpan");
+          gradeSpan.innerHTML = "평점 " + data.grade + " by " + data.people + "명";
+        }
+        else {
+          var recommendBtn = document.getElementById("recommendBtn");
+          // if ( !data.recommend ) data.recommend = this.content.recommend;
+          recommendBtn.innerHTML = "추천 " + data.recommend;
+        }
       }
     });
   }

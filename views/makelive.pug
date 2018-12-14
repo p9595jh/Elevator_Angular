@@ -2,7 +2,43 @@ doctype html
 head
     title= title
     meta(name='viewport', content='width=devide-width', initial-scale=1)
-    link(rel='stylesheet', href='/stylesheets/info.css')
+    style(type="text/css").
+        body {
+            background-color: rgb(247,250,255);
+            font-family: consolas;
+        }
+        #content {
+            width: 95%;
+            margin: auto;
+        }
+        p {
+            font-size: 16px;
+        }
+        hr {
+            border: 1px solid rgb(0,91,159);
+        }
+        .tb {
+            width: 400px;
+            border-collapse: collapse;
+            margin: auto;
+        }
+        .tb tr {
+            border-top: 1px solid rgb(0,91,159);
+            border-bottom: 1px solid rgb(0,91,159);
+            height: 30px;
+        }
+        .tblink {
+            color: black;
+            text-decoration: none;
+        }
+        button {
+            cursor: pointer;
+        }
+        .contentView {
+            font-size: 16px;
+            font-family: consolas;
+            white-space: pre-wrap;
+        }
 body
     div#content
         br
@@ -20,7 +56,7 @@ body
                 input(type="text", name="date", placeholder="날짜", style="width:70%; height:35px;")
                 br
                 br
-                input(type="number", name="location", placeholder="장소", style="width:70%; height:35px;")
+                input(type="text", name="location", placeholder="장소", style="width:70%; height:35px;")
                 br
                 br
                 input(type="number", name="num", placeholder="참여인원", style="width:70%; height:35px;")

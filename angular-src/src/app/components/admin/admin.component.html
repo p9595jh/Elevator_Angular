@@ -6,11 +6,11 @@
     </tr>
     <ng-container *ngFor="let val of users">
       <tr *ngIf="val.id != 'admin' && !val.stop">
-        <td><b style="cursor:pointer;" id="val.id" [attr.id]="val.id" onclick="">{{val.id}}</b></td>
+        <td><b style="cursor:pointer;" id="val.id" [attr.id]="val.id" (click)="openInfoWindow(val?.id)">{{val.id}}</b></td>
         <td><button (click)="onStopUser(val.id)" id="val.id + 'button'" [attr.id]="val.id + 'button'">정지</button></td>
       </tr>
       <tr *ngIf="val.id != 'admin' && val.stop">
-        <td><b style="cursor:pointer; color:red;" id="val.id" [attr.id]="val.id" onclick="">{{val.id}}</b></td>
+        <td><b style="cursor:pointer; color:red;" id="val.id" [attr.id]="val.id" (click)="openInfoWindow(val?.id)">{{val.id}}</b></td>
         <td><button (click)="onStopUser(val.id)" id="val.id + 'button'" [attr.id]="val.id + 'button'">해제</button></td>
       </tr>
     </ng-container>

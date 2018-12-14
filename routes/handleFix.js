@@ -41,9 +41,12 @@ router.post('/', function(req, res) {
             }
             else {
                 if ( files.image.name != '' ) {
-                    var filePath = files.image.path;
+                    const filePath = files.image.path;
                     fs.copy(filePath, 'public/images/profileimages/' + req.session.userid, function(err0) {
-                        if ( err0 ) console.err(err0);
+                        if ( err0 ) console.log('error while putting image to /public');
+                    });
+                    fs.copy(filePath, 'angular-src/src/images/profileimages/' + req.session.userid, function(err0) {
+                        if ( err0 ) console.log('error while putting image to /angular-src');
                     });
                 }
 
@@ -53,7 +56,6 @@ router.post('/', function(req, res) {
                         return;
                     }
                     req.session.nickname = nickname;
-                    // res.redirect('http://localhost:3000/astart');
                     res.redirect('./');
                 });
             }

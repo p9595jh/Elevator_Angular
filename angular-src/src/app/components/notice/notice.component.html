@@ -18,9 +18,9 @@
         <td>
             <div style="font-size:12px; padding:2px; margin-left:5px; border-bottom:1px dotted rgb(0,91,159);">
               <b *ngIf="val.id == 'admin'">
-                <a class="tblink" href="javascript:;" onclick="">{{val.nickname}}</a>
+                <a class="tblink" href="javascript:;" (click)="openInfoWindow(val?.id)">{{val.nickname}}</a>
               </b>
-              <a *ngIf="val.id != 'admin'" class="tblink" href="javascript:;" onclick="">{{val.nickname}}</a>
+              <a *ngIf="val.id != 'admin'" class="tblink" href="javascript:;" (click)="openInfoWindow(val?.id)">{{val.nickname}}</a>
               <span style="font-size:12px; float:right;">{{val.writedate}}</span>
             </div>
             <div style="padding-left:10px;">

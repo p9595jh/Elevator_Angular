@@ -12,7 +12,7 @@ router.post('/free', function(req, res, next) {
     var num = req.body.num;
     FreeBoard.deleteOne({num: num, id: id}, function(err, output) {
         if (err) res.status(500).json({ error: 'database failure' });
-        res.redirect('../free');
+        else return res.json({success: true});
     })
 });
 
@@ -22,7 +22,7 @@ router.post('/music', function(req, res, next) {
     var num = req.body.num;
     MusicClass.deleteOne({num: num, id: id}, function(err, output) {
         if (err) res.status(500).json({ error: 'database failure' });
-        res.redirect('../music');
+        else return res.json({success: true});
     });
 });
 
@@ -32,7 +32,7 @@ router.post('/subboard', function(req, res, next) {
     var num = req.body.num;
     SubContent.deleteOne({num: num, id: id}, function(err, output) {
         if (err) res.status(500).json({ error: 'database failure' });
-        res.redirect('../subboard?type=' + req.body.boardtype);
+        else return res.json({success: true});
     });
 })
 

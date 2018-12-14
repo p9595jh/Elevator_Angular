@@ -2,8 +2,69 @@ doctype html
 head
     title= title
     meta(name='viewport', content='width=devide-width', initial-scale=1)
-    link(rel='stylesheet', href='/stylesheets/info.css')
-    script(src='/javascripts/javascript.js')
+    script(type="text/javascript").
+        function reserve123(subid, userid) {
+            if ( subid == userid ) {
+                alert('라이브 관계자는 신청하실 수 없습니다');
+                return;
+            }
+
+            var data = { 'subid' : subid, 'userid' : userid };
+            data = JSON.stringify(data);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '../ajax/reserve');
+            xhr.setRequestHeader('Content-type', "application/json");
+            xhr.send(data);
+
+            xhr.addEventListener('load', function() {
+                var result = JSON.parse(xhr.responseText);
+                if ( result.result == 'done' ) {
+                    document.getElementById('reservelive').style.display = "none";
+                    document.getElementById('pppp').innerHTML = "신청 완료";
+                }
+                else {
+                    alert(result.result);
+                }
+            });
+        }
+    style(type="text/css").
+        body {
+            background-color: rgb(247,250,255);
+            font-family: consolas;
+        }
+        #content {
+            width: 95%;
+            margin: auto;
+        }
+        p {
+            font-size: 16px;
+        }
+        hr {
+            border: 1px solid rgb(0,91,159);
+        }
+        .tb {
+            width: 400px;
+            border-collapse: collapse;
+            margin: auto;
+        }
+        .tb tr {
+            border-top: 1px solid rgb(0,91,159);
+            border-bottom: 1px solid rgb(0,91,159);
+            height: 30px;
+        }
+        .tblink {
+            color: black;
+            text-decoration: none;
+        }
+        button {
+            cursor: pointer;
+        }
+        .contentView {
+            font-size: 16px;
+            font-family: consolas;
+            white-space: pre-wrap;
+        }
 body
     div#content
         br
