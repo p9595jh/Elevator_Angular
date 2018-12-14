@@ -50,7 +50,7 @@
 <div class="box">
   <a class="board" [routerLink]="['../suggest']">ㆍ건의게시판</a><hr/>
   <div class="startdiv" *ngFor="let val of suggest">
-    <a class="link" [routerLink]="['../content#'+val?.num]">{{val?.comment}}</a><br/>
+    <a class="link" [routerLink]="['../suggest']" [queryParams]="{id: val?.num}">{{val?.comment}}</a><br/>
   </div>
 </div>
 <br/><br/>

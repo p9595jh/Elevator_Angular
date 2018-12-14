@@ -1,10 +1,10 @@
 <div class="box">
   <span id="visitor">공지사항</span><hr/><br/>
 
-  <form (submit)="onWrite()" *ngIf="user.id == 'admin'">
+  <form (submit)="onWrite()" *ngIf="user?.id == 'admin'">
     <table style="width:700px; margin:auto;">
       <tr>
-        <td><textarea cols="80" rows="5" name="comment"></textarea></td>
+        <td><textarea cols="80" rows="5" name="comment" [(ngModel)]="comment"></textarea></td>
         <td><input type="submit" name="cmt" value="작성" style="width:100px; height:80px;" /></td>
       </tr>
     </table>
@@ -13,7 +13,7 @@
   <table class="tb2" *ngFor="let val of content">
     <tr style="height:110px; vertical-align:top;">
         <td style="text-align:center; vertical-align:middle; width:110px; border-right:1px solid rgb(0,91,159);">
-          <img src="'images/profileimages/' + val.id" width="70" height="70" />
+          <img [attr.src]="'images/profileimages/'+val?.id" width="70" height="70" />
         </td>
         <td>
             <div style="font-size:12px; padding:2px; margin-left:5px; border-bottom:1px dotted rgb(0,91,159);">

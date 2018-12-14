@@ -58,7 +58,7 @@ body
             table(border="0")
                 each val in playlist.list
                     tr
-                        td #{val.title}
+                        td(style="font-size:17px;") #{val.title}
                         td
                             audio(controls)
                                 source(src= val.path)

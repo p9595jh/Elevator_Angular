@@ -69,6 +69,7 @@ router.post('/boardrequest', function(req, res) {
     User.updateOne({id: req.body.userid}, {boardRequest: 1}, function(err1, output1) {});
     var MusicClass = require('./musicclass.js');
     MusicClass.updateOne({_id: req.body._id}, {boardRequest: true}, function(err1, output1) {});
+    return res.json({asdf: 'asdf'});
 });
 router.post('/acceptboardrequest', function(req, res) {
     var User = require('./user.js');
@@ -88,6 +89,7 @@ router.post('/acceptboardrequest', function(req, res) {
         User.updateOne({id: sub.id}, {$push: {subscribes: sub.id}}, function(err1, output1) {});
         User.updateOne({id: 'admin'}, {$push: {subscribes: sub.id}}, function(err1, output1) {});
     });
+    return res.json({asdf: 'asdf'});
 });
 router.post('/subscribeboard', function(req, res) {
     // var userid = req.body.userid;
@@ -214,7 +216,7 @@ router.post('/reserve', function(req, res) {
     var User = require('./user.js');
     var Sub = require('./sub.js');
     Sub.findOne({id: subid}, function(err, sub) {
-        if ( liveticket.length == liveviewer.length ) {
+        if ( sub.liveticket.length == sub.liveviewer.length ) {
             var responseData = { "result" : "남는 자리가 없습니다" };
             res.json(responseData);
             return;

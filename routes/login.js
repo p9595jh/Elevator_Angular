@@ -69,7 +69,14 @@ router.get('/data', function(req, res) {
 router.get('/ng', function(req, res) {
     if ( req.session.userid ) {
         return res.json({
-            result: true
+            result: true,
+            user: {
+                id: req.session.userid,
+                nickname: req.session.nickname,
+                stop: req.session.stop,
+                joindate: req.session.joindate,
+                boardRequest: req.session.boardRequest
+            }
         });
     }
     else {

@@ -13,7 +13,7 @@ export class NoticeComponent implements OnInit, OnDestroy {
   navigationSubscription;
   user: Object;
   content: Object[];
-  comment: String;
+  comment: string;
 
   constructor(
     private handleboardService: HandleboardService,

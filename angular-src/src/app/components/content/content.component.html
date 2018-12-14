@@ -7,16 +7,6 @@
   <span style="float:right; font-size:13px;">{{content?.writedate}}</span>
   <br/>
   <span style="float:right; font-size:13px;">조회 {{content?.hit}} 댓글 {{content?.comment?.length}}</span>
-
-  <!-- part for debugging, but not working -->
-  <div>
-    <p>content.grade: {{content?.grade}}</p>
-    <p>content.gradeby.length: {{content?.gardeby?.length}}</p>
-    <p>user.id: {{user?.id}}</p>
-    <p>content.id: {{content?.id}}</p>
-    <p>writer.boardRequest: {{writer?.boardRequest}}</p>
-  </div>
-  
   <ng-container *ngIf="listurl == 'music'">
     <br/>
     <span id="gradeSpan" style="float:right; font-size:13px;" #gradeSpan>평점 {{content?.grade}} by {{content?.gradeby?.length}}명</span>
@@ -32,16 +22,21 @@
     </ng-container>
   </ng-container><br/><br/>
 
-  <div style="text-align:center;" *ngIf="content?.image != ''">
-    <img [attr.src]="content?.image" width="imageWidth" />
-    <br/><br/>
-  </div>
-  <div style="text-align:center;" *ngIf="content?.audio != ''">
-    <audio controls>
-      <source [attr.src]="content?.audio" />
-    </audio>
-    <br/><br/>
-  </div>
+  <ng-container *ngIf="content?.image != ''">
+    <div style="text-align:center;">
+      <img [attr.src]="content?.image" width="imageWidth" />
+      <br/><br/>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="audioPath != ''">
+    <div style="text-align:center;">
+      <audio controls>
+        <source [attr.src]="audioPath" />
+      </audio>
+      <!-- <audio [attr.src]="content?.audio" controls> -->
+      <br/><br/>
+    </div>
+  </ng-container>
   <div style="padding:20px;">
     <pre class="contentView">{{content?.content}}</pre>
   </div><br/><br/><br/>
@@ -122,7 +117,7 @@
       <tr class="trhover" style="height:20px;">
         <td>{{val.num}}</td>
         <td style="text-align:left; padding:50px;">
-          <a class="link" [routerLink]="['./content', {type: boardtype, num: val.num}]">{{val?.title}}</a> 
+          <a class="link" [routerLink]="['../content', {type: boardtype, num: val.num}]">{{val?.title}}</a> 
           <span style="font-size:12px; color:grey;" *ngIf="val.comment.length > 0"> [{{val?.comment?.length}}]</span>
         </td>
         <td>

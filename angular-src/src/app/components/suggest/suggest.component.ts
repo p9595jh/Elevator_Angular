@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { NgFlashMessageService } from 'ng-flash-messages';
 
 import { HandleuserService } from '../../services/handleuser.service';
@@ -14,14 +14,17 @@ export class SuggestComponent implements OnInit, OnDestroy {
   navigationSubscription;
   loggedIn: boolean;
   content: any[];
-  comment: String;
+  comment: string;
+  id: string;
 
   constructor(
     private handleuserService: HandleuserService,
     private handleboardService: HandleboardService,
     private router: Router,
+    private route: ActivatedRoute,
     private flashMessage: NgFlashMessageService
   ) {
+    this.id = this.route.snapshot.queryParamMap.get('id');
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
       if ( e instanceof NavigationEnd ) {
         this.initialiseInvites();
@@ -34,6 +37,10 @@ export class SuggestComponent implements OnInit, OnDestroy {
       this.loggedIn = data.result;
       this.handleboardService.getSuggests().subscribe(data => {
         this.content = data.content;
+        let el = document.getElementById(this.id);
+        if ( el ) {
+          el.scrollIntoView();
+        }
       });
     });
 

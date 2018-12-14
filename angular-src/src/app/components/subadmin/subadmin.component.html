@@ -1,19 +1,20 @@
 <div class="box">
-    <table class="admintable">
-      <tr>
-        <th>ID</th>
-        <th>관리</th>
+  <table class="admintable">
+    <tr>
+      <th>ID</th>
+      <th>관리</th>
+    </tr>
+    <ng-container *ngFor="let val of sub?.stops">
+      <tr *ngIf="val != sub.id && val != 'admin'">
+        <td><b style="cursor:pointer; color:red;" [attr.id]="val" (click)="openInfoWindow(val)">{{val}}</b></td>
+        <td><button (click)="onStopUser(val)" [attr.id]="val + 'button'">해제</button></td>
       </tr>
-      <ng-container *ngFor="let val of sub.stops">
-        <tr>
-          <td><b style="cursor:pointer; color:red;" id="val.id" [attr.id]="val.id" (click)="openInfoWindow(val?.id)">{{val.id}}</b></td>
-          <td><button (click)="onStopUser(val.id)" id="val.id + 'button'" [attr.id]="val.id + 'button'">해제</button></td>
-        </tr>
-        <tr *ngIf="val.id != user.id || val.id != 'admin'">
-          <td><b style="cursor:pointer;" id="val.id" (click)="openInfoWindow(val?.id)">{{val.id}}</b></td>
-          <td><button (click)="onStopUser(val.id)" id="val.id + 'button'">정지</button></td>
-        </tr>
-      </ng-container>
-    </table>
-  </div>
-  
+    </ng-container>
+    <ng-container *ngFor="let val of clean">
+      <tr *ngIf="val != sub.id && val != 'admin'">
+        <td><b style="cursor:pointer;" [attr.id]="val" (click)="openInfoWindow(val)">{{val}}</b></td>
+        <td><button (click)="onStopUser(val)" [attr.id]="val + 'button'">정지</button></td>
+      </tr>
+    </ng-container>
+  </table>
+</div>

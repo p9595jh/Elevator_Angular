@@ -29,7 +29,7 @@
   </table>
   <br/><br/>
 
-  <button *ngIf="loggedIn && !user?.stop" style="float:right;" onclick="location.href='http://localhost:3000/write?type='+sub.id">글쓰기</button>
+  <button *ngIf="loggedIn && !user?.stop" style="float:right;" (click)="toWritePage()">글쓰기</button>
   <button style="float:right;" (click)="openPlayListWindow(sub?.id)">재생목록</button>
   <button style="float:left;" (click)="openViewLiveWindow(sub?.id)">라이브</button>
   <button *ngIf="user?.id == sub?.id" style="float:left;" (click)="openMakeLiveWindow(sub?.id)">라이브 생성</button>

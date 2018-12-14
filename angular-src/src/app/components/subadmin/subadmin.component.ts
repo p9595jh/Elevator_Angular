@@ -11,7 +11,7 @@ import { HandleuserService } from '../../services/handleuser.service';
   styleUrls: ['./subadmin.component.css']
 })
 export class SubadminComponent implements OnInit {
-  sub: any;
+  sub: Sub;
   clean: any[];
   user: any;
 
@@ -75,4 +75,11 @@ export class SubadminComponent implements OnInit {
     });
   }
 
+}
+
+interface Sub {
+  _id: string;
+  subscribes: string[];
+  stops: string[];
+  id: string;
 }

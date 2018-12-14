@@ -20,10 +20,10 @@ router.get('/', function(req, res, next) {
             users: users,
             user: {
                 id: req.session.userid,
-                    nickname: req.session.nickname,
-                    stop: req.session.stop,
-                    joindate: req.session.joindate,
-                    boardRequest: req.session.boardRequest
+                nickname: req.session.nickname,
+                stop: req.session.stop,
+                joindate: req.session.joindate,
+                boardRequest: req.session.boardRequest
             }
         });
     });

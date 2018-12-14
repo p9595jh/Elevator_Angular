@@ -1,6 +1,6 @@
-<div id="topscroll">
+<!-- <div id="topscroll">
   <a style="text-decoration:none; color:black; font-weight:bold;" href="#top">TOP</a>
-</div>
+</div> -->
 
 <header style="padding-top:20px; padding-bottom:20px;">
   <ul style="float:right; list-style:none;">
@@ -13,12 +13,11 @@
     <li *ngIf="!loggedIn" [routerLinkActive]="['active']">
       <a [routerLink]="['./loginpage']" class="link">로그인</a>
     </li>
-    <!-- have to add links to admin page here -->
     <li *ngIf="loggedIn && user?.id == 'admin'" [routerLinkActive]="['active']">
       <a [routerLink]="['./admin']" class="link">어드민</a>
     </li>
     <li *ngIf="loggedIn && user?.boardRequest == 2" [routerLinkActive]="['active']">
-        <a [routerLink]="['./subadmin']" class="link">어드민</a>
+      <a [routerLink]="['./subadmin']" class="link">어드민</a>
     </li>
   </ul>
   <div style="text-align:center;">

@@ -17,7 +17,7 @@
   <table class="tb2" *ngFor="let val of content">
     <tr style="height:110px; vertical-align:top;" [attr.id]="val.num">
       <td style="text-align:center; vertical-align:middle; width:110px; border-right:1px solid rgb(0,91,159)">
-        <img width="70" height="70"/>
+        <img width="70" height="70" [attr.src]="'images/profileimages/'+val?.id" />
       </td>
       <td>
         <div style="font-size:12px; padding:2px; margin-left:5px; border-bottom:1px dotted rgb(0,91,159);">

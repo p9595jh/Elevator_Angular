@@ -10,6 +10,7 @@ import { Router, NavigationEnd } from '@angular/router';
 export class NavbarComponent implements OnInit, OnDestroy {
   navigationSubscription;
   loggedIn: Boolean;
+  user: any;
 
   constructor(
     private handleuserService: HandleuserService,
@@ -25,6 +26,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.handleuserService.loggedIn().subscribe(data => {
       this.loggedIn = data.result;
+      this.user = data.user;
     });
   }
 

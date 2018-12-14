@@ -28,6 +28,7 @@ export class ContentComponent implements OnInit, OnDestroy {
 
   comment: String;
   num: Number;
+  audioPath: string = '';
 
   constructor(
     private handleuserService: HandleuserService,
@@ -60,6 +61,7 @@ export class ContentComponent implements OnInit, OnDestroy {
         this.boardtype = result.boardtype;
         this.all = result.all;
         this.writer = result.writer;
+        this.audioPath = this.content.audio;
       });
     });
   }

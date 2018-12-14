@@ -56,6 +56,10 @@ export class SubboardComponent implements OnInit, OnDestroy {
     }
   }
 
+  toWritePage() {
+    location.href = "http://localhost:3000/write?type=" + this.type;
+  }
+
   openInfoWindow(userid: string) {
     this.handleuserService.openWindow('http://localhost:3000/info?userid='+userid);
   }
