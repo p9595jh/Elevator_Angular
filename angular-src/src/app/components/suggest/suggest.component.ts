@@ -47,7 +47,7 @@ export class SuggestComponent implements OnInit, OnDestroy {
   }
 
   openInfoWindow(userid: string) {
-    this.handleuserService.openWindow('http://localhost:3000/info?userid='+userid);
+    this.handleuserService.openWindow(this.handleuserService.ServerAddress + '/info?userid='+userid);
   }
 
   initialiseInvites() {

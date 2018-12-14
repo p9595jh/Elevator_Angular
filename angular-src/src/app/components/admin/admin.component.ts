@@ -23,7 +23,7 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
     let headers = new Headers();
     headers.append('Content-type', 'application/json');
-    this.http.get('http://localhost:3000/admin', {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(data => {
+    this.http.get(this.handleuserService.ServerAddress + '/admin', {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(data => {
       if ( data.result ) {
         this.users = data.users;
       }
@@ -34,13 +34,13 @@ export class AdminComponent implements OnInit {
   }
 
   openInfoWindow(userid: string) {
-    this.handleuserService.openWindow('http://localhost:3000/info?userid='+userid);
+    this.handleuserService.openWindow(this.handleuserService.ServerAddress + '/info?userid='+userid);
   }
 
   onStopUser(userid) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    this.http.post('http://localhost:3000/ajax/stop', {userid: userid}, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(data => {
+    this.http.post(this.handleuserService.ServerAddress + '/ajax/stop', {userid: userid}, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(data => {
       if ( data.message == 'done' ) {
         if ( data.stop ) {
           document.getElementById(userid).style.color = "red";

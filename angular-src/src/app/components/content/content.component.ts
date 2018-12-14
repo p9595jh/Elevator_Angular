@@ -52,7 +52,7 @@ export class ContentComponent implements OnInit, OnDestroy {
 
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.get('http://localhost:3000/content?type='+this.paramType+'&num='+this.paramNum, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(result => {
+      this.http.get(this.handleuserService.ServerAddress + '/content?type='+this.paramType+'&num='+this.paramNum, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(result => {
         this.user = result.user;
         this.imageWidth = result.imageWidth;
         this.content = result.content;
@@ -77,7 +77,7 @@ export class ContentComponent implements OnInit, OnDestroy {
   }
 
   openInfoWindow(userid: string) {
-    this.handleuserService.openWindow('http://localhost:3000/info?userid='+userid);
+    this.handleuserService.openWindow(this.handleuserService.ServerAddress + '/info?userid='+userid);
   }
 
   onWriteComment() {
@@ -88,7 +88,7 @@ export class ContentComponent implements OnInit, OnDestroy {
     };
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    this.http.post('http://localhost:3000/comment', formData, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(data => {
+    this.http.post(this.handleuserService.ServerAddress + '/comment', formData, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(data => {
       if ( data.success ) {
         this.router.navigated = false;
         this.router.navigate(['./content'], {queryParams: {type: this.paramType, num: this.paramNum}});
@@ -112,7 +112,7 @@ export class ContentComponent implements OnInit, OnDestroy {
       }
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.post('http://localhost:3000/delete/'+this.paramType, formData, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(data => {
+      this.http.post(this.handleuserService.ServerAddress + '/delete/' + this.paramType, formData, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(data => {
         if ( data.success ) {
           this.router.navigated = false;
           this.router.navigate(['./'+this.listurl], {queryParams: {type: this.paramType}});
@@ -137,7 +137,7 @@ export class ContentComponent implements OnInit, OnDestroy {
     }
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    this.http.post('http://localhost:3000/delete/comment', formData, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(data => {
+    this.http.post(this.handleuserService.ServerAddress + '/delete/comment', formData, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(data => {
       if ( data.success ) {
         this.router.navigated = false;
         this.router.navigate(['./content'], {queryParams: {type: this.paramType, num: this.paramNum}});
@@ -162,7 +162,7 @@ export class ContentComponent implements OnInit, OnDestroy {
     }
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    this.http.post('http://localhost:3000/ajax', formData, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(data => {
+    this.http.post(this.handleuserService.ServerAddress + '/ajax', formData, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(data => {
       if ( data.msg == 'duplicate' ) {
         this.flashMessage.showFlashMessage({
           messages: ['이미 추천하셨습니다'],
@@ -187,7 +187,7 @@ export class ContentComponent implements OnInit, OnDestroy {
   requestBoard() {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    this.http.post('http://localhost:3000/ajax/boardrequest', {userid: this.content.id, _id: this.content._id}, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(data => {
+    this.http.post(this.handleuserService.ServerAddress + '/ajax/boardrequest', {userid: this.content.id, _id: this.content._id}, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(data => {
       document.getElementById("boardRequest").style.display = "none";
     });
   }
@@ -195,7 +195,7 @@ export class ContentComponent implements OnInit, OnDestroy {
   acceptBoard() {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    this.http.post('http://localhost:3000/ajax/acceptboardrequest', {userid: this.content.id, _id: this.content._id}, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(data => {
+    this.http.post(this.handleuserService.ServerAddress + '/ajax/acceptboardrequest', {userid: this.content.id, _id: this.content._id}, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe(data => {
       document.getElementById("boardRequest").style.display = "none";
     });
   }

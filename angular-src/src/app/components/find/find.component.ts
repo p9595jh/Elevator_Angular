@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { map } from 'rxjs/operators';
+import { HandleuserService } from '../../services/handleuser.service';
 
 @Component({
   selector: 'app-find',
@@ -10,7 +11,8 @@ import { map } from 'rxjs/operators';
 export class FindComponent implements OnInit {
 
   constructor(
-    private http: Http
+    private http: Http,
+    private handleuserService: HandleuserService
   ) { }
 
   ngOnInit() {
@@ -21,7 +23,7 @@ export class FindComponent implements OnInit {
       var code = (<HTMLInputElement> document.getElementById("findid")).value;
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.post('http://localhost:3000/ajax/find', {type: type, code: code}, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe((data: any) => {
+      this.http.post(this.handleuserService.ServerAddress + '/ajax/find', {type: type, code: code}, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe((data: any) => {
         document.getElementById("idresult").innerHTML = data.result;
       });
     }
@@ -29,7 +31,7 @@ export class FindComponent implements OnInit {
       var code = (<HTMLInputElement> document.getElementById("findpw")).value;
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.post('http://localhost:3000/ajax/find', {type: type, code: code}, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe((data: any) => {
+      this.http.post(this.handleuserService.ServerAddress + '/ajax/find', {type: type, code: code}, {headers: headers}).pipe(map((res: Response) => res.json())).subscribe((data: any) => {
         document.getElementById("pwresult").innerHTML = data.result;
       });
     }

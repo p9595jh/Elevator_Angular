@@ -57,23 +57,23 @@ export class SubboardComponent implements OnInit, OnDestroy {
   }
 
   toWritePage() {
-    location.href = "http://localhost:3000/write?type=" + this.type;
+    location.href = this.handleuserService.ServerAddress + "/write?type=" + this.type;
   }
 
   openInfoWindow(userid: string) {
-    this.handleuserService.openWindow('http://localhost:3000/info?userid='+userid);
+    this.handleuserService.openWindow(this.handleuserService.ServerAddress + '/info?userid='+userid);
   }
 
   openPlayListWindow(userid: string) {
-    this.handleuserService.openWindow('http://localhost:3000/openplaylist?userid='+userid);
+    this.handleuserService.openWindow(this.handleuserService.ServerAddress + '/openplaylist?userid='+userid);
   }
 
   openViewLiveWindow(userid: string) {
-    this.handleuserService.openWindow('http://localhost:3000/live/view?userid='+userid);
+    this.handleuserService.openWindow(this.handleuserService.ServerAddress + '/live/view?userid='+userid);
   }
 
   openMakeLiveWindow(userid: string) {
-    this.handleuserService.openWindow('http://localhost:3000/live/make?userid='+userid);
+    this.handleuserService.openWindow(this.handleuserService.ServerAddress + '/live/make?userid='+userid);
   }
 
 }

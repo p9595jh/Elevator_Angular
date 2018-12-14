@@ -29,5 +29,5 @@
   </table>
   <br/><br/>
 
-  <button *ngIf="loggedIn && !user?.stop" style="float:right;" onclick="location.href='http://localhost:3000/write?type=free'">글쓰기</button>
+  <button *ngIf="loggedIn && !user?.stop" style="float:right;" (click)="toWritePage()">글쓰기</button>
 </div>

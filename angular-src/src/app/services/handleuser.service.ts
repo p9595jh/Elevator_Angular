@@ -11,6 +11,7 @@ function _window() {
   // {providedIn: 'root'}
 )
 export class HandleuserService {
+  public ServerAddress: string = 'http://localhost:3000';
 
   constructor(
     private http: Http,
@@ -25,44 +26,37 @@ export class HandleuserService {
   loggedIn() {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:3000/login/ng', {headers: headers}).pipe(map((res: Response) => res.json()));
+    return this.http.get(this.ServerAddress + '/login/ng', {headers: headers}).pipe(map((res: Response) => res.json()));
   }
 
   loggingIn(user: any) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/login', user, {headers: headers}).pipe(map((res: Response) => res.json()));
+    return this.http.post(this.ServerAddress + '/login', user, {headers: headers}).pipe(map((res: Response) => res.json()));
   }
 
   getLoginData() {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:3000/login/data', {headers: headers}).pipe(map((res: Response) => res.json()));
+    return this.http.get(this.ServerAddress + '/login/data', {headers: headers}).pipe(map((res: Response) => res.json()));
   }
 
   logout() {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:3000/logout', {headers: headers}).pipe(map((res: Response) => res.json()));
+    return this.http.get(this.ServerAddress + '/logout', {headers: headers}).pipe(map((res: Response) => res.json()));
   }
 
   handleRegi(user: any) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/handleRegi', user, {headers: headers}).pipe(map((res: Response) => res.json()));
+    return this.http.post(this.ServerAddress + '/handleRegi', user, {headers: headers}).pipe(map((res: Response) => res.json()));
   }
 
   subscribeBoard(subid) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/ajax/subscribeboard', {subid: subid}, {headers: headers}).pipe(map((res: Response) => res.json()));
-  }
-
-  fixUser(user: any) {
-    let headers = new Headers();
-    headers.append('Content-Type', 'multipart/form-data; boundary=----WebKitFormBoundaryl4oxlVSt9yblG8VC');
-    // headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/handleFix', user, {headers: headers}).pipe(map((res: Response) => res.json()));
+    return this.http.post(this.ServerAddress + '/ajax/subscribeboard', {subid: subid}, {headers: headers}).pipe(map((res: Response) => res.json()));
   }
 
 }
