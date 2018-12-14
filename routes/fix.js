@@ -9,12 +9,12 @@ router.get('/', function(req, res, next) {
     User.findOne({id: req.session.userid}, function(err, users) {
         if ( err ) {
             console.log("error!!!!");
-            return res.json({
-                error: 'database failure'
-            })
+            res.status(500).send({ error: 'database failure' });
+            return;
         }
 
-        return res.json({
+        res.render('./fix', {
+            title: "회원정보수정",
             user: users,
             errmsg: ''
         });

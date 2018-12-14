@@ -13,18 +13,12 @@ router.post('/', function(req, res) {
     User.findOne({id: req.session.userid}, function(err, users) {
         if ( err ) {
             console.log("Error in handleRegi!!!!");
-            return res.json({
-                success: false,
-                errmsg: 'database failure'
-            })
+            res.status(500).send({ error: 'database failure' });
+            return;
         }
-        console.log(req.body);
         var form = new formidable.IncomingForm();
-        // form.uploadDir = '/uploadFiles';
 
         form.parse(req, function(err, fields, files) {
-            console.log(fields);
-            console.log(files);
             var password = fields.password;
             var passwordNew = fields.passwordNew;
             var nickname = fields.nickname;
@@ -32,41 +26,35 @@ router.post('/', function(req, res) {
             var introduction = fields.intro;
 
             if ( password != users.pw ) {
-                return res.json({
-                    success: false,
+                res.render('./fix', {
+                    title: '회원정보수정',
                     errmsg: '기존 비밀번호가 일치하지 않습니다',
+                    user: users
                 });
             }
             else if ( passwordNew == '' || nickname == '' ) {
-                return res.json({
-                    success: false,
+                res.render('./fix', {
+                    title: '회원정보수정',
                     errmsg: '* 표시된 칸은 모두 채워야 합니다',
+                    user: users
                 });
             }
             else {
                 if ( files.image.name != '' ) {
                     var filePath = files.image.path;
                     fs.copy(filePath, 'public/images/profileimages/' + req.session.userid, function(err0) {
-                        if ( err0 ) {
-                            console.log('error in handling profile image');
-                            console.log(err0);
-                        }
+                        if ( err0 ) console.err(err0);
                     });
                 }
 
                 User.updateOne({id: req.session.userid}, {pw: passwordNew, nickname: nickname, genre: genre, introduction: introduction}, function(err1, output) {
                     if ( err1 ) {
-                        return res.json({
-                            success: false,
-                            errmsg: 'database failure'
-                        })
+                        res.status(500).json({err: 'database failure'});
+                        return;
                     }
-                    else {
-                        req.session.nickname = nickname;
-                        return res.json({
-                            success: true
-                        });
-                    }
+                    req.session.nickname = nickname;
+                    // res.redirect('http://localhost:3000/astart');
+                    res.redirect('./');
                 });
             }
         });

@@ -44,7 +44,8 @@ const appRoutes: Routes = [
   { path: 'find', component: FindComponent },
   { path: 'fix', component: FixComponent },
   { path: 'notice', component: NoticeComponent },
-  { path: 'subadmin', component: SubadminComponent }
+  { path: 'subadmin', component: SubadminComponent },
+  { path: 'astart', component: StartComponent }
 ]
 
 @NgModule({
