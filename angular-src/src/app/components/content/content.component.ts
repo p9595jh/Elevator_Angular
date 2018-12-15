@@ -128,10 +128,10 @@ export class ContentComponent implements OnInit, OnDestroy {
     }
   }
 
-  onDeleteComment() {
+  onDeleteComment(num) {
     const formData = {
       contentnum: this.content.num,
-      num: this.num,
+      num: num,
       id: this.content.id,
       boardtype: this.paramType
     }
@@ -176,9 +176,11 @@ export class ContentComponent implements OnInit, OnDestroy {
           gradeSpan.innerHTML = "평점 " + data.grade + " by " + data.people + "명";
         }
         else {
-          var recommendBtn = document.getElementById("recommendBtn");
-          // if ( !data.recommend ) data.recommend = this.content.recommend;
-          recommendBtn.innerHTML = "추천 " + data.recommend;
+          var recommendbtn = document.getElementById("recommendbtn");
+          recommendbtn.innerHTML = "추천 " + data.recommend;
+          // if ( data.msg == 'success' ) {
+          //   recommendbtn.innerHTML = "추천 " + (this.content.recommend+1);
+          // }
         }
       }
     });

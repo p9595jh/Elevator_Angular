@@ -11,7 +11,7 @@
     </tr>
 
     <ng-container *ngFor="let val of free">
-      <tr class="trhover" style="height:20px;">
+      <tr class="trhover" style="padding: 5px;">
         <td>{{val.num}}</td>
         <td style="text-align:left; padding:50px;">
           <a class="link" [routerLink]="['../content']" [queryParams]="{type: 'free', num: val.num}">{{val.title}}</a>
