@@ -178,9 +178,6 @@ export class ContentComponent implements OnInit, OnDestroy {
         else {
           var recommendbtn = document.getElementById("recommendbtn");
           recommendbtn.innerHTML = "추천 " + data.recommend;
-          // if ( data.msg == 'success' ) {
-          //   recommendbtn.innerHTML = "추천 " + (this.content.recommend+1);
-          // }
         }
       }
     });
