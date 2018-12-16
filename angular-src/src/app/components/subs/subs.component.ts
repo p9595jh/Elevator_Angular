@@ -13,7 +13,7 @@ export class SubsComponent implements OnInit, OnDestroy {
   navigationSubscription;
   loggedIn: Boolean;
   sub: Object[];
-  user: Object;
+  user: any;
 
   constructor(
     private handleuserService: HandleuserService,
@@ -50,7 +50,11 @@ export class SubsComponent implements OnInit, OnDestroy {
 
   onSubscribeBoard(subid) {
     if ( confirm('구독하시겠습니까?') ) {
-      this.handleuserService.subscribeBoard(subid).subscribe(data => {
+      const formData = {
+        userid: this.user.id,
+        subid: subid
+      }
+      this.handleuserService.subscribeBoard(formData).subscribe(data => {
         if ( data.message == 'done' ) {
           this.router.navigated = false;
           this.router.navigate(['./subs']);

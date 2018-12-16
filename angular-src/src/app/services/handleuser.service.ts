@@ -53,10 +53,10 @@ export class HandleuserService {
     return this.http.post(this.ServerAddress + '/handleRegi', user, {headers: headers}).pipe(map((res: Response) => res.json()));
   }
 
-  subscribeBoard(subid) {
+  subscribeBoard(formData: any) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post(this.ServerAddress + '/ajax/subscribeboard', {subid: subid}, {headers: headers}).pipe(map((res: Response) => res.json()));
+    return this.http.post(this.ServerAddress + '/ajax/subscribeboard', formData, {headers: headers}).pipe(map((res: Response) => res.json()));
   }
 
 }
