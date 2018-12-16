@@ -13,6 +13,7 @@ export class FreeComponent implements OnInit, OnDestroy {
   navigationSubscription;
   loggedIn: boolean;
   free: any[];
+  user: any;
 
   constructor(
     private handleuserService: HandleuserService,
@@ -47,8 +48,9 @@ export class FreeComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.handleuserService.loggedIn().subscribe(data => {
       this.loggedIn = data.result;
-      this.handleboardService.getFrees().subscribe(data => {
-        this.free = data.free;
+      this.handleboardService.getFrees().subscribe(result => {
+        this.free = result.free;
+        this.user = result.user;
       });
     });
   }

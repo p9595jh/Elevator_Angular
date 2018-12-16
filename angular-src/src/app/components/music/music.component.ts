@@ -13,6 +13,7 @@ export class MusicComponent implements OnInit, OnDestroy {
   navigationSubscription;
   loggedIn: boolean;
   music: any[];
+  user: any;
 
   constructor(
     private handleuserService: HandleuserService,
@@ -29,8 +30,9 @@ export class MusicComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.handleuserService.loggedIn().subscribe(data => {
       this.loggedIn = data.result;
-      this.handleboardService.getMusics().subscribe(data => {
-        this.music = data.music;
+      this.handleboardService.getMusics().subscribe(result => {
+        this.music = result.music;
+        this.user = result.user;
       });
     });
 
