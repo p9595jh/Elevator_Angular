@@ -87,8 +87,9 @@ export class StartComponent implements OnInit, OnDestroy {
         this.router.navigate(['./start']);
       }
       else {
-        this.router.navigate(['localhost:3000/loginpage']);
-        
+        // this.router.navigate(['localhost:3000/loginpage']);
+        // location.href = "./?goto=loginpage";
+        this.router.navigate(['./loginpage']);
       }
     })
   }

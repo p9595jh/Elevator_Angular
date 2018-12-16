@@ -201,17 +201,25 @@ html
         white-space: pre-wrap;
       }
     //- CSS end
+    script(type="text/javascript").
+      function logout() {
+        var data = JSON.stringify({request: 1});
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', './logout');
+        xhr.setRequestHeader('Content-type', "application/json");
+        xhr.send(data);
+        xhr.addEventListener('load', function() {
+          location.href = "./?goto=start";
+        });
+      }
   body
-    div#topscroll
-      a(style="text-decoration:none; color:black; font-weight:bold;", href="#top") TOP
-
-    header(style="padding-top:20px; padding-down:20px;")
+    header(style="padding-top:20px; padding-bottom:20px;")
       ul(style="float:right; list-style:none;")
         li
           a(href="./?goto=notice" class="link") 공지사항
             - if ( user.id )
               li
-                a(href="./logout", class="link") 로그아웃
+                a(href="javascript:;", class="link", onclick="logout()") 로그아웃
             - else
               li
                 a(href="./?goto=loginpage", class="link") 로그인
